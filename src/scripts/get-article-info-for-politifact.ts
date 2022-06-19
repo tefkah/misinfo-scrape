@@ -19,11 +19,11 @@ const articleInfo = await getArticleInfoForDir(
   join(__dirname, '../../data/politifact-info.json')
 )
 
-const politifactInfo = await writeFile(
-  join(__dirname, '../../data/politifact-info.json'),
-  JSON.stringify(articleInfo, null, 2)
-)
-const politifactInfoMin = await writeFile(
-  join(__dirname, '../../data/politifact-info-minified.json'),
-  JSON.stringify(articleInfo)
-)
+// const politifactInfo = await writeFile(
+//   join(__dirname, '../../data/politifact-info.json'),
+//   JSON.stringify(articleInfo, null, 2)
+// )
+// const politifactInfoMin = await writeFile(
+//   join(__dirname, '../../data/politifact-info-minified.json'),
+//   JSON.stringify(articleInfo)
+// )

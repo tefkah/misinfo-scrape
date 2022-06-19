@@ -11,7 +11,7 @@ const argv = cli({
       {
         name: 'archive-snopes-collections',
       },
-      (args) => archiveCollections()
+      async (args) => await archiveCollections()
     ),
   ],
 })
