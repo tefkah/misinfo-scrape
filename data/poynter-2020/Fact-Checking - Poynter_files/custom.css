@@ -1,0 +1,29 @@
+.PoynterArticleTitle {
+    color: #363136;
+    font-family: "Poynter-OS-Display-V2", "Times New Roman", Georgia, serif;
+    margin: 0 0 .5em;
+}
+
+.pre-title {
+  font-size: 0.9rem;
+  line-height: 1.33333;
+  font-family: "Poynter-Gothic-Text-Condensed-V2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  text-transform: uppercase; }
+  .teaser--tiny .pre-title {
+    font-size: 0.8rem; }
+    
+.byline {
+  font-size: 0.7rem;
+  line-height: 1.71429;
+  margin: 0;
+  text-transform: uppercase; }
+  
+  .categoryPostCardDisplay a { 
+      font-family: "Poynter-OS-Display-V2", "Times New Roman", Georgia, serif;
+  }
+  
+  .vc_gitem-link {
+      font-family: "Poynter-OS-Display", "Times New Roman", Georgia, serif;
+      font-weight: "bold";
+  }

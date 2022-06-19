@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#EEEEEE;stroke-miterlimit:10;}
+	.st2{fill:url(#SVGID_1_);stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:#808080;}
+	.st4{fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st5{fill:url(#SVGID_2_);}
+	.st6{fill:#808080;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
+	.st7{fill:#E04B4B;}
+	.st8{fill:#666666;}
+	.st9{fill:#00BDF2;}
+	.st10{fill:none;stroke:#000000;stroke-width:0.7022;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:#000000;stroke-width:0.7635;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
+	.st13{fill:#EEEEEE;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
+	.st14{fill:url(#SVGID_3_);}
+	.st15{fill:url(#SVGID_4_);}
+	.st16{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st17{fill:#FF4B4B;}
+	.st18{fill:none;stroke:#FFFFFF;stroke-width:2.4286;stroke-linecap:round;stroke-miterlimit:10;}
+	.st19{fill:none;stroke:#000000;stroke-width:0.2697;stroke-miterlimit:10;}
+	.st20{fill:url(#SVGID_5_);stroke:#000000;stroke-width:0.8868;stroke-miterlimit:10;}
+	.st21{fill:url(#SVGID_6_);stroke:#000000;stroke-width:0.8868;stroke-miterlimit:10;}
+	.st22{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M57.2,24.9L33.3,7.2c-0.8-0.6-1.8-0.6-2.6,0L6.8,24.9c-0.5,0.4-0.8,1-0.8,1.6v28.8c0,0.6,0.5,1.2,1.2,1.2h49.7
+	c0.6,0,1.2-0.5,1.2-1.2V26.5C58,25.9,57.7,25.3,57.2,24.9z"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="31.998" y1="25.5375" x2="31.998" y2="40.2724">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#CCCCCC"/>
+</linearGradient>
+<path class="st2" d="M6,25.6l24.7,14.4c0.8,0.5,1.8,0.5,2.6,0L58,25.5"/>
+<path class="st4" d="M58,56.3L33.3,38c-0.8-0.6-1.8-0.6-2.6,0L6,56.3"/>
+<path class="st16" d="M57.2,24.9L33.3,7.2c-0.8-0.6-1.8-0.6-2.6,0L6.8,24.9c-0.5,0.4-0.8,1-0.8,1.6v28.8c0,0.6,0.5,1.2,1.2,1.2h49.7
+	c0.6,0,1.2-0.5,1.2-1.2V26.5C58,25.9,57.7,25.3,57.2,24.9z"/>
+<g>
+	<circle class="st17" cx="55.5" cy="25.4" r="8.5"/>
+	<g>
+		<line class="st18" x1="55.5" y1="21.6" x2="55.5" y2="29.1"/>
+		<line class="st18" x1="51.8" y1="25.4" x2="59.2" y2="25.4"/>
+	</g>
+</g>
+</svg>

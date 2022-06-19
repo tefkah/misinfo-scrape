@@ -1,0 +1,226 @@
+/* hide floating panel from MTC & Tablestakes product */
+.postid-907074 .floating-price__panel/*, .postid-954126 .floating-price__panel*/ {
+	visibility: hidden;
+}
+
+.postid-907074 .product_card /*, .postid-954126 .product_card*/ {
+	visibility: hidden;
+}
+
+.postid-907074 .price/*, .postid-954126 .price*/  { display: none; }
+
+.postid-954126 p.price:after,
+.postid-954126 .floating-price__panel p.price:after,
+.postid-954126 .product_card p.price:after {
+    content: 'temporary authorization';
+    font-size: .75rem;
+    font-family: 'Poynter-Gothic-Text', sans-serif;
+    font-weight: 400;
+}
+
+/* Wordpress Custom CSS From Admin */
+
+
+.member-profile-picture{
+	width: 300px;
+	margin-right: 10px;
+}
+
+/* COHORT */
+div.cohort_title a{
+	font-family: "Poynter-Gothic-Text-Condensed" !important;
+	text-transform: none;
+	font-size: 20px;
+	line-height: 24px;
+	color: #333333;
+}
+div.cohort_author p{
+	text-transform: none;
+	font-family: "Poynter-Gothic-Text-Condensed" !important;
+	font-size: 18px;
+		color: #333333;
+}
+
+
+/* THEME OVERRIDE FROM 5.2 UPDATE      - might not need anymore*/
+/* wpb wp bakery, wdm wisdom labs (maker of elumine) */
+.wpb_wrapper ul li {
+	font-size: 18px !important;
+	line-height: 24px !important;
+	font-family: "Poynter-Serif-RE" !important;
+}
+
+.wdm-blog-author a, .wdm-blog-date, .wdm-tag-container a {
+		font-family: "Poynter-Serif-RE" !important;
+}
+
+.wdm-category-container a, .wdm-cat-head{
+	font-family: "Poynter-Serif-RE" !important;
+}
+
+.name a{
+	font-family: Poynter-Gothic-Text-Condensed;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+/* MOBILE ADS   - create ads stylesheet? rightrail */
+.mobile_ad_rail_1, .mobile_ad_rail_2, .mobile_ad_rail_3 {
+	visibility: hidden;
+	height: 0;
+}
+@media only screen and (max-width: 750px) {
+  .mobile_ad_rail_1, .mobile_ad_rail_2, .mobile_ad_rail_3 {
+	visibility: visible;
+		height: auto;
+		margin-bottom: 15px;
+		padding-bottom: 20px;
+}
+  }
+
+/* GENERAL PADDING ON RIGHT COLUMN FOR WEBINAR INSTRUCTORS; NOT PERMANENT */
+.vc_col-sm-4 {
+	padding-left: 5px;
+}
+
+.wpb_content_element ul li {
+	font-size: 1.4em;
+	line-height: 1.6em;
+	color: #131313;
+}
+
+.wpb_content_element p {
+	color: #000000;
+}
+
+h3, h4 {
+	margin-top: ;
+	margin-bottom: .5em;
+}
+
+.content .wpb_wrapper .wpb_wrapper li{
+	font-size: 1.0em;
+	padding-top: 3px;
+}
+
+
+.headline_over_photo {
+	  text-shadow: 2px 2px 2px #333333;
+}
+
+
+
+.wpProQuiz_quiz_time {
+	display: none;
+}
+
+.wpProQuiz_time_limit, .wdm-selected {
+	font-family: Poynter-Gothic-Text-Condensed;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.wdm-quiz-col-text .wdm-selected{
+	font-family: Poynter-Gothic-Text-Condensed !important;
+	font-weight: bold;
+}
+.wdm-hour {
+	font-family: Poynter-Gothic-Text-Condensed !important;
+	 font-size: inherit;
+	 color: #5A9F3F !important;
+}
+
+.editorial_tips {
+	font-size: 1.1em;
+}
+
+.vc_grid-filter-item {
+	font-family: Poynter-Gothic-Text;
+}
+
+
+/* Fixes FA icons not displaying      - courses, older pages, custom training */
+.vc_icon_element.vc_icon_element-outer .vc_icon_element-inner .vc_icon_element-icon {
+  font-weight: 900 !important; 
+}
+.vc_icon_element.vc_icon_element-outer .vc_icon_element-inner .vc_icon_element-icon:before {
+  font-weight: 900 !important;
+}
+
+
+.logo__link {
+    border: none;
+}
+
+/*  get rid off border botom eventually from a tags */
+a.logo__link {
+	border: none;
+}
+
+
+
+/* End: Temp Checkbox Fix 051721 */
+
+/*  Might need to delete mailchimp styles */
+
+/* Mailchimp Shortcode Form */
+h1.piMailChimpHeading{
+	// display: none;
+}
+
+/* Mailchimp Success Message */
+.mailchimp_success{
+    background-color: #51843d;
+    color: white;
+    padding: 10px 15px;
+    margin-left: 10px;
+    height: 44px;
+    vertical-align: middle;
+    animation: fademc 0.4s ease;
+    border-radius: 5px;
+    display: inline-block;
+    line-height: 22px;
+}
+
+@keyframes fademc {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Hide MTC Product in Archives       -     LEAVE IT HERE */
+li.post-907074 p.product-price-tickr {
+    display: ;
+	visibility: hidden;
+	line-height: .5;
+}
+li.post-907074 p.product-price-tickr:after {
+    content: "Inquire Now";
+	display: block;
+	visibility: visible;
+}
+
+.pre-title {
+  font-size: 0.9rem;
+  line-height: 1.33333;
+  font-family: "Poynter-Gothic-Text-Condensed-V2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  text-transform: uppercase; }
+
+  .teaser--tiny .pre-title {
+    font-size: 0.8rem; }
+    
+
+  
+  .categoryPostCardDisplay a { 
+      font-family: "Poynter-OS-Display-V2", "Times New Roman", Georgia, serif;
+  }
+  /* vc is wp bakery (visual composer) */
+  .vc_gitem-link {
+      font-family: "Poynter-OS-Display", "Times New Roman", Georgia, serif;
+      font-weight: "bold";
+  }

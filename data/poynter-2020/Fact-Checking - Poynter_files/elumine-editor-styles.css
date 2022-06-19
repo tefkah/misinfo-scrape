@@ -1,0 +1,271 @@
+/* Elumine Custom CSS From Admin */
+/*
+body a {
+    font-weight: bold;
+}
+*/
+
+/*
+p, label, div, button, input, em, ul, li, ol, tr, td, select { 
+	font-family: "Poynter-Serif-RE", serif; 
+}
+*/
+
+.site-title a{ font-family: "Poynter-OS-Display", "Times New Roman", Georgia, serif !important; }
+
+/*
+body {
+     max-width: 3000px !important;
+}
+*/
+
+/*
+figcaption {
+     font-size: 1em !important;
+}
+*/
+
+
+/*                HEADER     */
+header.site-header.header-light {
+	background: #ffffff;
+}
+/* END HEADER */
+
+.qcopd-single-list > h2 {
+    display: none;
+}
+
+/*
+h1 {
+    font-family: "Poynter-OS-Display-V2", "Times New Roman", Georgia, serif !important;
+}
+*/
+
+.related_training_column {
+    margin-left: 35;
+    padding-left: 20;
+    padding-right: 0;
+}
+
+@media screen and (max-width: 760px) {
+    .poynter_coverage {
+        padding-left: 0;
+        padding-right: 0;
+    }  
+    .related_training_column {
+      margin-left: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+}
+
+
+
+
+.dfp-ad-widget-class {
+    text-align: center;
+    margin: auto;
+}
+
+
+
+
+.profile-highlights-sidebar {
+  display: none;
+}
+
+.user-name {
+  font-family: Poynter-Gothic-Text !important;
+}
+
+
+
+.single-blog-sidebar-wrap {
+  padding-top: 0px;
+background-color: #ffffff;
+}
+
+/*             HEADER              */
+.headerPlaceholders::-webkit-input-placeholder {
+  font-family: Poynter-Gothic-Text, sans-serif !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.headerPlaceholders:-ms-input-placeholder {
+  font-family: Poynter-Gothic-Text, sans-serif !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.headerPlaceholders:-moz-placeholder {
+  font-family: Poynter-Gothic-Text, sans-serif !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.headerPlaceholders::-moz-placeholder {
+  font-family: Poynter-Gothic-Text, sans-serif !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+/*            END HEADER              */
+
+/*
+a {
+    color: #67B244;
+}
+*/
+
+h3, h4, h5, h6 {
+     color: #151515;
+}
+
+
+.course-button:hover {
+    color: #ffffff !important;
+}
+
+
+
+.current_page_item.menu-item a  {
+     text-decoration: underline;
+}
+
+/*
+.main-navigation .menu-item a {
+    font-family: Poynter-Gothic-Text !important;
+    font-weight: bold;
+}
+*/
+
+
+
+.categories-filter select {
+    color: #151515;
+    background-image: url(../styles/custom-arrow.svg) right no-repeat !important;
+    background-color: transparent;
+}
+
+/*
+header.site-header.sps--abv .site-branding,
+header.site-header.sps--blw .site-branding {
+    padding-bottom: 0px;
+}
+*/
+.elumine-page-title {
+    font-family: Poynter-OS-Display-V2 !important;
+    font-weight: bold;
+    font-size: 54px;
+}
+
+/*
+p {
+    font-size: 20px;
+    line-height: 27px;
+}
+*/
+
+.wdml-post-content p {
+    color: #151515;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.primary-color {
+    color: #151515;
+}
+.ps {
+    color: #57a039;
+}
+select {
+    color: #151515;
+    background-image: url(../styles/custom-arrow.svg) right no-repeat !important;
+    background-color: transparent;
+}
+.btn,
+.button,
+button,
+input[type=button],
+input[type=submit] {
+    color: #151515;
+    border-color: transparent;
+    background-color: #57a039;
+}
+
+
+.contact-info__name {
+  font-size: 1.2rem;
+  line-height: 1.16667;
+  margin: 0; }
+
+.contact-info__listing {
+  font-size: 0.8rem;
+  color: #57a039;
+  list-style: none;
+  margin: 0; }
+  @media (min-width: 48em) {
+    .contact-info__listing {
+      font-size: 0.9rem;
+      line-height: 1.33333; } }
+
+.contact-info__address > a,
+.contact-info__phone > a {
+  text-decoration: none; }
+  .contact-info__address > a:hover,
+  .contact-info__phone > a:hover {
+    text-decoration: underline; }
+
+@media (min-width: 62.5em) {
+  .contact-info__address .address__upper,
+  .contact-info__address .address__lower {
+    display: inline; } }
+
+dl {
+  margin: 1em 0;
+  padding: 0; }
+  nav > ul, nav >
+  ol, nav >
+  dl {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+
+
+.menu__item {
+     float: left;
+}
+
+
+
+.navigation-secondary {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.dfp_ad_block {
+    padding: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
+    object-fit: contain;
+}
+
+.team_member_name {
+    font-family: Poynter-Gothic-Text !important;
+    font-size: 1.6em;
+}
+
+.team_member_job_title {
+    font-family: Poynter-Gothic-Text-Condensed !important;
+    font-size: 1.2em;
+}
+
+.btn_pillbox {
+    font-family: Poynter-Gothic-Text-Condensed !important;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.heading .elumine-page-title {
+    font-size: 35px;
+}

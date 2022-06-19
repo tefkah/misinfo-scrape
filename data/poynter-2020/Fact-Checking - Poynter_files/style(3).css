@@ -1,0 +1,2551 @@
+/*
+ Theme Name:   Elumine Child
+ Theme URI:    https://wisdmlabs.com/elumine
+ Description:  Elumine Child Theme
+ Author:       Wisdmlabs
+ Author URI:   https://wisdmlabs.com
+ Template:     elumine
+ Version:      1.0.0
+ Tags:         elearning
+ Text Domain:  elumine-child
+*/
+
+
+/* HEADER ? */
+/* Header whitespace fix. Need to revise and fix at the source. */
+.breadcrumbs-listing {
+    padding: 0;
+    margin: 1rem auto;
+    display: block;
+    font-family: 'Poynter-Gothic-Text', sans-serif;
+    position: relative;
+    top: 0px;
+    width: 100%;
+    display: none;
+}
+div.breadcrumbs {
+    padding:0;
+    margin: 0;
+}
+div.breadcrumbs a {
+    font-family: 'Poynter-Gothic-Text', sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.15;
+    text-align: left;
+    text-decoration: none;
+}
+.breadcrumbs-listing .separator {
+    margin: 2px 5px;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 44.456px;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: elumine;
+}
+div.breadcrumbs .bread-current, div.breadcrumbs .last-item {
+    color: #6a6a6a;
+    font-family: 'Poynter-Gothic-Text', sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+/* END HEADER */
+
+.site-content-contain > .container {
+	width: 100%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+            'header1 header1 usermenu'
+            'menu1 menu2 usermenu';
+    grid-gap: 5px;
+    padding: 10px;
+}
+
+/* HEADER */
+
+.header1Item { grid-area: header1; }
+.usermenuItem { grid-area: usermenu; }
+.menu1Item { grid-area: menu1; }
+.menu2Item { grid-area: menu2; }
+
+.headerSideBySide{
+    float: left;
+}
+
+/* END HEADER */
+
+.profile_new_float {
+    float: left;
+}
+
+.left_float {
+    width: 35%;
+}
+
+.right_float {
+    width: 60%;
+}
+
+.member-bio .fa {
+    font-size: 24pt;
+}
+
+.footer-padding {
+    padding-bottom: 30px;
+}
+
+.profile-section {
+    /* padding: 20px;
+     border: 1px solid #ebebeb; */
+    padding: 5px 50px 15px 50px;
+    display: table-cell;
+    width: 120px;
+    cursor: pointer;
+}
+
+.profile-section-active {
+    background-color: #ffffff;
+    border-bottom: 5px solid #57a039;
+}
+
+.profile-section-inactive {
+    background-color: #ffffff;
+    border-bottom: 10px solid #f2f2f2;
+}
+
+.profile-section-fullwidth {
+    width: auto;
+}
+
+.profile-section-content {
+    width: 100%;
+    padding: 20px 20px 20px 0;
+    border: 0 solid #ebebeb;
+    background-color: #ffffff;
+    font-family: "Poynter-OS-Display", "Times New Roman", Georgia, serif !important;
+    font-size: 20px;
+}
+
+.team-member-more {
+    margin-top: 30px;
+}
+
+.member-profile-picture {
+    border-radius: 200px;
+    max-width: 100%;
+}
+
+.course_div_thumb {
+    width: 30%;
+    float: left;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.course_div_title {
+    width: 65%;
+    float: left;
+    padding: 15px;
+}
+
+.course_span_title {
+    font-size: 21px;
+}
+
+.course_span_date {
+    font-size: 12px;
+}
+
+.course_divider {
+    width: 95%;
+    height: 1px;
+    color: #ebebeb;
+    margin: 5px 2% 5px 2%;
+}
+
+.load_more_button {
+    background-color: #6dab3c;
+    padding: 10px 20px 10px 20px;
+    width: 150px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Poynter-OS-Display", "Times New Roman", Georgia, serif !important;
+    margin: auto;
+    color: #ffffff;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: #fff transparent #000 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.course-div {
+    float: left;
+    margin-top: 20px;
+}
+
+.course-left {
+    width: 65%;
+}
+
+.course-right {
+    width: 35%;
+    font-size: 18px;
+    border: 1px solid black;
+    padding: 10px;
+    line-height: 110%;
+    float: right;
+}
+
+.course-left img {
+    max-width: 600px;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+.syllabus_wrap {
+    width: 100%;
+}
+
+.syllabus_header {
+    position: relative;
+    width: 100%;
+}
+
+.syllabus_button {
+    width:23%;
+    padding: 1%;
+    size: 22px;
+    font-weight: bolder;
+    float: left;
+    border: 1px solid #ebebeb;
+    cursor: pointer;
+}
+
+.syllabus_div {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ebebeb;
+}
+
+#tab_syllabus_2, #tab_syllabus_3, #tab_syllabus_4 {
+    display: none;
+}
+
+.syllabus_button {
+    cursor: hand;
+}
+
+.col-lg-8 {
+    /* width: 100%;
+     min-width: 100%; */
+}
+
+.coauthors-div-course {
+    margin: 0 15px 15px 0;
+    float: left;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+.fcrb-div-left {
+    float: left;
+    width: 65%;
+    padding-left: 20px;
+}
+
+.fcrb-div-right {
+    float: left;
+    width: 35%;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.fcrb-header {
+    width: 100%;
+}
+
+.float-left {
+    float: left;
+}
+
+.fcrb-header-div {
+    padding-left: 20px;
+}
+
+.fcrb-header-logo {
+    width: 300px;
+}
+
+.fcrb_news_item {
+    margin: 5px 0 5px 0;
+}
+
+.fcrb_news_item_div a {
+    color: black;
+}
+
+.fcrb_news_item_div {
+    padding-left: 15px;
+}
+
+.fcrb_item {
+    width: 100%;
+    color: grey;
+}
+
+.fcrb_loader {
+    margin: auto;
+}
+
+ul.fcrb_cats_ul li {
+    float: left;
+    width: 33%;
+    list-style: none;
+}
+
+.fcrb-items-list-div {
+    width: 100%;
+    border: 1px solid grey;
+    padding: 15px;
+    margin: 20px 0 20px 0;
+}
+
+.fcrb_item_div {
+    padding-left: 20px;
+}
+
+.floaty-left {
+    float: left;
+}
+
+.fcrb-items-list-div {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.fcrb_item_div, .fcrb_news_item_div {
+    margin: 25px 0 0 20px;
+}
+
+.green_title {
+    color: #67B244;
+    margin-left: 13px;
+}
+
+.fcrb_loader, .fcrb_categories {
+    display: none;
+    text-align: center;
+}
+
+.fcrb_empty {
+    display: block;
+}
+
+.fcrb_div_close {
+    width: 100%;
+    text-align: right;
+    display: none;
+}
+
+.fcrb_div_close {
+    cursor: pointer;
+}
+
+.fcrb_summary_div {
+    padding-left: 30px;
+}
+
+.main-author {
+    width: 100%;
+    margin: auto;
+    max-width: 1400px;
+}
+
+.primary-author {
+    position: relative;
+}
+
+.author-div-pic {
+    width: 35%;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.author-div-content {
+    padding-top: 30px;
+    width: 65%;
+}
+
+.member-info h2 {
+    color: #151515;
+    font-family: "Poynter-Serif-RE" !important;
+    font-size: 48px !important;
+    font-weight: bold !important;
+}
+
+
+
+.social-icons {
+    padding-bottom: 10px;
+}
+
+.social-icons a{
+    color: #151515;
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.social-icons a:hover {
+    color: #57a039;
+}
+
+.author-body {
+    color: #000000;
+    font-family: "Poynter-Serif-RE" !important;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.fa-calendar, .fa-tag {
+    margin-right: 10px;
+}
+
+.profile-section {
+    font-family: Poynter-Gothic-Text !important;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.headline-style {
+    font-family: Poynter-Gothic-Text !important;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.profile-section:hover {
+    color: #57a039;
+}
+
+.table-display {
+    display: table;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.course_div_title h3, h4 {
+    margin-top: 0 !important;
+}
+
+.article-headline {
+    color: #000000;
+    font-size: 36px;
+    font-family: "Poynter-Serif-RE" !important;
+    font-weight: bold;
+}
+
+.article-headline:hover {
+    color: #57a039;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    padding: 20px 10px 10px 10px !important;
+}
+
+.site-branding img {
+    max-height: 60px !important;
+}
+
+header.site-header.header-light {
+    box-shadow: none;
+}
+
+.header-container-under {
+    width: 100%;
+    max-width: 1600px;
+    height: 3px;
+    background-color: #f2f2f2;
+    margin: auto;
+}
+
+.leftie {
+    float: left;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.w80 {
+    width: 80%;
+}
+
+.w40p {
+    width: 40px;
+}
+
+.ucase {
+    text-transform: uppercase;
+}
+
+.article-tag-div {
+    padding-bottom: 15px;
+}
+
+#masthead {
+    margin-top: 0;
+}
+
+.fa {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.btn-share {
+    cursor: pointer;
+}
+
+.share-title {
+    font-family: Poynter-Gothic-Text;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.share-div {
+    padding: 10px;
+    background-color: #f2f2f2;
+    width: 150px;
+    margin-left: 165px;
+    margin-top: -15px;
+    display: none;
+    position: absolute;
+}
+
+.lds-dual-ring {
+    margin: auto;
+    width: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .course-left, .course-right {
+        width: 100%;
+    }
+
+    .profile-section {
+        padding: 3px 10px 0px 10px;
+        display: block;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .profile-section-fullwidth {
+        display: none;
+    }
+
+    .profile-section-fullwidth {
+        width: 100%;
+    }
+
+    .author-div-content, .course_div_title, .course_div_thumb, .author-div-pic {
+        width: 100%;
+    }
+
+    .profile-section-content {
+        padding: 20px 0 0 0;
+    }
+
+    .article-headline {
+        margin-top: 20px;
+    }
+
+}
+
+
+/* Global Grid */
+.col-centered {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* page-template-template-ifcn_misinformation */
+.page-template-template-ifcn_misinformation .breadcrumbs-listing {
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+.page-template-template-ifcn_misinformation .post-wrapper {
+	display: block;
+	
+}
+@media only screen and (min-width: 992px) {
+	.page-template-template-ifcn_misinformation .post-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+.covid-title.elumine-page-title {
+	margin-bottom: .5em;
+    word-break: break-word;
+    hyphens: auto;
+}
+@media only screen and (min-width: 375px) {
+	.covid-title.elumine-page-title {
+		margin-bottom: 1em;
+	}
+}
+.covid-articles {
+	
+}
+.covid-articles article {
+	min-height: 250px;
+}
+.covid-articles article:hover {
+	
+}
+.covid-articles article .post-container {
+	padding: 1.5em 15px 2em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+	margin: 0 -15px auto;
+	transition: top 700ms ease-in-out;
+	position: relative;
+	top: 0;
+}
+.covid-articles article:hover .post-container {
+	transition: position 1s;
+	position: relative;
+	top: -5px;
+	background-color: #57a039;
+	transition: top 300ms ease-in-out;
+}
+
+
+
+.covid-articles article:hover p {
+	color: #fff !important;
+}
+.covid-articles article:hover .entry-title--red {
+	color: #fff !important;
+}
+.covid-articles article:hover .entry-title a {
+	color: #fff !important;
+}
+.covid-articles article:hover .button {
+	background-color: #fff;
+	color: #333 !important;
+}
+.covid-articles article:hover .button:hover {
+	background-color: #fff;
+	color: #57a039 !important;
+}
+.covid-articles article .entry {
+	margin-top: auto;
+}
+
+
+.page-template-template-ifcn_misinformation #page header.entry-header .entry-title {
+	font-size: 1.25rem;
+	padding-top: .05em;
+	line-height: 1.3;
+}
+
+@media only screen and (min-width: 375px) {
+	.page-template-template-ifcn_misinformation #page header.entry-header .entry-title {
+		font-size: 1.5rem;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.page-template-template-ifcn_misinformation #page header.entry-header .entry-title {
+		font-size: 1.125rem;
+	}
+}
+
+
+.page-template-template-ifcn_misinformation #page header.entry-header .entry-title a {
+	text-decoration: none;
+	color: #151515;
+}
+.page-template-template-ifcn_misinformation #page header.entry-header .entry-title a:hover {
+	text-decoration: underline;
+}
+.page-template-template-ifcn_misinformation nav.navigation.pagination {
+	width: 100%;
+}
+.covid-disclaimer {
+    font-size: .75rem;
+    line-height: 1.2;
+    margin-top: 3em;
+}
+.page-template-template-ifcn_misinformation .heading {
+	width: 100%;
+	margin: 0 auto 3em;	
+}
+@media only screen and (min-width: 992px) {
+	.page-template-template-ifcn_misinformation .heading {
+		width: 768px;
+		
+	}
+}
+.page-template-template-ifcn_misinformation .heading p {
+	font-size: 1rem;
+}
+
+@media only screen and (min-width: 375px) {
+	.page-template-template-ifcn_misinformation .heading p {
+		font-size: 1.428571428571429rem;
+		font-size: 1.2rem;
+		margin: 0 auto;
+	}
+}
+.single-ifcn_misinformation #page header.entry-header .entry-title {
+	margin-bottom: .25em;
+	font-size: 28px !important;
+}
+.single-ifcn_misinformation #page .post-container {
+	margin-bottom: 1em;
+}
+.single-ifcn_misinformation .entry-content__button {
+	    margin-bottom: 4rem;
+}
+.entry-title--red {
+	color: #e43030;
+}
+.entry-content__text {
+    font-family: "Poynter-Serif-RE";
+    color: #444;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: .5em;
+}
+.entry-content__text--topinfo {
+	margin-bottom: 1em;
+}
+.entry-content__text--org {
+	font-size: 1.5rem;
+    font-weight: bold !important;
+}
+p.entry-content__text--smaller {
+	font-size: .75rem !important;
+	line-height: 1.4
+}
+p.entry-content__text--explanation {
+    line-height: 1.4;
+    font-size: 1.2rem;
+}
+.entry-content__button {
+	background: #67B244;
+	margin-bottom: 1em;
+}
+.entry-content__button:hover {
+	background: #538e38;
+	color: #fff;
+}
+.entry-content__button--smaller {
+    padding: 6px 16px;
+    padding: .5em 1em;
+    border-radius: 10em;
+    font-size: 12px;
+}
+#pagination {
+	background: ;
+}  
+#pagination .row a {
+	padding: 1.5em 1em;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	text-decoration: none;
+}
+#pagination .row a:hover {
+	text-decoration: underline;
+}
+
+
+
+/* Covid Filters */
+.page-template-template-ifcn_misinformation .covid-controls {
+	
+}
+.page-template-template-ifcn_misinformation form.covid-filters {
+	background-color: #333;
+	padding: 2em;
+	margin: 0 auto 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: none;
+}
+@media only screen and (min-width: 768px) {
+	.page-template-template-ifcn_misinformation form.covid-filters {
+		padding: 2em;
+	    flex-direction: row;
+	    border-radius: 0;
+	}
+}
+.
+.page-template-template-ifcn_misinformation form.covid-filters .covid-filters__select-wrap {
+	width: 100%;
+}
+@media only screen and (min-width: 768px) {
+	.page-template-template-ifcn_misinformation form.covid-filters .covid-filters__select-wrap {
+		width: 75%;
+	}
+}
+.page-template-template-ifcn_misinformation form.covid-filters select {
+	background-color: #fff !important;
+	width: 100%;
+	margin: 0 0 1rem 0;
+	padding: 4px 36px 4px 4px;
+	border: none;
+	font-family: 'Poynter-Gothic-Text' !important;
+		font-weight: bold;
+		color: #404040;
+		font-size: .85rem;
+}
+@media only screen and (min-width: 768px) {
+	.page-template-template-ifcn_misinformation form.covid-filters select {
+		background-color: #fff !important;
+		width: 30.5%;
+		margin: 0 2% 0 0;
+		padding: 4px 36px 4px 4px;
+		border: none;
+		
+	}
+}
+.page-template-template-ifcn_misinformation form.covid-filters .covid-filters__input-wrap {
+	width: 15%;
+}
+.covid-filters__orderby-wrap {
+	width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+@media only screen and (min-width: 768px) {
+	.covid-filters__orderby-wrap {
+		width: 25%;
+	}
+}
+.page-template-template-ifcn_misinformation form.covid-filters .covid-filters--view-wrap {
+	width: 80%;
+}
+.page-template-template-ifcn_misinformation form.covid-filters .covid-filters--clear-wrap {
+	width: 15%;
+	margin-left: 5%;
+}
+.page-template-template-ifcn_misinformation form.covid-filters .covid-filters--clear  {
+	font-family: 'Poynter-Gothic-Text' !important;
+    font-weight: bold;
+    width: 31px;
+    height: 31px;
+}
+
+.page-template-template-ifcn_misinformation input.covid-filters__input {
+	width: 100%;
+    padding: 5px 10px;
+    text-align: center;
+    font-family: 'Poynter-Gothic-Text' !important;
+    font-weight: bold !important;
+    cursor: pointer;
+    font-size: .85rem;
+	box-shadow: 0px 1px 0 #2e6119;
+	color: #333;
+}
+.page-template-template-ifcn_misinformation .covid-filters__input:hover {
+    background-color: #6fbf4c;
+    color: #404040;
+    box-shadow: 0px 1px 0 #2e6119;
+}
+.page-template-template-ifcn_misinformation form.covid-sort {
+	padding: 2em;
+	margin-bottom: 1em;
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.page-template-template-ifcn_misinformation .covid-sort__title {
+	font-family: 'Poynter-Gothic-Text' !important;
+    font-weight: bold !important;
+	font-size: .85rem;
+	letter-spacing: .05em;
+    margin: 0 1em 9px 0;
+}
+.page-template-template-ifcn_misinformation .covid-sort__select {
+	font-family: 'Poynter-Gothic-Text' !important;
+    font-weight: bold !important;
+	font-size: .9rem;
+	letter-spacing: 0;
+	margin: 0 1em 5px 0;
+    width: 12rem;
+}
+
+
+
+
+/* Covid Search */
+.page-template-template-ifcn_misinformation .searchform {
+    width: 100%;
+    background: #eee;
+    padding: 2em;
+    display: flex;
+    width: 100%;
+}
+.page-template-template-ifcn_misinformation .searchform div {
+    width:  100%;
+    margin: 0 auto;
+}
+.page-template-template-ifcn_misinformation .searchform .covid-search__input-text {
+    width: 70%;
+    margin-right: 2%;
+    background-color: #fff !important;
+    border: none;
+    padding: 4px;
+    line-height: 23px;
+}
+.page-template-template-ifcn_misinformation .searchform .covid-search__input-text:focus {
+	background-color: #fff !important;
+}
+.page-template-template-ifcn_misinformation .covid-filters__input.covid-filters__input--auto {
+	width: 25%;
+}
+@media only screen and (min-width: 768px) {
+	.page-template-template-ifcn_misinformation .searchform .covid-search__input-text {
+	    width: 82%;
+	}
+	.page-template-template-ifcn_misinformation .covid-filters__input.covid-filters__input--auto {
+		width: 15%;
+	}
+	.page-template-template-ifcn_misinformation .searchform div {
+	    width: 60%;
+	    margin: 0 auto;
+	}
+}
+
+
+/* Polygraph iframe */
+
+#polygraph-iframe {
+ margin-top: 68%;
+}
+
+
+@media (max-width: 1084px) {
+  #polygraph-iframe {
+    margin-top: 75%;
+  }
+}
+@media (max-width: 1000px) {
+  #polygraph-iframe {
+    margin-top: 80%;
+  }
+}
+@media (max-width: 655px) {
+  #polygraph-iframe {
+    margin-top: 90%;
+  }
+}
+@media (max-width: 545px) {
+  #polygraph-iframe {
+    margin-top: 217%;
+  }
+}
+@media (max-width: 414px) {
+  #polygraph-iframe {
+    margin-top: 250%;
+  }
+}
+@media (max-width: 300px) {
+  #polygraph-iframe {
+    margin-top: 290%;
+  }
+}
+
+
+
+
+
+
+
+#polygraph-iframe-clusters {
+  margin-top: 72%;
+}
+@media (max-width: 1007px) {
+  #polygraph-iframe-clusters {
+    margin-top: 92%;
+  }
+}
+@media (max-width: 991px) {
+  #polygraph-iframe-clusters {
+    margin-top: 152%;
+  }
+}
+@media (max-width: 685px) {
+  #polygraph-iframe-clusters {
+    margin-top: 163%;
+  }
+}
+@media (max-width: 615px) {
+  #polygraph-iframe-clusters {
+    margin-top: 163%;
+  }
+}
+@media (max-width: 429px) {
+  #polygraph-iframe-clusters {
+    margin-top: 347%;
+  }
+}
+@media (max-width: 388px) {
+  #polygraph-iframe-clusters {
+    margin-top: 437%;
+  }
+}
+
+
+
+
+
+
+/* Category Locally */
+.category-locally {
+	line-height: 1.2;
+}
+/* Image aspect ratio 16:9*/
+.category-locally .img-outer {
+  position: relative;
+  overflow: hidden;
+}
+.category-locally .img-outer:before {
+	display: block;
+	content: "";
+	width: 100%;
+	padding-top: calc(9 / 16 * 100%);
+}
+.category-locally .img-outer > .img-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/* End: Image aspect ratio 16:9*/
+.category-locally .heading {
+	padding: 2rem 0;
+	border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+}
+.category-locally .heading h1,
+.category-locally .heading h2, 
+.category-locally .heading h3,
+.category-locally .heading p {
+	margin: 0 0 .5rem 0;
+	padding: 0;
+	line-height: 1.2;
+	border: 0;
+}
+.category-locally section {
+	padding: 1rem 0 3rem;
+	border-bottom: 3px solid #333;
+}
+.category-locally section:first-of-type {
+	/* padding-top: 0; */
+}
+.category-locally section p/*
+,
+.category-locally section div
+*/ {
+	font-family: "Poynter-Serif-RE" !important;
+}
+
+.category-locally .heading p {
+	margin: 0;
+}
+.category-locally .local-news {
+	
+}
+.category-locally .heading h1.elumine-page-title span {
+	font-size: 56px;
+	line-height: 1;
+}
+.category-locally .news-column {
+	border-right: 1px solid #ddd;
+}
+@media only screen and (max-width: 768px) {
+	.category-locally .news-column {
+		border-right: none;
+	}
+}
+.category-locally .news-column:last-of-type {
+	border-right: none;
+}
+.category-locally .news-column .more-link a {
+	font-family: Poynter-Gothic-Text !important;
+	font-size: 16px;
+	color: #333;
+}
+.category-locally .news-column .more-link a:hover {
+    color: #67B244;
+	right: 2px;
+}
+.category-locally .featured-story {
+	/* padding-right: 2.5%; */
+	margin-bottom: 3rem;
+}
+.category-locally .featured-story__image {
+	margin-bottom: 1rem;
+	/* height: 56.25%;
+    overflow: hidden; */
+}
+.category-locally .featured-story__image img {
+	position: relative;
+	/* top: 50%;
+	transform: translateY(-50%); */
+	width: 100%; 
+}
+.category-locally .featured-story__title .entry-title,
+.category-locally .featured-story__title .entry-title a {
+	font-family: "Poynter-OS-Display" !important;
+	font-family: "Poynter-Serif-RE" !important;
+	font-weight: 700;
+	font-size: 40px;
+	color: #333;
+	margin-bottom: 1rem;
+	text-decoration: none;
+}
+category-locally .featured-story__title .entry-title:hover,
+.category-locally .featured-story__title .entry-title a:hover {
+	text-decoration: underline;
+}
+.category-locally .featured-highlights {
+	/* padding-left: 7.5%; */
+    /* border-left: 1px solid #ddd; */
+}
+.category-locally .featured-highlights__article {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+.category-locally .featured-highlights__article:first-of-type {
+    padding-top: 1rem;
+}
+.category-locally .featured-highlights__article:last-child {
+    border-bottom: none;
+}
+.category-locally .featured-highlights__title .entry-title,
+.category-locally .featured-highlights__title .entry-title a,
+.category-locally h3.teaser__title,
+.category-locally h3.teaser__title a {
+	font-family: "Poynter-OS-Display";
+	font-family: "Poynter-Serif-RE" !important;
+	font-weight: 700;
+    margin-bottom: .5rem;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #333;
+	text-decoration: none;
+}
+.category-locally .featured-highlights__title .entry-title:hover,
+.category-locally .featured-highlights__title .entry-title a:hover {
+	text-decoration: underline;
+}
+.category-locally .featured-highlights__section-title {
+	font-family: Poynter-Gothic-Text !important;
+	font-weight: bold;
+	font-size: 24px;
+    color: #333;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    letter-spacing: -.015em;
+}
+.category-locally .featured-highlights__section-subtitle {
+	font-size: 16px;
+}
+.category-locally .featured-highlights__section-headline {
+	font-size: 32px;
+}
+.category-locally .featured-highlights__details .featured-highlights__date-author,
+.tax-locally_categories .featured-highlights__date-author {
+	margin-bottom: 1rem;
+}
+.category-locally .hero-section .row {
+	flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+	.category-locally .hero-section .row {
+		flex-direction: column-reverse;
+	}
+}
+.category-locally .news-section .featured-highlights {
+	/* padding-right: 7.5%; */
+	padding-left: 0;
+    /* border-right: 1px solid #ddd; */
+    border-left: none;
+}
+.category-locally .news-section .featured-image {
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 1rem;
+}
+
+.category-locally .news-section .featured-highlights__title .entry-title, 
+.category-locally .news-section .featured-highlights__title .entry-title a {
+	font-size: 20px;
+	line-height: 1.2;
+}
+.category-locally .decline.news-section .featured-highlights__title .entry-title,
+.category-locally .decline.news-section .featured-highlights__title .entry-title a,
+.category-locally .news-section .help-other .featured-highlights__title .entry-title, 
+.category-locally .news-section .help-other .featured-highlights__title .entry-title a,
+.category-locally .news-section .help-jobs #divFeaturedJobs .teaser__title,
+.category-locally .news-section .help-jobs #divFeaturedJobs .teaser__title a,
+.category-locally .obituaries.news-section .featured-highlights__title .entry-title,
+.category-locally .obituaries.news-section .featured-highlights__title .entry-title a {
+	font-size: 18px;
+}
+.category-locally .excerpt {
+	display: none;
+}
+.category-locally .locally__subhead {
+	font-size: 14px;
+	line-height: 1.2;
+	font-weight: normal;
+	color: #333;
+	margin-bottom: .5rem;
+	display: block;
+}
+.category-locally #more-latest-news .featured-highlights__details {
+    top: calc(50% - 5px);
+    transform: translateY(-50%);
+    position: relative;
+}
+.category-locally .help-jobs {
+	display: none; /* Fix Jobs 100220 */
+}
+.category-locally .help-jobs .container {
+	width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+	padding: 0 0 1rem;
+	display: flex;
+	flex-direction: row;
+}
+.category-locally .help-jobs .container .topline,
+.category-locally .help-jobs .container .bottomline {
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+}
+.category-locally .help-jobs .container .row {
+	margin-right: 0;
+	margin-left: 0;
+    max-width: 25%;
+    flex: 0 0 25%;
+    border-right: 1px solid #ddd;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.category-locally .help-jobs .container .row:first-child {
+	padding-left: 0;
+}
+.category-locally .help-jobs .container .row:last-child {
+	padding-right: 0;
+	border-right: none;
+}
+@media only screen and (max-width: 768px) {
+	.category-locally .help-jobs .container {
+		flex-direction: column;
+	}
+	.category-locally .help-jobs .container .topline,
+	.category-locally .help-jobs .container .bottomline {
+	    border-right: none;
+	    border-bottom: 1px solid #ddd;
+	}
+	.category-locally .help-jobs .container .row {
+	    max-width: 100%;
+	    flex: 0 0 100%;
+	    border-right: none;
+	    padding-left: 0;
+	    padding-right: 0;
+	    padding-top: .5rem;
+	    padding-bottom: 1.5rem;
+	}
+}
+.category-locally .help-jobs .container .row .col-12 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.locally__nav {
+	padding: .25rem 0;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #ddd;
+}
+.locally__nav ul {
+	padding: 0;
+	margin: 0;
+}
+.locally__nav li {
+	padding: 0;
+	list-style: none;
+	display: inline;
+    font-size: 13px;
+}
+.locally__nav li a {
+	padding: .25rem .5rem;
+	list-style: none;
+	display: inline-block;
+    font-size: 13px;
+    font-family: Poynter-Gothic-Text;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+}
+.locally__nav li a:hover {
+    color: #57a039;
+    color: #333;
+    text-decoration: underline;
+}
+.category-locally section .help-poynter-training p {
+	font-size: 14px;
+	line-height: 1.2;
+}
+.category-locally hr {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+	border-top: 1px solid #e5e5e5;
+}
+.category-locally #donate {
+	padding: 2.5rem;
+	border-bottom: none;
+	text-align: center;
+}
+.category-locally #donate h5 {
+	font-size: 24px;
+}
+
+/* Hide author for partner articles */
+.category-locally .decline.news-section .vr-divider,
+.category-locally .decline.news-section .author,
+.category-locally .news-section .help-other .vr-divider, 
+.category-locally .news-section .help-other .author,
+.category-locally .obituaries.news-section .vr-divider,
+.category-locally .obituaries.news-section .author {
+	display: none;
+}
+
+.tax-locally_categories .heading h3,
+.tax-locally_categories .heading h3 a {
+	font-family: Poynter-Gothic-Text !important;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+	padding: 0;
+    margin-bottom: 1rem;
+    border: none;
+    text-decoration: none; 
+}
+.tax-locally_categories .heading h3 a:hover {
+	text-decoration: underline;    
+}
+.tax-locally_categories .heading h2 {
+	font-size: 56px;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+    padding-bottom: 1rem;
+	border-bottom: 3px solid #333;
+	width: 100%;
+    font-family: "Poynter-OS-Display" !important;
+    font-weight: 700;
+}
+.tax-locally_categories .articles {
+	padding-top: 2rem;
+}
+.tax-locally_categories article {
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd;
+}
+.tax-locally_categories article:first-of-type {
+    padding-top: 0;
+}
+.tax-locally_categories article:last-child {
+    border-bottom: none;
+}
+.tax-locally_categories header.entry-header .entry-title,
+.tax-locally_categories header.entry-header .entry-title a {
+	font-family: "Poynter-OS-Display" !important;
+	color: #333;
+	text-decoration: none;
+	font-weight: 700;
+}
+.tax-locally_categories header.entry-header .entry-title:hover,
+.tax-locally_categories header.entry-header .entry-title a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+.tax-locally_categories article p {
+    font-size: 16px;
+    line-height: 1.3;
+}
+.single-locally article {
+	padding-bottom: 3rem;
+}
+.single-locally p {
+	font-size: 14px;
+	line-height: 1.3;
+}
+.load-more__wrap {
+	padding: 2rem 0 2rem;
+	text-align: center;
+}
+div.loadmore, div.poynter_loadmore {
+	background-color: #222222;
+    border-radius: 2px;
+    display: inline-block;
+    font-family: "Poynter-Gothic-Text", sans-serif !important;
+    font-size: 14px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: .035em;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 30px;
+    margin: 2rem 0 2rem;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 5px;
+ }
+div.loadmore:hover, div.poynter_loadmore:hover {
+	background-color: #66b345;
+	background-color: #222222;
+	color: #ffffff;
+}
+
+.category-locally .button:hover,
+.category-locally a.button:hover,
+.tax-locally_categories .button:hover,
+.tax-locally_categories a.button:hover {
+	color: #fff;
+	background: #538e38;
+}
+.category-locally .contributors {
+	text-align: center;
+	padding: 1rem 0 1rem;
+}
+.category-locally .contributors img {
+	width: 100px;
+	margin: 1rem 1rem 0;
+}
+.category-locally section div.ad-col {
+	background: #eee;
+	padding: .5rem 0 1rem;
+	margin-bottom: 1rem;
+}
+.category-locally .ad-col p.ad-col__title {
+    font-family: "Poynter-Gothic-Text", sans-serif !important;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+}
+
+/* NYP margin fix */
+.single-product .wdm-summary-wrapper form.cart.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page-college-journalism-coverage-covid-19 */
+.page-college-journalism-coverage-covid-19 {
+	background: ;
+}
+.page-college-journalism-coverage-covid-19 .heading .elumine-page-title {
+	text-align: center;
+}
+.page-college-journalism-coverage-covid-19 .breadcrumbs-listing {
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+.page-college-journalism-coverage-covid-19 .post-wrapper {
+	display: block;
+	
+}
+@media only screen and (min-width: 992px) {
+	.page-college-journalism-coverage-covid-19 .post-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+.covid-title.elumine-page-title {
+	margin-bottom: .5em;
+    word-break: break-word;
+    hyphens: auto;
+}
+@media only screen and (min-width: 375px) {
+	.covid-title.elumine-page-title {
+		margin-bottom: 1em;
+	}
+}
+.covid-articles {
+	
+}
+.covid-articles article {
+	min-height: 250px;
+	margin: 1% 0;
+}
+.covid-articles article:hover {
+	
+}
+.page-college-journalism-coverage-covid-19 .covid-articles article .post-container {
+	padding: 1.5em 15px 2em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+	margin: 0 -15px auto;
+	margin: 0 -5px auto;
+	transition: 300ms ease-out;
+	position: relative;
+	top: 0;
+	border: 1px solid #eeeeee;
+	background: #f8f8f8;
+}
+.page-college-journalism-coverage-covid-19 .covid-articles article:hover .post-container {
+    transition: position 1s;
+	position: relative;
+	top: -2px;
+	background-color: #57a039;
+	background: #ffffff;
+	transition: 300ms ease-out;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.page-college-journalism-coverage-covid-19 .covid-articles article .button {
+	background-color: #333333;
+	color: #ffffff !important;
+}
+
+.page-college-journalism-coverage-covid-19 .covid-articles article:hover p {
+	color: #333333 !important;
+}
+.page-college-journalism-coverage-covid-19 .covid-articles article:hover .entry-title--red {
+/* 	color: #fff !important; */
+}
+.page-college-journalism-coverage-covid-19 .covid-articles article:hover .entry-title a {
+	color: #333333 !important;
+}
+.page-college-journalism-coverage-covid-19 .covid-articles article:hover .button {
+	background-color: #66b345;
+	color: #ffffff !important;
+}
+.page-college-journalism-coverage-covid-19 .covid-articles article:hover .button:hover {
+	background-color: #6fbf4c;
+	color: #ffffff !important;
+}
+.page-college-journalism-coverage-covid-19 .covid-articles article .entry {
+	margin-top: auto;
+}
+
+
+.page-college-journalism-coverage-covid-19 #page header.entry-header .entry-title {
+	font-size: 1.4rem;
+	padding-top: .05em;
+	line-height: 1.2;
+}
+
+@media only screen and (min-width: 375px) {
+	.page-college-journalism-coverage-covid-19 #page header.entry-header .entry-title {
+		font-size: 1.5rem;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.page-college-journalism-coverage-covid-19 #page header.entry-header .entry-title {
+		font-size: 1.4rem;
+	}
+}
+
+
+.page-college-journalism-coverage-covid-19 #page header.entry-header .entry-title a {
+	text-decoration: none;
+	color: #151515;
+}
+.page-college-journalism-coverage-covid-19 #page header.entry-header .entry-title a:hover {
+	text-decoration: underline;
+}
+.page-college-journalism-coverage-covid-19 nav.navigation.pagination {
+	width: 100%;
+}
+.covid-disclaimer {
+    font-size: .75rem;
+    line-height: 1.2;
+    margin-top: 3em;
+}
+.page-college-journalism-coverage-covid-19 .heading {
+	width: 100%;
+	margin: 0 auto 3em;	
+}
+@media only screen and (min-width: 992px) {
+	.page-college-journalism-coverage-covid-19 .heading {
+		width: 768px;
+		
+	}
+}
+.page-college-journalism-coverage-covid-19 .heading p {
+	font-size: 1rem;
+}
+
+@media only screen and (min-width: 375px) {
+	.page-college-journalism-coverage-covid-19 .heading p {
+		font-size: 1.428571428571429rem;
+		font-size: 1.2rem;
+		margin: 0 auto;
+	}
+}
+.single-ifcn_misinformation #page header.entry-header .entry-title {
+	margin-bottom: .25em;
+	font-size: 28px !important;
+}
+.single-ifcn_misinformation #page .post-container {
+	margin-bottom: 1em;
+}
+.single-ifcn_misinformation .entry-content__button {
+	    margin-bottom: 4rem;
+}
+.entry-title--red {
+	color: #e43030;
+}
+.page-college-journalism-coverage-covid-19 .entry-content__text {
+    font-family: "Poynter-Serif-RE";
+    color: #444;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: .5em;
+}
+.entry-content__text--topinfo {
+	margin-bottom: 1em;
+}
+.entry-content__text--org {
+	font-size: 1.5rem;
+    font-weight: bold !important;
+}
+p.entry-content__text--smaller {
+	font-size: .75rem !important;
+	line-height: 1.4
+}
+p.entry-content__text--explanation {
+    line-height: 1.4;
+    font-size: 1.2rem;
+}
+.entry-content__button {
+	background: #67B244;
+	margin-bottom: 1em;
+}
+.entry-content__button:hover {
+	background: #538e38;
+	color: #fff;
+}
+.entry-content__button--smaller {
+    padding: 6px 16px;
+    padding: .5em 1em;
+    border-radius: 10em;
+    font-size: 12px;
+}
+#pagination {
+	background: ;
+}  
+#pagination .row a {
+	padding: 1.5em 1em;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	text-decoration: none;
+}
+#pagination .row a:hover {
+	text-decoration: underline;
+}
+
+
+
+/* College Journalism Covid Filters */
+.page-college-journalism-coverage-covid-19 .covid-controls {
+	
+}
+.page-college-journalism-coverage-covid-19 form.covid-filters {
+	background-color: #333;
+	padding: 2em;
+	margin: 0 auto 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: none;
+}
+@media only screen and (min-width: 768px) {
+	.page-college-journalism-coverage-covid-19 form.covid-filters {
+		padding: 2em;
+	    flex-direction: row;
+	    border-radius: 0;
+	}
+}
+.
+.page-college-journalism-coverage-covid-19 form.covid-filters .covid-filters__select-wrap {
+	width: 100%;
+}
+@media only screen and (min-width: 768px) {
+	.page-college-journalism-coverage-covid-19 form.covid-filters .covid-filters__select-wrap {
+		width: 75%;
+	}
+}
+.page-college-journalism-coverage-covid-19 form.covid-filters select {
+	background-color: #fff !important;
+	width: 100%;
+	margin: 0 0 1rem 0;
+	padding: 4px 36px 4px 4px;
+	border: none;
+	font-family: 'Poynter-Gothic-Text' !important;
+		font-weight: bold;
+		color: #404040;
+		font-size: .85rem;
+}
+@media only screen and (min-width: 768px) {
+	.page-college-journalism-coverage-covid-19 form.covid-filters select {
+		background-color: #fff !important;
+		width: 30.5%;
+		margin: 0 2% 0 0;
+		padding: 4px 36px 4px 4px;
+		border: none;
+		
+	}
+}
+.page-college-journalism-coverage-covid-19 form.covid-filters .covid-filters__input-wrap {
+	width: 15%;
+}
+.covid-filters__orderby-wrap {
+	width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+@media only screen and (min-width: 768px) {
+	.covid-filters__orderby-wrap {
+		width: 25%;
+	}
+}
+.page-college-journalism-coverage-covid-19 form.covid-filters .covid-filters--view-wrap {
+	width: 80%;
+}
+.page-college-journalism-coverage-covid-19 form.covid-filters .covid-filters--clear-wrap {
+	width: 15%;
+	margin-left: 5%;
+}
+.page-college-journalism-coverage-covid-19 form.covid-filters .covid-filters--clear  {
+	font-family: 'Poynter-Gothic-Text' !important;
+    font-weight: bold;
+    width: 31px;
+    height: 31px;
+}
+
+.page-college-journalism-coverage-covid-19 input.covid-filters__input {
+	width: 100%;
+    padding: 5px 10px;
+    text-align: center;
+    font-family: 'Poynter-Gothic-Text' !important;
+    font-weight: bold !important;
+    cursor: pointer;
+    font-size: .85rem;
+	box-shadow: 0px 1px 0 #2e6119;
+	color: #333;
+}
+.page-college-journalism-coverage-covid-19 .covid-filters__input:hover {
+    background-color: #6fbf4c;
+    color: #404040;
+    box-shadow: 0px 1px 0 #2e6119;
+}
+.page-college-journalism-coverage-covid-19 form.covid-sort {
+	padding: 2em;
+	margin-bottom: 1em;
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.page-college-journalism-coverage-covid-19 .covid-sort__title {
+	font-family: 'Poynter-Gothic-Text' !important;
+    font-weight: bold !important;
+	font-size: .85rem;
+	letter-spacing: .05em;
+    margin: 0 1em 9px 0;
+}
+.page-college-journalism-coverage-covid-19 .covid-sort__select {
+	font-family: 'Poynter-Gothic-Text' !important;
+    font-weight: bold !important;
+	font-size: .9rem;
+	letter-spacing: 0;
+	margin: 0 1em 5px 0;
+    width: 12rem;
+}
+
+
+
+
+/* College Journalism Covid Search */
+.page-college-journalism-coverage-covid-19 .searchform {
+    width: 100%;
+    background: #eee;
+    padding: 2em;
+    display: flex;
+    width: 100%;
+}
+.page-college-journalism-coverage-covid-19 .searchform div {
+    width:  100%;
+    margin: 0 auto;
+}
+.page-college-journalism-coverage-covid-19 .searchform .covid-search__input-text {
+    width: 70%;
+    margin-right: 2%;
+    background-color: #fff !important;
+    border: none;
+    padding: 4px;
+    line-height: 23px;
+}
+.page-college-journalism-coverage-covid-19 .searchform .covid-search__input-text:focus {
+	background-color: #fff !important;
+}
+.page-college-journalism-coverage-covid-19 .covid-filters__input.covid-filters__input--auto {
+	width: 25%;
+}
+@media only screen and (min-width: 768px) {
+	.page-college-journalism-coverage-covid-19 .searchform .covid-search__input-text {
+	    width: 82%;
+	}
+	.page-college-journalism-coverage-covid-19 .covid-filters__input.covid-filters__input--auto {
+		width: 15%;
+	}
+	.page-college-journalism-coverage-covid-19 .searchform div {
+	    width: 60%;
+	    margin: 0 auto;
+	}
+}
+.meta-info {
+    font-family: Poynter-Serif-RE, sans-serif !important;
+    font-size: 16px;
+    color: #333333;
+}
+.single-college_journalism #pagination {
+	padding: 0 !important;
+}
+/* End page-college-journalism-coverage-covid-19 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* College Media Landing Page */
+.page-journalism-education-resources {
+	line-height: 1.2;
+}
+.page-journalism-education-resources .container {
+	width: 1440px;
+}
+
+.page-journalism-education-resources .help-jobs {
+	display: none; /* Fix Jobs 100220 */
+}
+
+
+.page-journalism-education-resources .button {
+	/* Global Woo Button? */
+	color: #fff;
+    background-color: #66b345;
+    height: auto;
+/*     width: 100%; */
+    border-radius: 50px;
+    font-size: .875rem;
+    line-height: 1.4;
+    text-align: center;
+    padding: .75rem 2rem !important;
+    z-index: 2;
+    box-shadow: none;
+    transition: box-shadow .3s;
+    font-family: 'Poynter-Gothic-Text', sans-serif !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .033em;
+    box-shadow: none;
+}
+/* Image aspect ratio 16:9*/
+.page-journalism-education-resources .img-outer {
+  position: relative;
+  overflow: hidden;
+}
+.page-journalism-education-resources .img-outer:before {
+	display: block;
+	content: "";
+	width: 100%;
+	padding-top: calc(9 / 16 * 100%);
+}
+.page-journalism-education-resources .img-outer > .img-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/* End: Image aspect ratio 16:9*/
+.page-journalism-education-resources .heading .container {
+	padding: 2rem 0;
+	border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+/*     margin-bottom: 0; */
+}
+.page-journalism-education-resources .heading h1,
+.page-journalism-education-resources .heading h2, 
+.page-journalism-education-resources .heading h3,
+.page-journalism-education-resources .heading p {
+	margin: 0 0 .5rem 0;
+	padding: 0;
+	line-height: 1.2;
+	border: 0;
+}
+.page-journalism-education-resources section .container {
+	padding: 1rem 0 3rem;
+	padding: 0 0 3rem;
+	border-bottom: 3px solid #333;
+	margin-bottom: 1rem;
+}
+.page-journalism-education-resources section .container .container {
+	border-bottom: none;
+}
+.page-journalism-education-resources section:first-of-type {
+	/* padding-top: 0; */
+}
+.page-journalism-education-resources section p/*
+,
+.page-journalism-education-resources section div
+*/ {
+	font-family: "Poynter-Serif-RE" !important;
+}
+
+.page-journalism-education-resources .heading p {
+	margin: 0;
+}
+.page-journalism-education-resources .local-news {
+	
+}
+.page-journalism-education-resources .heading h1.elumine-page-title span {
+	font-size: 56px;
+	line-height: 1;
+	font-weight: 700;
+}
+.page-journalism-education-resources .news-column {
+	border-right: 1px solid #ddd;
+}
+.page-journalism-education-resources .news-column:last-of-type {
+	border-right: none;
+}
+@media only screen and (max-width: 768px) {
+	.page-journalism-education-resources .news-column {
+		border-right: none;
+	}
+}
+.page-journalism-education-resources .featured-highlights:last-of-type {
+	border-right: none;
+}
+.page-journalism-education-resources .featured-highlights .more-link a {
+	font-family: Poynter-Gothic-Text !important;
+	font-size: 16px;
+	color: #333;
+}
+.page-journalism-education-resources .featured-highlights .more-link a:hover {
+    color: #67B244;
+	right: 2px;
+}
+.page-journalism-education-resources .featured-story {
+	/* padding-right: 2.5%; */
+/* 	margin-bottom: 3rem; */
+}
+.page-journalism-education-resources .featured-story__image {
+	margin-bottom: 1rem;
+	/* height: 56.25%;
+    overflow: hidden; */
+}
+.page-journalism-education-resources .featured-story__image img {
+	position: relative;
+	/* top: 50%;
+	transform: translateY(-50%); */
+	width: 100%; 
+}
+.page-journalism-education-resources .featured-story__title .entry-title,
+.page-journalism-education-resources .featured-story__title .entry-title a {
+	font-family: "Poynter-OS-Display" !important;
+	font-family: "Poynter-Serif-RE" !important;
+	font-weight: 700;
+	font-size: 1.5rem;
+	color: #333;
+	margin-bottom: 1rem;
+	text-decoration: none;
+}
+@media (max-width: 991px) {
+	.page-journalism-education-resources .featured-story__title .entry-title,
+	.page-journalism-education-resources .featured-story__title .entry-title a {
+		font-size: 1.5rem;
+	}
+}
+@media (max-width: 768px) {
+	.page-journalism-education-resources .featured-story__title .entry-title,
+	.page-journalism-education-resources .featured-story__title .entry-title a {
+		font-size: 2.5rem;
+	}
+}
+page-journalism-education-resources .featured-story__title .entry-title:hover,
+.page-journalism-education-resources .featured-story__title .entry-title a:hover {
+	text-decoration: underline;
+}
+.page-journalism-education-resources .featured-highlights {
+	/* padding-left: 7.5%; */
+    /* border-left: 1px solid #ddd; */
+}
+.page-journalism-education-resources .featured-highlights__article {
+/*     padding: 1rem 0; */
+    border-right: 1px solid #ddd;
+	margin-bottom: 2rem;
+}
+.page-journalism-education-resources .featured-highlights__article:first-of-type {
+/*     padding-top: 1rem; */
+}
+.page-journalism-education-resources .featured-highlights__article:last-child {
+    border-right: none;
+}
+.page-journalism-education-resources #more-latest-news .featured-highlights__article {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    border-right: none;
+}
+
+.page-journalism-education-resources .featured-highlights__title .entry-title,
+.page-journalism-education-resources .featured-highlights__title .entry-title a,
+.page-journalism-education-resources h3.teaser__title,
+.page-journalism-education-resources h3.teaser__title a {
+	font-family: "Poynter-OS-Display";
+	font-family: "Poynter-Serif-RE" !important;
+	font-weight: 700;
+    margin-bottom: .5rem;
+	font-size: 20px;
+	line-height: 1.2;
+	color: #333;
+	text-decoration: none;
+}
+.page-journalism-education-resources .featured-highlights__title .entry-title:hover,
+.page-journalism-education-resources .featured-highlights__title .entry-title a:hover {
+	text-decoration: underline;
+}
+.page-journalism-education-resources .featured-highlights__section-title {
+	font-family: Poynter-Gothic-Text !important;
+	font-weight: bold;
+	font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    letter-spacing: -.015em;
+    text-transform: ;
+}
+.page-journalism-education-resources .featured-highlights__section-headline {
+	margin-bottom: 4rem;
+    font-size: 2.5rem;
+    line-height: 1.15;
+    font-family: "Poynter-Serif-RE" !important;
+    margin-right: 25vw;
+}
+@media (max-width: 768px) {
+	.page-journalism-education-resources .featured-highlights__section-headline {
+	    font-size: 2rem;
+	}
+}
+.page-journalism-education-resources .featured-highlights__section-headline a {
+	font-family: "Poynter-Serif-RE" !important;
+	text-decoration: underline;
+	color: #434343;
+	font-weight: 500;
+}
+.page-journalism-education-resources .featured-highlights__section-headline a:hover {
+	color: #67B244;
+}
+.page-journalism-education-resources .featured-highlights__section-subtitle {
+	font-size: 16px;
+	font-size: 1.125rem;
+}
+.page-journalism-education-resources .featured-highlights__details .featured-highlights__date-author,
+.tax-locally_categories .featured-highlights__date-author {
+	margin-bottom: 1rem;
+}
+.page-journalism-education-resources .hero-section .row {
+	flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+	.page-journalism-education-resources .hero-section .row {
+		flex-direction: column-reverse;
+	}
+}
+
+.news-section .news-column article {
+	padding: 1rem 0;
+}
+@media only screen and (max-width: 768px) {
+	.news-section .news-column article {
+		padding: 1.5rem 0;
+	}
+}
+.page-journalism-education-resources .news-section .featured-highlights {
+	/* padding-right: 7.5%; */
+	padding-left: 0;
+    /* border-right: 1px solid #ddd; */
+    border-left: none;
+}
+.page-journalism-education-resources .news-section .featured-image {
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 1rem;
+}
+
+.page-journalism-education-resources .news-section .featured-highlights__title .entry-title, 
+.page-journalism-education-resources .news-section .featured-highlights__title .entry-title a {
+	font-size: 20px;
+	line-height: 1.2;
+}
+.page-journalism-education-resources .decline.news-section .featured-highlights__title .entry-title,
+.page-journalism-education-resources .decline.news-section .featured-highlights__title .entry-title a,
+.page-journalism-education-resources .news-section .help-other .featured-highlights__title .entry-title, 
+.page-journalism-education-resources .news-section .help-other .featured-highlights__title .entry-title a,
+.page-journalism-education-resources .news-section .help-jobs #divFeaturedJobs .teaser__title,
+.page-journalism-education-resources .news-section .help-jobs #divFeaturedJobs .teaser__title a,
+.page-journalism-education-resources .obituaries.news-section .featured-highlights__title .entry-title,
+.page-journalism-education-resources .obituaries.news-section .featured-highlights__title .entry-title a {
+	font-size: 18px;
+}
+.page-journalism-education-resources .excerpt {
+	display: none;
+}
+.page-journalism-education-resources .locally__subhead {
+	font-size: 14px;
+	line-height: 1.2;
+	font-weight: normal;
+	color: #333;
+	margin-bottom: .5rem;
+	display: block;
+}
+.page-journalism-education-resources #more-latest-news .featured-highlights__details {
+    top: calc(50% - 5px);
+    transform: translateY(-50%);
+    position: relative;
+}
+.page-journalism-education-resources .help-jobs .container {
+	width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+	padding: 0 0 1rem;
+	display: flex;
+	flex-direction: row;
+}
+.page-journalism-education-resources .help-jobs .container .topline,
+.page-journalism-education-resources .help-jobs .container .bottomline {
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+}
+.page-journalism-education-resources .help-jobs .container .row {
+	margin-right: 0;
+	margin-left: 0;
+    max-width: 25%;
+    flex: 0 0 25%;
+    border-right: 1px solid #ddd;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.page-journalism-education-resources .help-jobs .container .row:first-child {
+	padding-left: 0;
+}
+.page-journalism-education-resources .help-jobs .container .row:last-child {
+	padding-right: 0;
+	border-right: none;
+}
+@media only screen and (max-width: 768px) {
+	.page-journalism-education-resources .help-jobs .container {
+		flex-direction: column;
+	}
+	.page-journalism-education-resources .help-jobs .container .topline,
+	.page-journalism-education-resources .help-jobs .container .bottomline {
+	    border-right: none;
+	    border-bottom: 1px solid #ddd;
+	}
+	.page-journalism-education-resources .help-jobs .container .row {
+	    max-width: 100%;
+	    flex: 0 0 100%;
+	    border-right: none;
+	    padding-left: 0;
+	    padding-right: 0;
+	    padding-top: .5rem;
+	    padding-bottom: 1.5rem;
+	}
+}
+.page-journalism-education-resources .help-jobs .container .row .col-12 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.page-journalism-education-resources .page__nav .container {
+	padding: .25rem 0;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #ddd;
+}
+.page-journalism-education-resources .page__nav ul {
+	padding: 0;
+	margin: 0;
+}
+.page-journalism-education-resources .page__nav li {
+	padding: 0;
+	list-style: none;
+	display: inline;
+    font-size: 13px;
+}
+.page-journalism-education-resources .page__nav li a {
+	padding: .25rem .5rem;
+	list-style: none;
+	display: inline-block;
+    font-size: 13px;
+    font-family: Poynter-Gothic-Text;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+}
+.page-journalism-education-resources .page__nav li a:hover {
+    color: #57a039;
+    color: #333;
+    text-decoration: underline;
+}
+.page-journalism-education-resources section .help-poynter-training p {
+	font-size: 14px;
+	line-height: 1.2;
+}
+.page-journalism-education-resources hr {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+	border-top: 1px solid #e5e5e5;
+}
+.page-journalism-education-resources #donate {
+	padding: 2.5rem;
+	border-bottom: none;
+	text-align: center;
+}
+.page-journalism-education-resources #donate h5 {
+	font-size: 24px;
+}
+
+/* Hide author for partner articles */
+.page-journalism-education-resources .decline.news-section .vr-divider,
+.page-journalism-education-resources .decline.news-section .author,
+.page-journalism-education-resources .news-section .help-other .vr-divider, 
+.page-journalism-education-resources .news-section .help-other .author,
+.page-journalism-education-resources .obituaries.news-section .vr-divider,
+.page-journalism-education-resources .obituaries.news-section .author {
+	display: none;
+}
+
+.tax-locally_categories .heading h3,
+.tax-locally_categories .heading h3 a {
+	font-family: Poynter-Gothic-Text !important;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+	padding: 0;
+    margin-bottom: 1rem;
+    border: none;
+    text-decoration: none; 
+}
+.tax-locally_categories .heading h3 a:hover {
+	text-decoration: underline;    
+}
+.tax-locally_categories .heading h2 {
+	font-size: 56px;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+    padding-bottom: 1rem;
+	border-bottom: 3px solid #333;
+	width: 100%;
+    font-family: "Poynter-OS-Display" !important;
+    font-weight: 700;
+}
+.tax-locally_categories .articles {
+	padding-top: 2rem;
+}
+.tax-locally_categories article {
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd;
+}
+.tax-locally_categories article:first-of-type {
+    padding-top: 0;
+}
+.tax-locally_categories article:last-child {
+    border-bottom: none;
+}
+.tax-locally_categories header.entry-header .entry-title,
+.tax-locally_categories header.entry-header .entry-title a {
+	font-family: "Poynter-OS-Display" !important;
+	color: #333;
+	text-decoration: none;
+	font-weight: 700;
+}
+.tax-locally_categories header.entry-header .entry-title:hover,
+.tax-locally_categories header.entry-header .entry-title a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+.tax-locally_categories article p {
+    font-size: 16px;
+    line-height: 1.3;
+}
+.single-locally article {
+	padding-bottom: 3rem;
+}
+.single-locally p {
+	font-size: 14px;
+	line-height: 1.3;
+}
+.load-more__wrap {
+	padding: 2rem 0 2rem;
+	text-align: center;
+}
+div.loadmore, div.poynter_loadmore {
+	background-color: #333;
+    border-radius: 3px;
+    display: inline-block;
+    font-family: "Poynter-Gothic-Text", sans-serif !important;
+    font-size: 14px;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: .035em;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 30px;
+    margin: 2rem 0 2rem;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+    text-transform: uppercase;
+ }
+div.loadmore:hover, div.poynter_loadmore:hover {
+	background-color: #66b345;
+	background-color: #333;
+	color: #fff;
+}
+
+.page-journalism-education-resources .button:hover,
+.page-journalism-education-resources a.button:hover,
+.tax-locally_categories .button:hover,
+.tax-locally_categories a.button:hover {
+	color: #fff;
+	background: #538e38;
+}
+.page-journalism-education-resources .contributors {
+	text-align: center;
+	padding: 1rem 0 1rem;
+}
+.page-journalism-education-resources .contributors img {
+	width: 100px;
+	margin: 1rem 1rem 0;
+}
+.page-journalism-education-resources section div.ad-col {
+	background: #eee;
+	padding: .5rem 0 1rem;
+	margin-bottom: 1rem;
+}
+.page-journalism-education-resources .ad-col p.ad-col__title {
+    font-family: "Poynter-Gothic-Text", sans-serif !important;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+}
+
+.page-journalism-education-resources .testimonial__wrap {
+	padding-top: 4rem;
+	padding-bottom: 2rem;
+}
+
+.page-journalism-education-resources .wp-caption-text {
+	display: none;
+}
+.anchor:before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin: -100px 0 0;
+}
+
+
+.page-journalism-education-resources section.newsletter-section .flex-newsletters {
+	display: flex;
+	flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+	.page-journalism-education-resources section.newsletter-section .flex-newsletters {
+		flex-direction: row;
+	}
+}
+.page-journalism-education-resources section.newsletter-section .flex-newsletters div {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+    margin-right: 0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+    border-bottom: 2px solid #555555;
+    border-right: none;
+}
+@media only screen and (min-width: 768px) {
+	.page-journalism-education-resources section.newsletter-section .flex-newsletters div {
+	    padding-right: 1.5rem;
+	    margin-right: 1.5rem;
+	    padding-bottom: 0;
+	    margin-bottom: 0;
+	    align-items: flex-start;
+	    border-right: 2px solid #555555;
+	    border-bottom: none;
+	}
+}
+.page-journalism-education-resources section.newsletter-section .flex-newsletters div:last-of-type {
+    border-right: none;
+    border-bottom: none;
+}
+
+#sidebar-above-footer {
+	background: #eeeeee;
+	padding: 3rem 0;
+}
+
+/* Loader Animation on Mailchimp */
+.form-group{
+	position: relative;
+}
+
+.mailchimp-icon-container {
+  position: absolute;
+  right: 10px;
+  top: calc(50% - -5px);
+  display: none;
+}
+
+.mailchimp-loader {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  animation: around 5.4s infinite;
+}
+
+@keyframes around {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.mailchimp-loader::after, .mailchimp-loader::before {
+  content: "";
+  background: white;
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-width: 2px;
+  border-color: #333 #333 transparent transparent;
+  border-style: solid;
+  border-radius: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  animation: around 0.7s ease-in-out infinite;
+}
+
+.mailchimp-loader::after {
+  animation: around 0.7s ease-in-out 0.1s infinite;
+  background: transparent;
+}
+
+.mailchimp-sub-status{
+    display: none;
+}
