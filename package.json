@@ -1,0 +1,16 @@
+{
+  "name": "misinfo-scrape",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Thomas F. K. Jorna <hello@tefkah.com>",
+  "license": "GPLv3+",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "commander": "^9.3.0",
+    "tsx": "^3.4.3",
+    "typescript": "^4.7.4"
+  }
+}
