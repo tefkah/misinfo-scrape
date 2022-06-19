@@ -1,6 +1,14 @@
 import { readdir, readFile } from 'fs/promises'
 import { join } from 'path'
 
+export interface CollectionLink {
+  url: string
+  source?: string
+  rating?: string
+  claim?: string
+  date?: string
+  locations?: string[]
+}
 /**
  * Read all html files from the snopes collections folder and return an array of all articles
  */
@@ -9,8 +17,8 @@ export async function getArticlesFromCollection({
   findLinkFunc,
 }: {
   directoryIn: string
-  findLinkFunc: (file: string) => string[]
-}): Promise<string[]> {
+  findLinkFunc: (file: string) => CollectionLink[]
+}): Promise<CollectionLink[]> {
   /**
    * Read directory
    */
