@@ -1,6 +1,11 @@
 import { JSDOM } from 'jsdom'
 import { CollectionLink } from './get-articles-from-collection'
 
+export interface HydratedCollectionLink extends CollectionLink {
+  poynterUrl: string
+  blame?: string
+}
+
 export const hydratePoynterLink = async (link: CollectionLink) => {
   const dom = await JSDOM.fromURL(link.url)
   const document = dom.window.document

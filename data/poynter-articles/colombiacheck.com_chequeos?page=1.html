@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="title" content="Chequeos | ColombiaCheck"/>
+<link rel="canonical" href="https://colombiacheck.com/chequeos"/>
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)"/>
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon"/>
+
+    <title>Chequeos | ColombiaCheck</title>
+    <style media="all">.ajax-progress{display:inline-block;padding:1px 5px 2px 5px}[dir="rtl"] .ajax-progress{float:right}.ajax-progress-throbber .throbber{display:inline;padding:1px 5px 2px;background:transparent url(core/misc/throbber-active.gif) no-repeat 0 center}.ajax-progress-throbber .message{display:inline;padding:1px 5px 2px}tr .ajax-progress-throbber .throbber{margin:0 2px}.ajax-progress-bar{width:16em}.ajax-progress-fullscreen{position:fixed;z-index:1000;top:48.5%;left:49%;width:24px;height:24px;padding:4px;opacity:.9;border-radius:7px;background-color:#232323;background-image:url(core/misc/loading-small.gif);background-repeat:no-repeat;background-position:center center}[dir="rtl"] .ajax-progress-fullscreen{right:49%;left:auto}</style>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?rdky1p"/>
+<style media="all">.js input.form-autocomplete{background-image:url(core/misc/throbber-inactive.png);background-repeat:no-repeat;background-position:100% center}.js[dir="rtl"] input.form-autocomplete{background-position:0% center}.js input.form-autocomplete.ui-autocomplete-loading{background-image:url(core/misc/throbber-active.gif);background-position:100% center}.js[dir="rtl"] input.form-autocomplete.ui-autocomplete-loading{background-position:0% center}</style>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/fieldgroup.module.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?rdky1p"/>
+<style media="all">.clearfix:after{display:table;clear:both;content:""}</style>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/details.module.css?rdky1p"/>
+<style media="all">.hidden{display:none}.visually-hidden{position:absolute!important;overflow:hidden;clip:rect(1px,1px,1px,1px);width:1px;height:1px;word-wrap:normal}.visually-hidden.focusable:active,.visually-hidden.focusable:focus{position:static!important;overflow:visible;clip:auto;width:auto;height:auto}.invisible{visibility:hidden}.item-list__comma-list,.item-list__comma-list li{display:inline}.item-list__comma-list{margin:0;padding:0}.item-list__comma-list li:after{content:", "}.item-list__comma-list li:last-child:after{content:""}</style>
+
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/nowrap.module.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/progress.module.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?rdky1p"/>
+<style media="all">.resize-none{resize:none}.resize-vertical{min-height:2em;resize:vertical}.resize-horizontal{max-width:100%;resize:horizontal}.resize-both{max-width:100%;min-height:2em;resize:both}</style>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/sticky-header.module.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-counter.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-counters.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-general-info.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tabledrag.module.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tablesort.module.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tree-child.module.css?rdky1p"/>
+<style media="all">.views-align-left{text-align:left}.views-align-right{text-align:right}.views-align-center{text-align:center}.views-view-grid .views-col{float:left}.views-view-grid .views-row{float:left;clear:both;width:100%}.views-display-link+.views-display-link{margin-left:.5em}</style>
+<link rel="stylesheet" media="all" href="/themes/custom/colombia_check_theme/css/A.main.e3419b172b4f18fd60e2.css,,qrdky1p+flickity.css,,qrdky1p,Mcc.3-yFdkJXBc.css.pagespeed.cf.FKzvEeot-E.css"/>
+
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/node.css?rdky1p"/>
+<link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"/>
+<link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Work+Sans:100,200,300,400,500,600,700,800,900"/>
+
+    
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78649803-1"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-78649803-1');</script>
+
+    <!-- Facebook Pixel Code -->
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','194231361206911');fbq('track','PageView');</script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=194231361206911&ev=PageView&noscript=1"/></noscript>
+    <!-- End Facebook Pixel Code -->
+
+  </head>
+  <body>
+        <a href="#main-content" class="visually-hidden focusable">
+      Pasar al contenido principal
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+  <!-- Barra de navegación fija inicial     -->
+<nav class="Navigation" id="navColcheck">
+  <a href="https://colombiacheck.com">
+    <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/check_blanco.svg" alt="" class="Navigation-icon">
+  </a>
+  <button class="navbar-toggler">
+  <button class="Navigation-button" onclick="openColcheckNav();">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="Navigation-menu">
+                                              
+    
+
+        
+              <ul class="Navigation-menu-list">
+                    <li class="Navigation-menu-list-item">
+        <a class="Navigation-menu-list-item-text" href="https://colombiacheck.com/chequeos">CHEQUEOS</a>
+            </li>
+                <li class="Navigation-menu-list-item">
+        <a class="Navigation-menu-list-item-text" href="https://colombiacheck.com/investigaciones">INVESTIGACIONES</a>
+            </li>
+                <li class="Navigation-menu-list-item">
+        <a class="Navigation-menu-list-item-text" href="https://colombiacheck.com/investigaciones-especiales">ESPECIALES</a>
+            </li>
+                <li class="Navigation-menu-list-item">
+        <a class="Navigation-menu-list-item-text" href="https://colombiacheck.com/podcast">PODCAST</a>
+            </li>
+                <li class="Navigation-menu-list-item">
+        <a class="Navigation-menu-list-item-text" href="https://archivo.colombiacheck.com/especiales/zoom/">ZOOM</a>
+            </li>
+                <li class="Navigation-menu-list-item">
+        <a class="Navigation-menu-list-item-text" href="/index.php/tego">menu</a>
+            </li>
+          </ul>
+    
+
+
+
+
+  
+  
+    <div class="Navigation-menu-social">
+      <a href="https://www.facebook.com/colombiacheck" class="Navigation-menu-social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/colcheck" class="Navigation-menu-social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/c/colombiacheck" class="Navigation-menu-social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/colombiacheck/" class="Navigation-menu-social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/573228523557?text=Hola%2C%20me%20gustar%C3%ADa%20inscribirme%20a%20la%20lista%20de%20difusi%C3%B3n%20de%20Colombiacheck%20y%20recibir%20chequeos%20diarios%20en%20mi%20celular." class="Navigation-menu-social-icon"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@colcheck?lang=en&is_copy_url=1&is_from_webapp=v1" class="Navigation-menu-social-icon"><i class="fab fa-tiktok"></i></a>
+      <a href="http://t.me/Colombiacheck" class="Navigation-menu-social-icon"><i class="fab fa-telegram-plane"></i></a>
+      <a href="mailto:contacto@colombiacheck.com" class="Navigation-menu-social-icon"><i class="far fa-envelope"></i></a>
+    </div>
+  </div>
+  <button id="btnBuscar" class="Navigation-search" type="button" data-toggle="modal" data-target="#modalBusqueda">
+    <i class="fa fa-search"></i>
+  </button>
+  <p class="Navigation-date">19 de Junio de 2022</p>
+</nav>
+<!--FIN  Barra de navegación fija inicial     -->
+
+
+<!-- inicio modal busqueda -->
+
+<!-- The Modal -->
+<div class="modal fade" id="modalBusqueda">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form class="buscar" action="/search/nodo" method="get">
+          <input class="form-control mr-sm-2" type="text" placeholder="Buscar..." name="keys">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- cierre modal busqueda -->
+
+<!-- Menu de navegación con logo -->
+<section class="Menu">
+  <a href="https://colombiacheck.com">
+    <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/colombiacheck.svg" alt="" class="Menu-logo">
+  </a>
+  <nav class="Menu-navigation">
+    <a class="Menu-navigation-element" href="https://colombiacheck.com/chequeos">
+      <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/chequeo_menu_icon.svg" alt="" class="Menu-navigation-element-icon">
+      <h6 class="Menu-navigation-element-text">Chequeos</h6>
+    </a>
+    <a class="Menu-navigation-element" href="https://colombiacheck.com/investigaciones">
+      <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/explicador_menu_icon.svg" alt="" class="Menu-navigation-element-icon">
+      <h6 class="Menu-navigation-element-text">Explicadores</h6>
+    </a>
+    <a class="Menu-navigation-element" href="https://colombiacheck.com/investigaciones-especiales">
+      <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/especial_menu_icon.svg" alt="" class="Menu-navigation-element-icon">
+      <h6 class="Menu-navigation-element-text">Especiales</h6>
+    </a>
+    <a class="Menu-navigation-element" href="https://colombiacheck.com/conectando-caminos/">
+      <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/migracion_menu_icon.svg" alt="" class="Menu-navigation-element-icon">
+      <h6 class="Menu-navigation-element-text">Proyecto Migración Venezolana</h6>
+    </a>
+  </nav>
+</section>
+<!-- FIN Menu de navegación con logo -->
+
+<div class="highlighted">
+  <aside class="layout-container section clearfix container" role="complementary">
+          <div data-drupal-messages-fallback class="hidden"></div>
+
+  
+  </aside>
+</div>
+
+      <div id="block-colombia-check-theme-content">
+  
+    
+      <div>
+    <div class="row">
+        <div class="contenido-inicial">
+            
+        </div><!-- /.contenido-inicial -->
+    </div>
+</div>
+<div>
+    <div class="row">
+        <div class="contenido-principal">
+            <div class="block-region-principal"><div class="views-element-container">
+  
+    
+      <div><div class="js-view-dom-id-76c4b7494c47fc96755c2af81ba1d214fbf5cc945ee038a0cd7cf9c1ba72a74e">
+  
+  
+  
+
+  
+  
+  
+
+      <div class="views-row">
+
+            
+    
+
+   <!-- Nota principal -->
+ 
+<div class="Principal">
+            <a href="/chequeos/video-que-excusa-incumplimiento-de-rodolfo-hernandez-con-casas-en-bucaramanga-usa-datos">
+        <div class="Principal-picture">
+        <div class="Principal-picture-franja Principal-picture-franja-cuestionable">
+        <p class="Principal-picture-franja-texto">Cuestionable Cuestionable Cuestionable Cuestionable Cuestionable Cuestionable Cuestionable</p>
+        </div>
+        <div class="Principal-picture-imagen">
+            <img class="Principal-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/portada_web_VideosBuacaramangaRodolfo_18-06-22.png?VersionId=fpOdojhr8p9dh4pjUXW.ejpSG0377zqH"/>
+        </div>
+        <div class="Principal-picture-bandera Principal-picture-bandera-mediana">
+        <img class="Principal-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_mediana.svg"/>
+        <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/desinformacion.svg" class="Principal-picture-bandera-icon Principal-picture-bandera-mediana-icon"/>
+        <p class="Principal-picture-bandera-text Principal-picture-bandera-mediana-text Principal-picture-bandera-text-cuestionable">
+            Cuestionable</p>
+        </div>
+    </div>
+    <div class="Principal-texto">
+        <h2 class="Principal-texto-titulo">Video que excusa incumplimiento de Rodolfo Hernández con casas en Bucaramanga usa datos cuestionables</h2>
+        <h3 class="Principal-texto-parrafo">En un video se afirma que el exalcalde no cumplió con los ‘20.000 Hogares Felices’ porque en la Alcaldía se robaron la plata y prefirió pagar la deuda de la administración para que su sucesor...</h3>
+        <p class="Principal-texto-link">Ver más +</p>
+    </div>
+    </a>
+</div>
+<!-- Fin Nota principal -->
+</div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  </div>
+<div class="views-element-container">
+  
+    
+      <div>
+<div id="informacionReciente" class="container">
+  <div class="row">
+    <div class="title col">
+      <h2>Chequeos Recientes</h2>
+    </div>
+  </div>
+  <div id="bloqueImagenes" class="row">
+    
+
+
+
+  
+    
+		
+	
+<div class="Chequeo Chequeo-fila">
+  		<a href="/chequeos/es-falso-que-chavez-ganara-por-una-diferencia-de-1-de-votos-en-las-presidenciales-de-1998">
+  		<div class="Chequeo-picture">
+      	<div class="Chequeo-picture-franja Chequeo-picture-franja-falso">
+			<p class="Chequeo-picture-franja-texto">
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			</p>
+		</div>
+		<div class="Chequeo-picture-imagen">
+	      	<img class="Chequeo-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/portada_web_VotosChavezRomer_18-06-22.png?VersionId=VvaJovs4iEBx2HK1eROmvXG2Eu9FUUrB"/>
+		</div>
+		<div class="Chequeo-picture-bandera Chequeo-picture-bandera-pequena">
+			<img class="Chequeo-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_pequena.svg"/>
+       		<img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/desinformacion.svg" class="Chequeo-picture-bandera-icon Chequeo-picture-bandera-pequena-icon"/>
+        	<p class="Chequeo-picture-bandera-text Chequeo-picture-bandera-pequena-text Chequeo-picture-bandera-text-falso">Falso</p>
+		</div>
+		</div>
+		<div class="Chequeo-texto">
+			<h3 class="Chequeo-texto-titulo">
+        Es falso que Chávez ganara por una diferencia de 1% de votos en las presidenciales de 1998 en Venezuela
+			</h3>
+			<p class="Chequeo-texto-parrafo">
+        En redes sociales circula una imagen que afirma esto con el fin de desestimular el voto en blanco en Colombia para la segunda vuelta presidencial, pero lo cierto es que en aquella oportunidad el...
+      </p>
+		</div>
+	</a>
+</div>
+
+
+
+  
+
+  
+    
+		
+	
+<div class="Chequeo Chequeo-fila">
+  		<a href="/chequeos/petro-si-nacio-en-cienaga-de-oro-cordoba">
+  		<div class="Chequeo-picture">
+      	<div class="Chequeo-picture-franja Chequeo-picture-franja-falso">
+			<p class="Chequeo-picture-franja-texto">
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			</p>
+		</div>
+		<div class="Chequeo-picture-imagen">
+	      	<img class="Chequeo-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/Chequeo-Petro-no-es-costen%CC%83o-trinos-de-Robledo-web%20%281%29.png?VersionId=5DyfnrofzQMOoMMxdqNuWmZzD2PKfCEs"/>
+		</div>
+		<div class="Chequeo-picture-bandera Chequeo-picture-bandera-pequena">
+			<img class="Chequeo-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_pequena.svg"/>
+       		<img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/desinformacion.svg" class="Chequeo-picture-bandera-icon Chequeo-picture-bandera-pequena-icon"/>
+        	<p class="Chequeo-picture-bandera-text Chequeo-picture-bandera-pequena-text Chequeo-picture-bandera-text-falso">Falso</p>
+		</div>
+		</div>
+		<div class="Chequeo-texto">
+			<h3 class="Chequeo-texto-titulo">
+        Petro sí nació en Ciénaga de Oro, Córdoba 
+			</h3>
+			<p class="Chequeo-texto-parrafo">
+        El senador Robledo publicó trinos asegurando que el candidato presidencial por el Pacto Histórico mentía sobre su nacimiento. Aquí le contamos que esto es falso y las pruebas que ratifican que Petro...
+      </p>
+		</div>
+	</a>
+</div>
+
+
+
+  
+
+  
+    
+		
+	
+<div class="Chequeo Chequeo-fila">
+  		<a href="/chequeos/juanes-no-dijo-saquemos-parasitos-socialistas-delincuentes-narcos-pedofilos-de">
+  		<div class="Chequeo-picture">
+      	<div class="Chequeo-picture-franja Chequeo-picture-franja-cuestionable">
+			<p class="Chequeo-picture-franja-texto">
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			</p>
+		</div>
+		<div class="Chequeo-picture-imagen">
+	      	<img class="Chequeo-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/Chequeo-Falsa-cita-de-Juanes-web01.png?VersionId=so9i2BQvfRHZdYzc4UnFuMbRMMGxhmPR"/>
+		</div>
+		<div class="Chequeo-picture-bandera Chequeo-picture-bandera-mediana">
+			<img class="Chequeo-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_mediana.svg"/>
+       		<img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/desinformacion.svg" class="Chequeo-picture-bandera-icon Chequeo-picture-bandera-mediana-icon"/>
+        	<p class="Chequeo-picture-bandera-text Chequeo-picture-bandera-mediana-text Chequeo-picture-bandera-text-cuestionable">Cuestionable</p>
+		</div>
+		</div>
+		<div class="Chequeo-texto">
+			<h3 class="Chequeo-texto-titulo">
+        Juanes no dijo: “saquemos a parásitos socialistas, delincuentes, narcos pédofilos de Latinoamérica”
+			</h3>
+			<p class="Chequeo-texto-parrafo">
+        Una publicación de redes aprovecha que el cantante colombiano dijo en el 2021 “el comunismo es una mierda” para achacarle declaraciones falsas.
+      </p>
+		</div>
+	</a>
+</div>
+
+
+
+  
+
+  
+    
+		
+	
+<div class="Chequeo Chequeo-fila">
+  		<a href="/chequeos/hernandez-no-propuso-ampliar-la-jornada-laboral-sino-que-el-y-su-vice-trabajarian-10-horas">
+  		<div class="Chequeo-picture">
+      	<div class="Chequeo-picture-franja Chequeo-picture-franja-cuestionable">
+			<p class="Chequeo-picture-franja-texto">
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			</p>
+		</div>
+		<div class="Chequeo-picture-imagen">
+	      	<img class="Chequeo-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/Chequeo-Rodolfo-Hern%C3%A1ndez-propone-10-horas-de-trabajo-y-sin-ir-al-ba%C3%B1o-web02.png?VersionId=A1ekHgXeTBda5CcKdKWT3cyKqWOT68L0"/>
+		</div>
+		<div class="Chequeo-picture-bandera Chequeo-picture-bandera-mediana">
+			<img class="Chequeo-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_mediana.svg"/>
+       		<img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/desinformacion.svg" class="Chequeo-picture-bandera-icon Chequeo-picture-bandera-mediana-icon"/>
+        	<p class="Chequeo-picture-bandera-text Chequeo-picture-bandera-mediana-text Chequeo-picture-bandera-text-cuestionable">Cuestionable</p>
+		</div>
+		</div>
+		<div class="Chequeo-texto">
+			<h3 class="Chequeo-texto-titulo">
+        Hernández no propuso ampliar la jornada laboral, sino que él y su ‘vice’ trabajarían 10 horas diarias
+			</h3>
+			<p class="Chequeo-texto-parrafo">
+        El candidato de la Liga de Gobernantes Anticorrupción se refirió a este tema en una trasmisión en vivo por Facebook, pero después aclaró en sus redes sociales que se refería al horario de trabajo de...
+      </p>
+		</div>
+	</a>
+</div>
+
+
+
+  
+
+  
+    
+		
+	
+<div class="Chequeo Chequeo-fila">
+  		<a href="/chequeos/rodolfo-hernandez-no-propone-acabar-con-los-subsidios-para-los-pobres-sino-unificarlos">
+  		<div class="Chequeo-picture">
+      	<div class="Chequeo-picture-franja Chequeo-picture-franja-cuestionable">
+			<p class="Chequeo-picture-franja-texto">
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			Cuestionable
+			</p>
+		</div>
+		<div class="Chequeo-picture-imagen">
+	      	<img class="Chequeo-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/portada_web_RodolfoSubsidiosFamiliaAdultos_15-06-22.png?VersionId=WWTWKpUj_.U_MEibPwD5BkpqqXlqzbeJ"/>
+		</div>
+		<div class="Chequeo-picture-bandera Chequeo-picture-bandera-mediana">
+			<img class="Chequeo-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_mediana.svg"/>
+       		<img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/desinformacion.svg" class="Chequeo-picture-bandera-icon Chequeo-picture-bandera-mediana-icon"/>
+        	<p class="Chequeo-picture-bandera-text Chequeo-picture-bandera-mediana-text Chequeo-picture-bandera-text-cuestionable">Cuestionable</p>
+		</div>
+		</div>
+		<div class="Chequeo-texto">
+			<h3 class="Chequeo-texto-titulo">
+        Rodolfo Hernández no propone acabar con los subsidios para los pobres, sino unificarlos 
+			</h3>
+			<p class="Chequeo-texto-parrafo">
+        La propuesta del candidato es que bajo la figura de renta básica se concentren en un solo pago familiar todos los subsidios existentes de acuerdo con la clasificación del Sisbén IV.  
+ 
+
+      </p>
+		</div>
+	</a>
+</div>
+
+
+
+  
+
+  
+    
+		
+	
+<div class="Chequeo Chequeo-fila">
+  		<a href="/chequeos/esta-foto-no-demuestra-que-francia-marquez-este-practicando-brujeria-ni-santeria">
+  		<div class="Chequeo-picture">
+      	<div class="Chequeo-picture-franja Chequeo-picture-franja-falso">
+			<p class="Chequeo-picture-franja-texto">
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			</p>
+		</div>
+		<div class="Chequeo-picture-imagen">
+	      	<img class="Chequeo-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/Chequeo-santeria-y-brujeria-francia-web.png?VersionId=JVQX0NvsVe8Gem_jBSn8VDMdXUslGkQ2"/>
+		</div>
+		<div class="Chequeo-picture-bandera Chequeo-picture-bandera-pequena">
+			<img class="Chequeo-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_pequena.svg"/>
+       		<img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/desinformacion.svg" class="Chequeo-picture-bandera-icon Chequeo-picture-bandera-pequena-icon"/>
+        	<p class="Chequeo-picture-bandera-text Chequeo-picture-bandera-pequena-text Chequeo-picture-bandera-text-falso">Falso</p>
+		</div>
+		</div>
+		<div class="Chequeo-texto">
+			<h3 class="Chequeo-texto-titulo">
+        Esta foto no demuestra que Francia Márquez esté practicando brujería ni santería
+			</h3>
+			<p class="Chequeo-texto-parrafo">
+        La narrativa que acusa de bruja a la candidata vicepresidencial del Pacto Histórico descontextualiza y estigmatiza un acto simbólico de carácter internacional.
+      </p>
+		</div>
+	</a>
+</div>
+
+
+
+  
+
+  
+    
+		
+	
+<div class="Chequeo Chequeo-fila">
+  		<a href="/chequeos/rodolfo-hernandez-no-dijo-que-las-iglesias-cristianas-solo-sirven-para-hacer-plata-y">
+  		<div class="Chequeo-picture">
+      	<div class="Chequeo-picture-franja Chequeo-picture-franja-falso">
+			<p class="Chequeo-picture-franja-texto">
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			Falso
+			</p>
+		</div>
+		<div class="Chequeo-picture-imagen">
+	      	<img class="Chequeo-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/Chequeo-Frase-de-Rodolfo-sobre-las-iglesias-cristianas-web.png?VersionId=M8AI12gWVXTmtIuawzcXeI65iDyVAYRP"/>
+		</div>
+		<div class="Chequeo-picture-bandera Chequeo-picture-bandera-pequena">
+			<img class="Chequeo-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_pequena.svg"/>
+       		<img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/desinformacion.svg" class="Chequeo-picture-bandera-icon Chequeo-picture-bandera-pequena-icon"/>
+        	<p class="Chequeo-picture-bandera-text Chequeo-picture-bandera-pequena-text Chequeo-picture-bandera-text-falso">Falso</p>
+		</div>
+		</div>
+		<div class="Chequeo-texto">
+			<h3 class="Chequeo-texto-titulo">
+        Rodolfo Hernández no dijo que las iglesias cristianas “solo sirven para hacer plata y comprar votos”
+			</h3>
+			<p class="Chequeo-texto-parrafo">
+        En una búsqueda de la frase no se encontraron registros que la vinculen al candidato presidencial.
+      </p>
+		</div>
+	</a>
+</div>
+
+
+
+  
+
+  
+    
+		
+	
+<div class="Chequeo Chequeo-fila">
+  		<a href="/chequeos/rodolfo-hernandez-da-un-dato-falso-y-tres-cuestionables-sobre-finanzas-del-pais-y-pobreza">
+  		<div class="Chequeo-picture">
+      	<div class="Chequeo-picture-franja Chequeo-picture-franja-multiple">
+			<p class="Chequeo-picture-franja-texto">
+			Chequeo Múltiple
+			Chequeo Múltiple
+			Chequeo Múltiple
+			Chequeo Múltiple
+			Chequeo Múltiple
+			Chequeo Múltiple
+			Chequeo Múltiple
+			</p>
+		</div>
+		<div class="Chequeo-picture-imagen">
+	      	<img class="Chequeo-picture-imagen-img" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/2022-06/portada_web_PaquetedeRodolfoW_09-06-22.png?VersionId=ptWM3QzCFINhE2gaxvXL1mKrlJ7beYj8"/>
+		</div>
+		<div class="Chequeo-picture-bandera Chequeo-picture-bandera-grande">
+			<img class="Chequeo-picture-bandera-bandera" src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/bandera_grande.svg"/>
+       		<img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/discurso.svg" class="Chequeo-picture-bandera-icon Chequeo-picture-bandera-grande-icon"/>
+        	<p class="Chequeo-picture-bandera-text Chequeo-picture-bandera-grande-text Chequeo-picture-bandera-text-multiple">Chequeo Múltiple</p>
+		</div>
+		</div>
+		<div class="Chequeo-texto">
+			<h3 class="Chequeo-texto-titulo">
+        Rodolfo Hernández da un dato falso y tres cuestionables sobre finanzas del país y pobreza
+			</h3>
+			<p class="Chequeo-texto-parrafo">
+        Verificamos las cifras sobre presupuesto, gastos presidenciales, el hambre y reformas tributarias que ha dado el candidato presidencial. Algunos ya los habíamos chequeado antes.
+      </p>
+		</div>
+	</a>
+</div>
+
+
+
+  
+
+
+    <div class="col col-sm-4">
+      <div id="patrocinadores">
+        <div class="container">
+          <div class="row">
+            <div id="colDos" class="col-12">
+              <div class="row">
+                <div class="col">
+                  <a href="https://colombiacheck.com/sobre-nosotros">
+                    <img src="/themes/custom/colombia_check_theme/img/que-es.png" alt="Patrocinadores">
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <a href="https://consejoderedaccion.org/" target="_blank">
+                    <img src="/themes/custom/colombia_check_theme/img/consejo-redaccion.png" alt="Patrocinadores">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="paginador">
+    <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+        <h4 id="pagination-heading" class="visually-hidden">Paginación</h4>
+        <ul class="pager__items js-pager__items pagination justify-content-center">
+                        
+            
+                                    <li class="pager__item pager__item--previous page-item">
+                <a class="page-link prev" href="?page=0" title="Ir a la página anterior" rel="prev">
+                    <span class="visually-hidden">Página anterior</span>
+                    <i class="fas fa-angle-left"></i>
+                </a>
+            </li>
+                                                                        <li class="page-item pager__item">
+                                                                <a class="page-link" href="?page=0" title="Go to page 1">
+                    <span class="visually-hidden">
+                        Page
+                    </span>1</a>
+            </li>
+                        <li class="page-item pager__item active">
+                                                                <a class="page-link" href="?page=1" title="Página actual">
+                    <span class="visually-hidden">
+                        Página actual
+                    </span>2</a>
+            </li>
+                        <li class="page-item pager__item">
+                                                                <a class="page-link" href="?page=2" title="Go to page 3">
+                    <span class="visually-hidden">
+                        Page
+                    </span>3</a>
+            </li>
+                        <li class="page-item pager__item">
+                                                                <a class="page-link" href="?page=3" title="Go to page 4">
+                    <span class="visually-hidden">
+                        Page
+                    </span>4</a>
+            </li>
+                                                <li class="pager__item pager__item--ellipsis page-item" role="presentation">&hellip;</li>
+                                                <li class="pager__item pager__item--next page-item">
+                <a class="page-link next" href="?page=2" title="Ir a la página siguiente" rel="next">
+                    <span class="visually-hidden">Siguiente página</span>
+                    <i class="fas fa-angle-right"></i>
+                </a>
+            </li>
+                        
+                    </ul>
+    </nav>
+</div>
+
+</div>
+
+  </div>
+</div>
+        </div><!-- /.contenido-principal -->
+    </div>
+</div>
+<div>
+    <div class="row">
+        <div class="contenido-final">
+            
+        </div><!-- /.contenido-final-->
+    </div>
+</div>
+  </div>
+
+  
+
+<footer class="site-footer">
+    <div class="site-footer__top clearfix">
+          <div id="block-piedepagina">
+  
+    
+      <!-- Inicio nuevo footer -->
+<footer class="Footer">
+  <div class="Footer-menu">
+    <div class="Footer-menu-secciones">
+      <h4 class="Footer-menu-secciones-titulo">Secciones</h4>
+      <ul class="Footer-menu-secciones-container">
+        <a href="mailto:contacto@colombiacheck.com">
+          <li class="Footer-menu-secciones-element">Contacto</li>
+        </a>
+        <a href="https://colombiacheck.com/investigaciones-especiales">
+          <li class="Footer-menu-secciones-element">Especiales</li>
+        </a>
+        <a href="https://colombiacheck.com/chequeos">
+          <li class="Footer-menu-secciones-element">Chequeos</li>
+        </a>
+        <a href="https://archivo.colombiacheck.com/especiales/zoom/">
+          <li class="Footer-menu-secciones-element">Zoom</li>
+        </a>
+        <a href="https://colombiacheck.com/investigaciones">
+          <li class="Footer-menu-secciones-element">Investigaciones</li>
+        </a>
+      </ul>
+    </div>
+    <div class="Footer-menu-secciones">
+      <h4 class="Footer-menu-secciones-titulo">Colombiacheck</h4>
+      <ul class="Footer-menu-secciones-container">
+        <a href="/sobre-nosotros">
+          <li class="Footer-menu-secciones-element">Sobre nosotros</li>
+        </a>
+        <a href="/politica-de-tratamiento-de-datos">
+        <li class="Footer-menu-secciones-element">Política de datos</li>
+        </a>
+        <a href="/preguntas-frecuentes">
+          <li class="Footer-menu-secciones-element">Preguntas frecuentes</li>
+        </a>
+        <a href="/metodologia">
+          <li class="Footer-menu-secciones-element">Metodología</li>
+        </a>
+        <a href="/terminos-y-condiciones">
+          <li class="Footer-menu-secciones-element">Términos y condiciones</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+  <div class="Footer-creditos">
+    <div class="Footer-creditos-logos">
+      <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/colombiacheck_blanco.svg" alt="" class="Footer-creditos-logos-colcheck">
+      <a class="Footer-creditos-logos-cdr" href="https://consejoderedaccion.org/" target="_blank">
+        <p class="Footer-creditos-logos-cdr-text">Un proyecto de</p>
+        <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/cdr_blanco.svg" alt="" class="Footer-creditos-logos-cdr-image">
+      </a>
+    </div>
+    <div class="Footer-creditos-nosotros">
+      <a href="https://ifcncodeofprinciples.poynter.org/" target="_blank">
+        <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/ifcn.svg" alt="" class="Footer-creditos-nosotros-ifcn">
+      </a>
+      <a href="https://www.facebook.com/journalismproject/programs/third-party-fact-checking" target="_blank">
+        <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/3pfc.png" alt="" class="Footer-creditos-nosotros-ifcn">
+      </a>
+      <nav class="Footer-creditos-nosotros-menu">
+        <a class="Footer-creditos-nosotros-menu-item" href="mailto:contacto@colombiacheck.com">
+          <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/ico2m.svg" alt="" class="Footer-creditos-nosotros-menu-item-icon">
+          <p class="Footer-creditos-nosotros-menu-item-text">Contáctanos</p>
+        </a>
+        <a class="Footer-creditos-nosotros-menu-item" href="https://colombiacheck.us18.list-manage.com/subscribe?u=70b5ba0ec9c96dbde296893c0&id=0d954cde77">
+          <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/ico1m.svg" alt="" class="Footer-creditos-nosotros-menu-item-icon">
+          <p class="Footer-creditos-nosotros-menu-item-text">Boletín</p>
+        </a>
+        <a class="Footer-creditos-nosotros-menu-item" href="https://colombiacheck.com/metodologia">
+          <img src="https://colombiacheck.s3.us-east-2.amazonaws.com/colcheck/theme/ico4m.svg" alt="" class="Footer-creditos-nosotros-menu-item-icon">
+          <p class="Footer-creditos-nosotros-menu-item-text">Metodología</p>
+        </a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<footer class="Footer-last">
+  <p class="Footer-last-text">2016 - 2022 © Derechos reservados</p>
+</footer>
+
+<!-- Fin nuevo footer -->
+  </div>
+
+  
+  </div>
+  </footer>
+
+<script>let colcheckNav=document.getElementById('navColcheck');function openColcheckNav(){colcheckNav.classList.toggle('open');}</script>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"chequeos","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es","currentQuery":{"page":"1"}},"pluralDelimiter":"\u0003","user":{"uid":0,"permissionsHash":"c554847fe619e4de0ad766683cd3f1ebe07a668acac039050cf2a0f0bf919c8b"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.5.1"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.9.20"></script>
+<script src="/themes/custom/colombia_check_theme/js/colombiacheck.js,qrdky1p.pagespeed.jm.RCH0M5Za-O.js"></script>
+<script src="/themes/custom/colombia_check_theme/js/jquery.ellipsis.min.js?rdky1p"></script>
+<script src="/themes/custom/colombia_check_theme/js/flickity.pkgd.min.js,qrdky1p.pagespeed.jm.JjsJvd4bRN.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

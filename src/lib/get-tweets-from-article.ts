@@ -7,26 +7,38 @@ import { isPolitifact } from './determine-source'
 import { ratingMapNumbers } from './rating-map'
 import { Info } from './types'
 
-const illegalTwitterRegex = /(share\?|\/\w*Politifact|intent\/tweet|Snopes)/i
+const illegalTwitterRegex = /(\/share\?|\/\w*Politifact|intent\/tweet|Snopes)/i
+const isTweetRegex = /\/\/:(www\.)?twitter\.com\/[^/]+\/status/
+const tweetRegex = /https?:\/\/(www\.)?twitter\.com\/[^/]+\/status.*?("|')/gi
 
 /**
  * Find all twitter links in the main body of an article which aren't "intent" type links.
  * Returns an object with the article title and the links.
  */
-export const findTwitterLinksInArticle = (file: string) => {
+export const findTwitterLinksInArticleDom = (file: string) => {
   const dom = new JSDOM(file)
   const document = dom.window.document
-  const links = document.querySelectorAll('body a')
+  const links = document.querySelectorAll('a')
   const twitterLinks = []
   for (const link of links) {
     const href = link.getAttribute('href')
 
-    if (href && href.includes('twitter.com') && !illegalTwitterRegex.test(href)) {
+    if (href && isTweetRegex.test(href) && !illegalTwitterRegex.test(href)) {
       twitterLinks.push({ url: href, id: href.match(/status\/(\d+)/i)?.[1] })
     }
   }
 
   return twitterLinks || []
+}
+
+/**
+ * Find twitter links by regex searching for isTweetRegex in the raw string representation of an article.
+ */
+export const findTwitterLinksInArticle = (file: string) => {
+  const tweets = file.match(tweetRegex) || []
+
+  const tw = tweets.map((href) => ({ url: href, id: href.match(/status\/(\d+)/i)?.[1] }))
+  return tw
 }
 
 /**
@@ -100,23 +112,23 @@ export const getArticleInfoForDir = async (directory: string, out: string, minif
   const write = async (file: string, minified = false, last: boolean) => {
     console.log(`Processing ${file}`)
     const htmlFile = await readFile(join(directory, file), 'utf8')
-    const politifact = isPolitifact(htmlFile)
+    // const politifact = isPolitifact(htmlFile)
     const twitter = findTwitterLinksInArticle(htmlFile)
-    const desc = findDescriptionInArticle(htmlFile, politifact)
+    //   const desc = findDescriptionInArticle(htmlFile, politifact)
 
-    const meta = politifact ? findPolitifactMeta(htmlFile) : findSnopesMeta(htmlFile)
-    console.log(`Finished processing ${desc.title}
-  Tweets: ${JSON.stringify(twitter) || 'none lmao'}
-  Verdict: ${meta.rating || meta['Truth-O-Meter']}`)
+    //   const meta = politifact ? findPolitifactMeta(htmlFile) : findSnopesMeta(htmlFile)
+    //   console.log(`Finished processing ${desc.title}
+    // Tweets: ${JSON.stringify(twitter) || 'none lmao'}
+    // Verdict: ${meta.rating || meta['Truth-O-Meter']}`)
 
-    const rating = normalizeRating(meta.rating || meta['Truth-O-Meter'])
+    //   const rating = normalizeRating(meta.rating || meta['Truth-O-Meter'])
 
     const data = {
-      source: politifact ? 'PolitiFact' : 'Snopes',
+      source: file, // politifact ? 'PolitiFact' : 'Snopes',
       tweets: twitter,
-      ...desc,
-      meta,
-      normalizedRating: rating,
+      // ...desc,
+      // meta,
+      // normalizedRating: rating,
     }
     const res = output.write(
       `${JSON.stringify(data, null, 2)}${last ? '' : ','}\n${last ? ']' : ''}`
@@ -130,7 +142,9 @@ export const getArticleInfoForDir = async (directory: string, out: string, minif
   output.close()
 
   const res = JSON.parse(await readFile(out, 'utf8'))
+  console.log('Creating minfied version')
   await writeFile(out.replace('.json', '-min.json'), JSON.stringify(res))
+
   const onlyTweets = res.filter((r: Info) => r.tweets.length > 0)
 
   await writeFile(out.replace('.json', '-tweets.json'), JSON.stringify(onlyTweets, null, 2))

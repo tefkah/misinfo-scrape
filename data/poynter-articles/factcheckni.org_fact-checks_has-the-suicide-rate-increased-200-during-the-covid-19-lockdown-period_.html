@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <script type="text/javascript">
+//----------------------------------------------------------
+//------ JAVASCRIPT HOOK FUNCTIONS FOR GRAVITY FORMS -------
+//----------------------------------------------------------
+
+if ( ! gform ) {
+	document.addEventListener( 'gform_main_scripts_loaded', function() { gform.scriptsLoaded = true; } );
+	window.addEventListener( 'DOMContentLoaded', function() { gform.domLoaded = true; } );
+
+	var gform = {
+		domLoaded: false,
+		scriptsLoaded: false,
+		initializeOnLoaded: function( fn ) {
+			if ( gform.domLoaded && gform.scriptsLoaded ) {
+				fn();
+			} else if( ! gform.domLoaded && gform.scriptsLoaded ) {
+				window.addEventListener( 'DOMContentLoaded', fn );
+			} else {
+				document.addEventListener( 'gform_main_scripts_loaded', fn );
+			}
+		},
+		hooks: { action: {}, filter: {} },
+		addAction: function( action, callable, priority, tag ) {
+			gform.addHook( 'action', action, callable, priority, tag );
+		},
+		addFilter: function( action, callable, priority, tag ) {
+			gform.addHook( 'filter', action, callable, priority, tag );
+		},
+		doAction: function( action ) {
+			gform.doHook( 'action', action, arguments );
+		},
+		applyFilters: function( action ) {
+			return gform.doHook( 'filter', action, arguments );
+		},
+		removeAction: function( action, tag ) {
+			gform.removeHook( 'action', action, tag );
+		},
+		removeFilter: function( action, priority, tag ) {
+			gform.removeHook( 'filter', action, priority, tag );
+		},
+		addHook: function( hookType, action, callable, priority, tag ) {
+			if ( undefined == gform.hooks[hookType][action] ) {
+				gform.hooks[hookType][action] = [];
+			}
+			var hooks = gform.hooks[hookType][action];
+			if ( undefined == tag ) {
+				tag = action + '_' + hooks.length;
+			}
+			if( priority == undefined ){
+				priority = 10;
+			}
+
+			gform.hooks[hookType][action].push( { tag:tag, callable:callable, priority:priority } );
+		},
+		doHook: function( hookType, action, args ) {
+
+			// splice args from object into array and remove first index which is the hook name
+			args = Array.prototype.slice.call(args, 1);
+
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action], hook;
+				//sort by priority
+				hooks.sort(function(a,b){return a["priority"]-b["priority"]});
+
+				hooks.forEach( function( hookItem ) {
+					hook = hookItem.callable;
+
+					if(typeof hook != 'function')
+						hook = window[hook];
+					if ( 'action' == hookType ) {
+						hook.apply(null, args);
+					} else {
+						args[0] = hook.apply(null, args);
+					}
+				} );
+			}
+			if ( 'filter'==hookType ) {
+				return args[0];
+			}
+		},
+		removeHook: function( hookType, action, priority, tag ) {
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action];
+				hooks = hooks.filter( function(hook, index, arr) {
+					var removeHook = (undefined==tag||tag==hook.tag) && (undefined==priority||priority==hook.priority);
+					return !removeHook;
+				} );
+				gform.hooks[hookType][action] = hooks;
+			}
+		}
+	};
+}
+</script>
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Has the suicide rate increased 200% during the COVID-19 lockdown period? - Fact Check NI</title>
+	<link rel="canonical" href="https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Has the suicide rate increased 200% during the COVID-19 lockdown period? - Fact Check NI" />
+	<meta property="og:description" content="The claim is unsubstantiated. There are no official statistics or evidence to support the claim that the rates of suicide increased 200% during the period of lockdown (i.e. from 23 March to present). [This article is part of the COVID-19 Information Dissemination (COVID-19 ID) Project — a partnership between Community Development and Health Network (CDHN)..." />
+	<meta property="og:url" content="https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/" />
+	<meta property="og:site_name" content="Fact Check NI" />
+	<meta property="article:publisher" content="https://www.facebook.com/factcheckni" />
+	<meta property="article:published_time" content="2020-07-01T13:14:41+00:00" />
+	<meta property="article:modified_time" content="2022-02-27T14:21:20+00:00" />
+	<meta property="og:image" content="http://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@FactCheckN" />
+	<meta name="twitter:site" content="@FactCheckN" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="FactCheckNI" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="3 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://factcheckni.org/#organization","name":"Fact Check NI","url":"https://factcheckni.org/","sameAs":["https://www.instagram.com/factcheckni_","https://www.linkedin.com/company/factcheckni","https://www.facebook.com/factcheckni","https://twitter.com/FactCheckN"],"logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://factcheckni.org/#/schema/logo/image/","url":"https://factcheckni.org/wp-content/uploads/2020/04/Logo-FactCheckNI-JPG-1.jpg","contentUrl":"https://factcheckni.org/wp-content/uploads/2020/04/Logo-FactCheckNI-JPG-1.jpg","width":1472,"height":361,"caption":"Fact Check NI"},"image":{"@id":"https://factcheckni.org/#/schema/logo/image/"}},{"@type":"WebSite","@id":"https://factcheckni.org/#website","url":"https://factcheckni.org/","name":"Fact Check NI","description":"","publisher":{"@id":"https://factcheckni.org/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://factcheckni.org/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#primaryimage","url":"https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5.png","contentUrl":"https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5.png","width":1200,"height":630},{"@type":"WebPage","@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#webpage","url":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/","name":"Has the suicide rate increased 200% during the COVID-19 lockdown period? - Fact Check NI","isPartOf":{"@id":"https://factcheckni.org/#website"},"primaryImageOfPage":{"@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#primaryimage"},"datePublished":"2020-07-01T13:14:41+00:00","dateModified":"2022-02-27T14:21:20+00:00","breadcrumb":{"@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/"]}]},{"@type":"BreadcrumbList","@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://factcheckni.org/"},{"@type":"ListItem","position":2,"name":"Has the suicide rate increased 200% during the COVID-19 lockdown period?"}]},{"@type":"Article","@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#article","isPartOf":{"@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#webpage"},"author":{"@id":"https://factcheckni.org/#/schema/person/85d1ea0fa0159339bdadca79e73ec7fa"},"headline":"Has the suicide rate increased 200% during the COVID-19 lockdown period?","datePublished":"2020-07-01T13:14:41+00:00","dateModified":"2022-02-27T14:21:20+00:00","mainEntityOfPage":{"@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#webpage"},"wordCount":473,"publisher":{"@id":"https://factcheckni.org/#organization"},"image":{"@id":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#primaryimage"},"thumbnailUrl":"https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5.png","keywords":["@CDHN_NI","COVID-19","suicide"],"articleSection":["Health"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://factcheckni.org/#/schema/person/85d1ea0fa0159339bdadca79e73ec7fa","name":"FactCheckNI","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://factcheckni.org/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/4dd32bb816d3f7c31c3cbc856bd695b0?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/4dd32bb816d3f7c31c3cbc856bd695b0?s=96&d=mm&r=g","caption":"FactCheckNI"},"description":"Northern Ireland's first and only dedicated fact checking service.","sameAs":["http://factcheckni.org"],"url":"https://factcheckni.org/author/factcheckni/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Fact Check NI &raquo; Has the suicide rate increased 200% during the COVID-19 lockdown period? Comments Feed" href="https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/feed/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://factcheckni.org/wp-includes/css/dist/block-library/style.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #f5f5f5;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--pink: #FFA7A3;--wp--preset--color--grey: #C6C6C6;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='main-style-css'  href='https://factcheckni.org/wp-content/themes/factcheckni/assets/build/frontend.css' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-google-fonts-css'  href='https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&#038;family=Literata:wght@400;700&#038;display=swap' type='text/css' media='all' />
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' id='jquery-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/@shinsenter/defer.js@2.4.2/dist/defer.min.js' id='defer-js'></script>
+<script type='text/javascript' id='icwp-wpsf-shield-notbot-js-extra'>
+/* <![CDATA[ */
+var shield_vars_notbotjs = {"ajax":{"not_bot":{"action":"icwp-wpsf","exec":"not_bot","exec_nonce":"ab5d6b2521","mod_slug":"icwp-wpsf-ips","ajaxurl":"https:\/\/factcheckni.org\/wp-admin\/admin-ajax.php"}},"flags":{"run":true}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://factcheckni.org/wp-content/plugins/wp-simple-firewall/resources/js/shield/notbot.js' id='icwp-wpsf-shield-notbot-js'></script>
+<link rel="https://api.w.org/" href="https://factcheckni.org/wp-json/" /><link rel="alternate" type="application/json" href="https://factcheckni.org/wp-json/wp/v2/posts/15600" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://factcheckni.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://factcheckni.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.3" />
+<link rel='shortlink' href='https://factcheckni.org/?p=15600' />
+<link rel="alternate" type="application/json+oembed" href="https://factcheckni.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffactcheckni.org%2Ftopics%2Fhealth%2Fhas-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://factcheckni.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffactcheckni.org%2Ftopics%2Fhealth%2Fhas-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period%2F&#038;format=xml" />
+<!-- Generated by Full Fact Claim Review Schema --><script type="application/ld+json">[{"@context":"http://schema.org","@type":"ClaimReview","datePublished":"2020-07-01","author":{"@type":"Organization","name":"FactCheckNI","url":""},"claimReviewed":"Suicides have increased 200% in the COVID-19 lockdown period.","itemReviewed":{"appearance":[{"@type":"CreativeWork","url":"https://twitter.com/EddieHearn/status/1277609184482164736"}],"author":{"name":"Eddie Hearn","@type":"Person"},"datePublished":"2020-06-29","@type":"Claim"},"reviewRating":{"@type":"Rating","alternateName":"UNSUBSTANTIATED. There are no official statistics or evidence to support the claim that the rates of suicide increased 200% during the period of lockdown (i.e. from 23 March to present).","bestRating":"5","worstRating":"1","ratingValue":""},"url":"https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/"}]</script><style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style>
+    <link rel="icon" type="image/png" href="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/favicon.png"  sizes="128x128" />    
+    <script type="text/javascript">
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+            
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#a20d15">
+
+            <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76087330-1"></script>
+        <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-76087330-1');</script>
+    
+
+</head>
+<body class="post-template-default single single-post postid-15600 single-format-standard" >
+
+    <header class="px-2 pb-2 pt-8 md:p-6 bg-offwhite dark:bg-navy">
+
+        <div class="container mx-auto">
+            <div class="flex lg:items-center md:justify-between">
+
+                <div class="w-1/2 md:w-4/12 flex lg:items-center">
+                    <a href="https://factcheckni.org" class='w-full lg:w-1/2'>
+                        <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/factcheck-logo.png" class="block dark:hidden w-48">
+                        <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/fact-check-white-logo.png" class="hidden dark:block w-48">
+                    </a>
+
+                    <form role="search" action="https://factcheckni.org/" method="get" id="headersearch" class="hidden lg:block lg:w-1/2">
+                        <label for="search-for"><span class="screen-reader-text">Search</span></label>
+                        <input id="search-for" type="text" name="s" placeholder="Search"/>
+                        <input type="hidden" name="post_type" value="post"/>
+                        <input class='search-button-archive hidden' type="submit" alt="Search" value="Search"/>
+                    </form>
+                </div>
+
+                <div class="w-1/2 md:w-10/12 lg:w-3/4 flex item-center justify-end ">
+                    <div id="nav-toggle" class="mobile-toggle lg:hidden h-8 w-8 cursor-pointer relative z-10">
+                        <div id="burger-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    
+                    <nav>
+                        <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/factcheck-logo-black.svg" class="lg:hidden ml-2 w-48 dark:hidden">
+                        <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/fact-check-white-logo.png" class="hidden dark:block lg:dark:hidden ml-2 w-48">
+                        <div class="nav-group lg:flex lg:items-center ">
+                            <ul class="mb-0">
+                                <li class="menu-item-has-children factcheck_link list-none mb-0"><a href="https://factcheckni.org/fact-checks" class="font-bold py-6">Fact Checks</a>
+                                    <div class="sub-menu">
+                                        <div class="container">
+                                            <ul class="items">
+                                                                                                    <li class="lg:w-1/4">
+                                                        <a href="https://factcheckni.org/category/topics/economy/">
+                                                                                                                        <div class="meganav-icon"><svg id="Group_4451" data-name="Group 4451" xmlns="http://www.w3.org/2000/svg" width="65" height="61.75" viewBox="0 0 65 61.75">
+  <path id="Path_1937" data-name="Path 1937" d="M44.25,28a3.25,3.25,0,1,1,3.25,3.25A3.26,3.26,0,0,1,44.25,28ZM21.5,24.75H37.75v-6.5H21.5ZM67,19.875V42.527l-9.165,3.055L52.375,63.75H34.5v-6.5H28v6.5H10.125S2,36.255,2,26.375A17.865,17.865,0,0,1,19.875,8.5h16.25a16.234,16.234,0,0,1,13-6.5A4.868,4.868,0,0,1,54,6.875a4.552,4.552,0,0,1-.39,1.885A15.71,15.71,0,0,0,52.57,12.5l7.378,7.378Zm-6.5,6.5H57.25L45.875,15a23.441,23.441,0,0,1,.845-6.207A9.8,9.8,0,0,0,39.928,15H19.875A11.387,11.387,0,0,0,8.5,26.375c0,6.11,3.965,21.612,6.533,30.875H21.5v-6.5H41v6.5h6.533L52.57,40.513l7.93-2.665Z" transform="translate(-2 -2)" fill="currentColor"/>
+</svg>
+</div>
+                                                            <div class="pageinfo w-full">
+                                                                <h4 class="font-bold font-alegreya mt-2 mb-1 dark:text-black">Economy</h4>                                                                <p>Includes home ownership, poverty, and how takes are spent.</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="lg:w-1/4">
+                                                        <a href="https://factcheckni.org/category/topics/education/">
+                                                                                                                        <div class="meganav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="29.455" viewBox="0 0 36 29.455">
+  <path id="Path_2074" data-name="Path 2074" d="M19,3,1,12.818l6.545,3.567V26.2L19,32.455,30.455,26.2V16.385L33.727,14.6V25.909H37V12.818Zm11.16,9.818L19,18.905,7.84,12.818,19,6.731ZM27.182,24.256,19,28.724l-8.182-4.467V18.169L19,22.636l8.182-4.467Z" transform="translate(-1 -3)" fill="currentColor"/>
+</svg>
+</div>
+                                                            <div class="pageinfo w-full">
+                                                                <h4 class="font-bold font-alegreya mt-2 mb-1 dark:text-black">Education</h4>                                                                <p>Includes child-care, primary, secondary and tertiary education.</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="lg:w-1/4">
+                                                        <a href="https://factcheckni.org/category/topics/elections/">
+                                                                                                                        <div class="meganav-icon"><svg id="Group_4308" data-name="Group 4308" xmlns="http://www.w3.org/2000/svg" width="76" height="38" viewBox="0 0 76 38">
+  <path id="Path_1708" data-name="Path 1708" d="M12.667,28.167a6.333,6.333,0,1,0-6.333-6.333A6.352,6.352,0,0,0,12.667,28.167Zm3.578,3.483a22.111,22.111,0,0,0-3.578-.317,22.01,22.01,0,0,0-8.8,1.837A6.368,6.368,0,0,0,0,39.028V44H14.25V38.9A14.246,14.246,0,0,1,16.245,31.65Zm47.088-3.483A6.333,6.333,0,1,0,57,21.833,6.352,6.352,0,0,0,63.333,28.167ZM76,39.028a6.368,6.368,0,0,0-3.863-5.858,21.528,21.528,0,0,0-12.382-1.52A14.246,14.246,0,0,1,61.75,38.9V44H76Zm-24.573-8.8A33.07,33.07,0,0,0,38,27.375a33.6,33.6,0,0,0-13.427,2.85A9.462,9.462,0,0,0,19,38.9V44H57V38.9A9.462,9.462,0,0,0,51.427,30.225ZM25.555,37.667c.285-.728.412-1.235,2.882-2.185a26.673,26.673,0,0,1,19.127,0c2.438.95,2.565,1.457,2.882,2.185ZM38,12.333A3.167,3.167,0,1,1,34.833,15.5,3.176,3.176,0,0,1,38,12.333M38,6a9.5,9.5,0,1,0,9.5,9.5A9.487,9.487,0,0,0,38,6Z" transform="translate(0 -6)" fill="currentColor"/>
+</svg>
+</div>
+                                                            <div class="pageinfo w-full">
+                                                                <h4 class="font-bold font-alegreya mt-2 mb-1 dark:text-black">Elections</h4>                                                                <p>Includes party manifestos, hustings, and election processes</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="lg:w-1/4">
+                                                        <a href="https://factcheckni.org/category/topics/environment/">
+                                                                                                                        <div class="meganav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="40.223" viewBox="0 0 36 40.223"><defs></defs><g transform="translate(-3.1 -2)"><g transform="translate(3.1 2)"><path class="a" d="M31.055,22.112h4.022L21,2,7.022,22.112h3.922L3.1,34.179H17.017v8.045h7.944V34.179H39.1ZM10.521,30.156l7.844-12.067h-3.64l6.295-9.05,6.335,9.05H23.534l8.045,12.067Z" transform="translate(-3.1 -2)"  fill="currentColor"/></g></g></svg></div>
+                                                            <div class="pageinfo w-full">
+                                                                <h4 class="font-bold font-alegreya mt-2 mb-1 dark:text-black">Environment</h4>                                                                <p>Includes agriculture, animals, climate change and recycling</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="lg:w-1/4">
+                                                        <a href="https://factcheckni.org/category/topics/europe/">
+                                                                                                                        <div class="meganav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="66.694" height="64.71" viewBox="0 0 66.694 64.71">
+  <g id="Group_4466" data-name="Group 4466" transform="translate(-1174.399 551.129)">
+    <g id="Group_4454" data-name="Group 4454" transform="translate(1174.399 -522.881)">
+      <path id="Path_1945" data-name="Path 1945" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4455" data-name="Group 4455" transform="translate(1179.28 -509.339)">
+      <path id="Path_1946" data-name="Path 1946" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4456" data-name="Group 4456" transform="translate(1189.577 -500.065)">
+      <path id="Path_1947" data-name="Path 1947" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4457" data-name="Group 4457" transform="translate(1203.824 -495.692)">
+      <path id="Path_1948" data-name="Path 1948" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4458" data-name="Group 4458" transform="translate(1217.084 -499.783)">
+      <path id="Path_1949" data-name="Path 1949" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4459" data-name="Group 4459" transform="translate(1228.51 -509.939)">
+      <path id="Path_1950" data-name="Path 1950" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4460" data-name="Group 4460" transform="translate(1231.331 -523.199)">
+      <path id="Path_1951" data-name="Path 1951" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4461" data-name="Group 4461" transform="translate(1228.51 -537.164)">
+      <path id="Path_1952" data-name="Path 1952" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4462" data-name="Group 4462" transform="translate(1218.212 -547.32)">
+      <path id="Path_1953" data-name="Path 1953" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4463" data-name="Group 4463" transform="translate(1203.401 -551.129)">
+      <path id="Path_1954" data-name="Path 1954" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4464" data-name="Group 4464" transform="translate(1188.589 -547.884)">
+      <path id="Path_1955" data-name="Path 1955" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+    <g id="Group_4465" data-name="Group 4465" transform="translate(1178.574 -537.587)">
+      <path id="Path_1956" data-name="Path 1956" d="M6.881,9.453,9.9,11.274,9.1,7.842l2.665-2.309-3.509-.3L6.881,2,5.509,5.236,2,5.534,4.665,7.842l-.8,3.431Z" transform="translate(-2 -2)" fill="currentColor"/>
+    </g>
+  </g>
+</svg>
+</div>
+                                                            <div class="pageinfo w-full">
+                                                                <h4 class="font-bold font-alegreya mt-2 mb-1 dark:text-black">Europe</h4>                                                                <p>Includes Brexit, the Irish border, passports, Good Friday Agreement.</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="lg:w-1/4">
+                                                        <a href="https://factcheckni.org/category/topics/health/">
+                                                                                                                        <div class="meganav-icon"><svg id="Group_4467" data-name="Group 4467" xmlns="http://www.w3.org/2000/svg" width="50.556" height="65" viewBox="0 0 50.556 65">
+  <path id="Path_1958" data-name="Path 1958" d="M24.861,46.333H15.833V35.5h9.028V26.472H35.694V35.5h9.028V46.333H35.694v9.028H24.861ZM55.556,21.056V60.778A7.243,7.243,0,0,1,48.333,68H12.222A7.243,7.243,0,0,1,5,60.778V21.056a7.243,7.243,0,0,1,7.222-7.222H48.333A7.243,7.243,0,0,1,55.556,21.056Zm-7.222,0H12.222V60.778H48.333ZM51.944,3H8.611v7.222H51.944Z" transform="translate(-5 -3)" fill="currentColor"/>
+</svg>
+</div>
+                                                            <div class="pageinfo w-full">
+                                                                <h4 class="font-bold font-alegreya mt-2 mb-1 dark:text-black">Health</h4>                                                                <p>Includes reproductive rights, mental health, nutrition and COVID-19.</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="lg:w-1/4">
+                                                        <a href="https://factcheckni.org/category/topics/law/">
+                                                                                                                        <div class="meganav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="65" height="67.421" viewBox="0 0 65 67.421">
+  <path id="Path_1957" data-name="Path 1957" d="M1,62.292H37.775v6.129H1ZM13.994,22.667l8.673-8.673L66,57.327,57.327,66ZM35.691,1,53.037,18.346l-8.673,8.673L27.018,9.673ZM9.673,26.988,27.018,44.333l-8.673,8.673L1,35.661l8.673-8.673Z" transform="translate(-1 -1)" fill="currentColor"/>
+</svg>
+</div>
+                                                            <div class="pageinfo w-full">
+                                                                <h4 class="font-bold font-alegreya mt-2 mb-1 dark:text-black">Law</h4>                                                                <p>Includes crime statistics, cultural and religious matters.</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="lg:w-1/4">
+                                                        <a href="https://factcheckni.org/category/topics/peace/">
+                                                                                                                        <div class="meganav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="65" height="59.638" viewBox="0 0 65 59.638">
+  <path id="Path_1959" data-name="Path 1959" d="M49.125,3A19.462,19.462,0,0,0,34.5,9.792,19.462,19.462,0,0,0,19.875,3,17.7,17.7,0,0,0,2,20.875C2,33.16,13.05,43.17,29.788,58.38L34.5,62.638l4.712-4.29C55.95,43.17,67,33.16,67,20.875A17.7,17.7,0,0,0,49.125,3Zm-14.3,50.537-.325.325-.325-.325C18.7,39.53,8.5,30.268,8.5,20.875A11.107,11.107,0,0,1,19.875,9.5a12.706,12.706,0,0,1,11.6,7.67h6.077A12.625,12.625,0,0,1,49.125,9.5,11.107,11.107,0,0,1,60.5,20.875C60.5,30.268,50.3,39.53,34.825,53.537Z" transform="translate(-2 -3)" fill="currentColor"/>
+</svg>
+</div>
+                                                            <div class="pageinfo w-full">
+                                                                <h4 class="font-bold font-alegreya mt-2 mb-1 dark:text-black">Peace</h4>                                                                <p>Includes paramilitaries, peace lines, and life after “the Troubles”.</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+
+                                            <div class="wrapper text-center mt-4">
+                                                <a href="https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/fact-checks" class="bg-cherryred uppercase rounded-full text-white font-bold py-4 px-12 hover:bg-red view-latest">View Latest</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="main-navigation"><ul id="menu-main-navigation" class="main-menu lg:flex m-0 p-0 list-none"><li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-27"><a href="https://factcheckni.org/about-us/">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-21639" class="menu-item menu-item-type-post_type_archive menu-item-object-our-team menu-item-21639"><a href="https://factcheckni.org/about-us/who-we-are/">Who We Are</a></li>
+	<li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-158"><a href="https://factcheckni.org/about-us/funding/">Funding</a></li>
+	<li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="https://factcheckni.org/about-us/code-of-principles/">Code of Principles</a></li>
+	<li id="menu-item-18869" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18869"><a href="https://factcheckni.org/about/faq/">FAQ</a></li>
+	<li id="menu-item-18868" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18868"><a href="https://factcheckni.org/about/authors/">Authors</a></li>
+	<li id="menu-item-18866" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-18866"><a href="https://factcheckni.org/about/policies/">Policies</a>
+	<ul class="sub-menu">
+		<li id="menu-item-335" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-335"><a href="https://factcheckni.org/about-us/data-protection-policy/">Data Protection Policy</a></li>
+		<li id="menu-item-18864" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18864"><a href="https://factcheckni.org/about/policies/privacy-policy-2/">Privacy Policy</a></li>
+		<li id="menu-item-18867" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18867"><a href="https://factcheckni.org/about/policies/code-of-conduct/">Code of Conduct</a></li>
+	</ul>
+</li>
+	<li id="menu-item-18863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18863"><a href="https://factcheckni.org/about/process/">Process</a></li>
+</ul>
+</li>
+<li id="menu-item-336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-336"><a href="https://factcheckni.org/toolkit/">Toolkit</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://factcheckni.org/training/">Training</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://factcheckni.org/contact/">Contact</a></li>
+<li id="menu-item-18865" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18865"><a href="https://factcheckni.org/claims/">Submit a Claim</a></li>
+</ul></div>                        </div>
+
+                        <form role="search" action="https://factcheckni.org/" method="get" id="mobilesearch" class="md:hidden mt-8">
+                            <label for="search-for"><span class="screen-reader-text">Search</span></label>
+                            <input id="search-for" type="text" name="s" placeholder="Search"/>
+                            <input type="hidden" name="post_type" value="post"/>
+                            <input class='search-button-archive hidden' type="submit" alt="Search" value="Search"/>
+                        </form>
+
+                        <div class="wrapper text-center mt-10 lg:hidden">
+                            <a href="/claims" class="submit-mobile-nav bg-cherryred rounded-full text-white font-bold py-4 px-12">Submit a Topic</a>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+
+        <span class="dark-mode-toggle absolute right-0 top-0 cursor-pointer bg-grey_one dark:bg-red">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17.274" height="17.274" viewBox="0 0 17.274 17.274" class="block dark:hidden moon">
+              <path id="Path_1899" data-name="Path 1899" d="M9.113,5.409a7.109,7.109,0,0,0,8.752,8.752A6.719,6.719,0,1,1,9.113,5.409ZM11.637,3a8.637,8.637,0,1,0,8.637,8.637,9.714,9.714,0,0,0-.1-1.305A5.186,5.186,0,1,1,12.942,3.1,9.713,9.713,0,0,0,11.637,3Z" transform="translate(-3 -3)" fill="#f0434d"/>
+
+            </svg>
+            <span class="lightsoff">Lights off</span>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="18.328" height="18.329" viewBox="0 0 18.328 18.329" class="hidden dark:block sun">
+              <path id="Path_1897" data-name="Path 1897" d="M10.164,7.665a2.5,2.5,0,1,1-2.5,2.5,2.507,2.507,0,0,1,2.5-2.5m0-1.666a4.166,4.166,0,1,0,4.166,4.166A4.167,4.167,0,0,0,10.164,6ZM1.833,11H3.5a.833.833,0,0,0,0-1.666H1.833a.833.833,0,0,0,0,1.666Zm15,0H18.5a.833.833,0,0,0,0-1.666H16.829a.833.833,0,0,0,0,1.666Zm-7.5-9.164V3.5A.833.833,0,0,0,11,3.5V1.833a.833.833,0,0,0-1.666,0Zm0,15V18.5A.833.833,0,1,0,11,18.5V16.829a.833.833,0,0,0-1.666,0ZM5.157,3.983A.831.831,0,0,0,3.983,5.157l.883.883A.831.831,0,0,0,6.04,4.866ZM15.463,14.288a.831.831,0,0,0-1.175,1.175l.883.883a.831.831,0,0,0,1.175-1.175Zm.883-9.131a.831.831,0,1,0-1.175-1.175l-.883.883A.831.831,0,0,0,15.463,6.04ZM6.04,15.463a.831.831,0,0,0-1.175-1.175l-.883.883a.831.831,0,0,0,1.175,1.175Z" transform="translate(-1 -1)" fill="#303030"/>
+            </svg>
+            <span class="lightson text-navy hidden">Lights on</span>
+
+        </span>
+
+                    <div class="container pt-10">
+                <div class="row">
+                    <p id="breadcrumbs"><span><span><a href="https://factcheckni.org/"><span class='screen-reader-text'>Home</span><span class='inline-flex items-center'><svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="13.747" height="11.247" viewBox="0 0 13.747 11.247"><path d="M7.873,3,1,8.249l.756.994,1.118-.856v5.861h10V8.386l1.118.85.756-.987Zm3.749,10h-7.5V7.436L7.873,4.575l3.749,2.862Z" transform="translate(-1 -3)" fill="#f0434d"/></svg></span></a> <span class='font-bold mx-1 inline-block'>/</span> <strong class="breadcrumb_last" aria-current="page">Has the suicide rate increased 200% during the COVID-19 lockdown period?</strong></span></span></p>                </div>
+            </div>
+        
+    </header>
+<main style="min-height:350px;" class="bg-offwhite dark:bg-navy">    
+    <div class="container">
+        <p class="mb-0 hidden" id="mobile-breadcrumbs"><span><a href="https://factcheckni.org/disciplines//"></a> &gt; <strong class="breadcrumb_last" aria-current="page">Has the suicide rate increased 200% during the COVID-19 lockdown period?</strong></span>
+        </p>
+
+        
+            <div class="row md:pt-8">
+                <div class="w-full lg:w-8/12 mx-auto post-title pt-8">
+                    <h1>Has the suicide rate increased 200% during the COVID-19 lockdown period?</h1>
+                    <p class="mt-4 flex"><span class="mr-4">1 July 2020</span>
+                        <span class="flex reading-time">3 minute read</span></p>
+                        <div class="flex flex-col sm:flex-row flex-start post-overview border-t border-b border-pinkprimary md:border-b-0 py-6">
+                                                            <div class="w-full md:w-1/2 md:border-r post-subject pr-6 mr-6 md:border-grey_three">
+                                    <h6 class="uppercase mb-1 text-cherryred font-bold">Subject</h6>
+                                    <p class="mb-0">CLAIM: Suicides have increased 200% in the COVID-19 lockdown period.</p>
+                                </div>
+                                                                                        <div class="w-full md:w-1/2 post-rating">
+                                    <h6 class="uppercase mb-1 w-1/2 text-cherryred font-bold">Rating</h6>
+                                    <p class="mb-0">UNSUBSTANTIATED</p>
+                                </div>
+                                                    </div>
+                </div>
+            </div>
+            <div class="row py-8 md:pt-0">
+                <div class="w-full lg:w-8/12 mx-auto post-content">
+                    
+<p><strong>The claim is unsubstantiated. There are no official statistics or evidence to support the claim that the rates of suicide increased 200% during the period of lockdown (i.e. from 23 March to present).</strong></p>
+
+
+
+<figure class="wp-block-image size-large"><img width="1024" height="538" src="https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5-1024x538.png" alt="" class="wp-image-21565" srcset="https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5-1024x538.png 1024w, https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5-300x158.png 300w, https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5-768x403.png 768w, https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5-65x34.png 65w, https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5-150x79.png 150w, https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5-75x39.png 75w, https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5-76x40.png 76w, https://factcheckni.org/wp-content/uploads/2020/07/Untitled-1200-×-630px-5.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><em>[This article is part of the <a href="https://www.cdhn.org/covid-19-information-dissemination-id-project" target="_blank" rel="noopener noreferrer">COVID-19 Information Dissemination (COVID-19 ID) Project</a> — a partnership between <a href="https://www.cdhn.org/" target="_blank" rel="noopener noreferrer">Community Development and Health Network (CDHN)</a> and <a href="https://factcheckni.org/fact-checks/new-working-partnership-covid-19-information-dissemination-covid-19-id-project/" target="_blank" rel="noopener noreferrer">FactCheckNI</a>. Its aim is to improve people’s health literacy about COVID-19 by providing <a href="https://www.cdhn.org/covid-19-fact-checks" target="_blank" rel="noopener noreferrer">accurate and up-to-date information</a> that will increase knowledge, understanding and confidence and enable people to make good health decisions.]</em></p>
+
+
+
+<p><a href="https://twitter.com/EddieHearn/status/1277609184482164736" target="_blank" rel="noopener noreferrer">Tweets</a> claiming that deaths by suicide have increased 200% since lockdown spread on Twitter on 29 June 2020. The tweets, shared across the UK, do not specifically state in which region they are referring to, but in the body of one of the widely shared tweets, it references “Samaritans UK”.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Twitter-1.png"><img loading="lazy" width="589" height="220" src="https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Twitter-1.png" alt="" class="wp-image-15602" srcset="https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Twitter-1.png 589w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Twitter-1-300x112.png 300w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Twitter-1-65x24.png 65w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Twitter-1-150x56.png 150w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Twitter-1-75x28.png 75w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Twitter-1-107x40.png 107w" sizes="(max-width: 589px) 100vw, 589px" /></a></figure></div>
+
+
+
+<p><strong>Statistics on suicide</strong></p>
+
+
+
+<p>FactCheckNI has <a href="https://factcheckni.org/fact-checks/do-more-men-die-by-suicide-in-northern-ireland/" target="_blank" rel="noopener noreferrer">previously published</a> about rates of suicide in Northern Ireland and how statistics regarding deaths by suicide are compiled in the UK, more generally.</p>
+
+
+
+<p>Rates of deaths by suicide in the UK are reported by the Office for National Statistics (ONS). Its most <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/2018registrations" target="_blank" rel="noopener noreferrer">recent statistics</a> (based on information recorded on death certificates) are focused on deaths registered in 2018. They have also published <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathscausedbysuicidebyquarterinengland" target="_blank" rel="noopener noreferrer">provisional figures</a> for England for 2019.</p>
+
+
+
+<p>In Northern Ireland, the Northern Ireland Statistics and Research Agency (NISRA) also reports on the rates of death by suicide in the region. Its most <a href="https://www.nisra.gov.uk/publications/suicide-statistics" target="_blank" rel="noopener noreferrer">recent statistical release</a> on the rates of suicide in Northern Ireland pertained to the period covering 2018. NISRA has also issued provisional suicide numbers for 2019, in the form of <a href="https://www.nisra.gov.uk/publications/registrar-general-quarterly-tables-2019" target="_blank" rel="noopener noreferrer">quarterly tables</a>.</p>
+
+
+
+<p>None of these official sources of statistics have released data covering the period of <a href="https://factcheckni.org/fact-checks/health/what-are-the-rules-of-lockdown-in-northern-ireland/" target="_blank" rel="noopener noreferrer">lockdown</a> (i.e. from 23 March 2020 to present), therefore the claim that the rate of suicides has increased 200% cannot be corroborated.</p>
+
+
+
+<p><strong>Samaritans Official tweet:</strong></p>
+
+
+
+<p><a href="https://www.samaritans.org/" target="_blank" rel="noopener noreferrer">The Samaritans</a> echo this finding about the lack of reliable statistical data on suicide rates during the period of lockdown in their responses to many of the individual tweets on the issue:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Samaritans-1.png"><img loading="lazy" width="587" height="135" src="https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Samaritans-1.png" alt="" class="wp-image-15605" srcset="https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Samaritans-1.png 587w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Samaritans-1-300x69.png 300w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Samaritans-1-65x15.png 65w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Samaritans-1-150x34.png 150w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Samaritans-1-75x17.png 75w, https://factcheckni.org/wp-content/uploads/2020/07/FactCheckNI-108-Suicide-Samaritans-1-120x28.png 120w" sizes="(max-width: 587px) 100vw, 587px" /></a></figure></div>
+
+
+
+<p>The Samaritans also provides <a href="https://www.samaritans.org/about-samaritans/media-guidelines/best-practice-suicide-reporting-tips/" target="_blank" rel="noopener noreferrer">information</a> about their recommended guidelines on reporting on the issue of suicide safely.</p>
+
+
+
+<p>A UK mental health charity, SANE, has <a href="https://www.itv.com/news/2020-05-06/charity-warns-of-mental-illness-timebomb-as-calls-increase-by-200" target="_blank" rel="noopener noreferrer">reported a 200% increase in calls to its helpline</a> since lockdown began.</p>
+
+
+
+<p>While newspapers around the world report <a href="https://www.usnews.com/news/healthiest-communities/articles/2020-05-22/experts-warn-of-a-surge-of-suicides-tied-to-the-coronavirus-pandemic" target="_blank" rel="noopener noreferrer">experts’s fears that suicides rates will rise during a lockdown period</a> that some of their patients find stressful, there are no figures yet for the UK to suggest whether the suicide rate has increased, decreased, or remained the same.</p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p><em>FactCheckNI is Northern Ireland’s first and only dedicated independent fact-checking service and a&nbsp;<a href="https://ifcncodeofprinciples.poynter.org/profile/factcheckni" target="_blank" rel="noopener noreferrer">verified signatory</a>&nbsp;to the International Fact-Checking Network’s&nbsp;<a href="https://www.poynter.org/ifcn-fact-checkers-code-of-principles/" target="_blank" rel="noopener noreferrer">Code of Principles</a>. You can learn more about&nbsp;<a href="https://factcheckni.org/about/" target="_blank" rel="noopener noreferrer">about FactCheckNI</a>, our&nbsp;<a href="https://factcheckni.org/about/personnel/" target="_blank" rel="noopener noreferrer">personnel</a>, what our article&nbsp;<a href="https://factcheckni.org/blog/for-your-consideration-factcheckni-verdict-ratings/" target="_blank" rel="noopener noreferrer">verdicts</a>&nbsp;mean, and how to&nbsp;<a href="https://factcheckni.org/claims" target="_blank" rel="noopener noreferrer">submit a claim</a>.</em></p>
+                </div>
+            </div>
+
+            <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' id="scrollToTopBtn" title="Go to top">Back to top</button>
+
+        
+            <div class="row py-6 flex-col">
+                <div class="w-full sm:w-2/12 mx-auto">
+                    <p class="font-bold text-cherryred text-center">Share</p>
+                    <div class="socials flex justify-around pb-6 mb-6 border-b border-grey_three">
+                            <div class="flex justify-center">
+        <a class="transition-opacity duration-200 ease-in hover:opacity-75" target="_blank"
+           rel="noopener noreferrer"
+           href="https://twitter.com/share?url=https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/&text=Has%20the%20suicide%20rate%20increased%20200%25%20during%20the%20COVID-19%20lockdown%20period%3F">
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+              <g id="Group_4693" data-name="Group 4693" transform="translate(7318 -3340)">
+                <circle id="Ellipse_124" data-name="Ellipse 124" cx="22" cy="22" r="22" transform="translate(-7318 3340)" fill="#f0434d"/>
+                <path id="Path_1880" data-name="Path 1880" d="M468.264,41.831c.015.209.015.419.015.628a13.743,13.743,0,0,1-21.151,11.569,9.972,9.972,0,0,0,1.166.06,9.669,9.669,0,0,0,5.994-2.063,4.837,4.837,0,0,1-4.514-3.348,6.083,6.083,0,0,0,.912.075,5.1,5.1,0,0,0,1.271-.164,4.829,4.829,0,0,1-3.872-4.738v-.06a4.867,4.867,0,0,0,2.182.613,4.836,4.836,0,0,1-1.495-6.458A13.724,13.724,0,0,0,458.727,43a5.46,5.46,0,0,1-.12-1.106,4.833,4.833,0,0,1,8.356-3.3,9.507,9.507,0,0,0,3.064-1.166,4.815,4.815,0,0,1-2.123,2.661,9.679,9.679,0,0,0,2.78-.747,10.376,10.376,0,0,1-2.422,2.5Z" transform="translate(-7754.627 3314.571)" fill="#fdf4f4"/>
+              </g>
+            </svg>
+        </a>
+        <a class="mx-4 transition-opacity duration-200 ease-in hover:opacity-75" target="_blank"
+           rel="noopener noreferrer"
+           href="https://www.linkedin.com/shareArticle?mini=true&url=https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/&title=Has%20the%20suicide%20rate%20increased%20200%25%20during%20the%20COVID-19%20lockdown%20period%3F">
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+              <g id="Group_4694" data-name="Group 4694" transform="translate(7265 -3340)">
+                <circle id="Ellipse_128" data-name="Ellipse 128" cx="22" cy="22" r="22" transform="translate(-7265 3340)" fill="#f0434d"/>
+                <path id="linkedin-brands" d="M18.475,32H1.417A1.427,1.427,0,0,0,0,33.434V50.462A1.427,1.427,0,0,0,1.417,51.9H18.475A1.431,1.431,0,0,0,19.9,50.462V33.434A1.431,1.431,0,0,0,18.475,32ZM6.013,49.054H3.064v-9.5H6.018v9.5ZM4.539,38.262a1.71,1.71,0,1,1,1.71-1.71A1.711,1.711,0,0,1,4.539,38.262ZM17.067,49.054H14.118V44.435c0-1.1-.022-2.518-1.532-2.518-1.537,0-1.772,1.2-1.772,2.438v4.7H7.865v-9.5h2.829v1.3h.04a3.106,3.106,0,0,1,2.793-1.532c2.984,0,3.54,1.967,3.54,4.525Z" transform="translate(-7252.948 3319.37)" fill="#fdf4f4"/>
+              </g>
+            </svg>
+        </a>
+        <a class="transition-opacity duration-200 ease-in hover:opacity-75" target="_blank"
+           rel="noopener noreferrer" href="https://www.facebook.com/sharer.php?u=https://factcheckni.org/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+              <g id="Group_4695" data-name="Group 4695" transform="translate(7211 -3340)">
+                <circle id="Ellipse_129" data-name="Ellipse 129" cx="22" cy="22" r="22" transform="translate(-7211 3340)" fill="#f0434d"/>
+                <g id="facebook-letter-logo" transform="translate(-7194.096 3351.399)">
+                  <path id="Facebook" d="M116.9,4.23V7.237h-2.2v3.677h2.2V21.839h4.525V10.914h3.036s.284-1.763.422-3.69h-3.442V4.71a1.068,1.068,0,0,1,.981-.881h2.465V0h-3.352C116.787,0,116.9,3.681,116.9,4.23Z" transform="translate(-114.696 -0.001)" fill="#fdf4f4"/>
+                </g>
+              </g>
+            </svg>
+        </a>
+        
+    </div>
+                        </div>
+                </div>
+
+
+                                    <div class="w-full mx-auto">
+                        <p class="font-bold text-cherryred text-center">Tags</p>
+                        <ul class="flex justify-center items-center flex-wrap lg:flex-nowrap">
+                                                            <li class="bg-white rounded-lg border-cherryred dark:bg-navy_black border py-2 px-4 mr-4 mb-4">
+                                    <a href="https://factcheckni.org/tag/cdhn_ni/" class="text-cherryred capitalize dark:text-white">@CDHN_NI</a>
+                                </li>
+                                                            <li class="bg-white rounded-lg border-cherryred dark:bg-navy_black border py-2 px-4 mr-4 mb-4">
+                                    <a href="https://factcheckni.org/tag/covid-19/" class="text-cherryred capitalize dark:text-white">COVID-19</a>
+                                </li>
+                                                            <li class="bg-white rounded-lg border-cherryred dark:bg-navy_black border py-2 px-4 mr-4 mb-4">
+                                    <a href="https://factcheckni.org/tag/suicide/" class="text-cherryred capitalize dark:text-white">suicide</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                            </div>
+
+    <section class="pb-6 md:pb-20 md:pt-10 mb-0 bg-gray-300">
+        <div class="container">
+            <div class="row">
+                <div class="w-full mb-8 read-next">
+                    <h2>Read next</h2>
+                </div>
+            </div>
+            <div class="row">
+                <!--fwp-loop-->
+
+                    <a href="https://factcheckni.org/topics/health/do-140-people-per-year-die-while-fishing-in-irish-waters/" class="w-full mb-8 sm:w-1/3 posts-card">
+                            <img width="260" height="160" src="https://factcheckni.org/wp-content/uploads/2022/06/Untitled-1200-×-630px-14-260x160.png" class="attachment-posts-card size-posts-card wp-post-image" alt="" loading="lazy" />                            <div class="bg-white dark:bg-navy_black px-4 py-6 rounded-b-lg">
+                                <p class="text-cherryred font-bold inline capitalize">Articles</p><p class="text-cherryred font-bold inline"> | </p><p class="text-cherryred font-bold inline capitalize">Environment</p><p class="text-cherryred font-bold inline"> | </p><p class="text-cherryred font-bold inline capitalize">Health</p>                                <h5 class="mb-0 font-literata">Do 140 people per year die while fishing in Irish waters?</h5>
+                                <p class="py-3 border-b border-grey_four">16 June 2022</p>
+
+                                                                            <!-- <h6 class="uppercase mb-1 font-alegreya font-bold">Subject</h6> -->
+                                        <p class="border-b border-grey_four pb-3">CLAIM: Approximately 120 to 140 people die while fishing in Ireland.</p>
+                                    
+                                                                            <h6 class="uppercase mb-1 font-alegreya font-bold">Rating</h6>
+                                        <p class="border-b border-grey_four pb-3">INACCURATE WITH CONSIDERATION</p>
+                                    
+                                On BBC Radio Ulster’s show Good Morning Ulster on June 7, during a discussion about deaths during the Isle of Man TT, former road racer                            </div>
+                        </a>
+
+                    
+                
+                    <a href="https://factcheckni.org/topics/education/are-children-entitled-to-free-school-meals-29-percentage-points-less-likely-than-their-peers-to-get-good-gcses-has-this-attainment-gap-barely-closed-in-over-a-decade/" class="w-full mb-8 sm:w-1/3 posts-card">
+                            <img width="260" height="160" src="https://factcheckni.org/wp-content/uploads/2021/02/children-poverty-260x160.png" class="attachment-posts-card size-posts-card wp-post-image" alt="" loading="lazy" />                            <div class="bg-white dark:bg-navy_black px-4 py-6 rounded-b-lg">
+                                <p class="text-cherryred font-bold inline capitalize">Education</p><p class="text-cherryred font-bold inline"> | </p><p class="text-cherryred font-bold inline capitalize">Elections</p><p class="text-cherryred font-bold inline"> | </p><p class="text-cherryred font-bold inline capitalize">Health</p>                                <h5 class="mb-0 font-literata">Are children entitled to free school meals 29 percentage points less likely than their peers to get good GCSEs? Has this attainment gap barely closed in over a decade?</h5>
+                                <p class="py-3 border-b border-grey_four">21 April 2022</p>
+
+                                                                            <!-- <h6 class="uppercase mb-1 font-alegreya font-bold">Subject</h6> -->
+                                        <p class="border-b border-grey_four pb-3">CLAIM: Children in Northern Ireland who are entitled to free school meals (FSME) are 29 percentage points less likely to get 5+ GCSEs at A*-C, including English and maths, than those who aren’t FSME, based on results for 2018-19. This attainment gap has only shrunk by three percentage points (pp) since 2005-06</p>
+                                    
+                                                                            <h6 class="uppercase mb-1 font-alegreya font-bold">Rating</h6>
+                                        <p class="border-b border-grey_four pb-3">ACCURATE</p>
+                                    
+                                Data shows that in 2018-2019, 49.5% of FSME school leavers had at least five GCSEs including English and maths, compared to 78.5% of their non-FSME                            </div>
+                        </a>
+
+                    
+                
+                    <a href="https://factcheckni.org/topics/health/are-children-who-take-a-covid-19-vaccine-52-times-more-likely-to-suffer-an-early-death/" class="w-full mb-8 sm:w-1/3 posts-card">
+                            <img width="260" height="160" src="https://factcheckni.org/wp-content/uploads/2022/01/covid-flu-260x160.png" class="attachment-posts-card size-posts-card wp-post-image" alt="" loading="lazy" />                            <div class="bg-white dark:bg-navy_black px-4 py-6 rounded-b-lg">
+                                <p class="text-cherryred font-bold inline capitalize">Health</p>                                <h5 class="mb-0 font-literata">Are children who take a COVID-19 vaccine 52 times more likely to suffer an early death?</h5>
+                                <p class="py-3 border-b border-grey_four">4 March 2022</p>
+
+                                                                            <!-- <h6 class="uppercase mb-1 font-alegreya font-bold">Subject</h6> -->
+                                        <p class="border-b border-grey_four pb-3">CLAIM: Children who get the Covid-19 vaccine increase their risk of early death by 5,100%.</p>
+                                    
+                                                                            <h6 class="uppercase mb-1 font-alegreya font-bold">Rating</h6>
+                                        <p class="border-b border-grey_four pb-3">INACCURATE</p>
+                                    
+                                Data does not support this claim. Deaths of children after vaccination are too rare to inform reliable estimates. A temporary increase is possible because children                            </div>
+                        </a>
+
+                    
+                            </div>
+        </div>
+    </section>
+                  
+                
+        
+    </div>
+
+        <div class="waves h-[220px] relative">
+            <div class="absolute inset-0 text-grey_one dark:text-dark_navy">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0"><path fill="#FFA7A3" class="wave-1" d=""/></svg>                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0"><path fill="#F0434D" class="wave-2" d=""/></svg>                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0"><path fill="currentColor" class="wave-3" d=""/></svg>            </div>
+        </div>
+
+</main>
+
+<footer class="bg-grey_one dark:bg-dark_navy text-white py-4 md:py-6">
+
+    <div class="container mx-auto">
+        <div class="row sm:flex sm:justify-around md:row md:flex-nowrap md:gap-x-4">
+            <div class="sm:w-5/12 w-full mb-5 md:mr-8 lg:mr-28">
+                <h3 class="text-offwhite">Newsletter sign up</h3>
+                <p class="text-offwhite">Keep up with the latest from FactCheckNI with out email newsletter. We’ll only send you the good stuff. We’ll never spam you. We’ll never share you email address.</p>
+
+                <script type="text/javascript">
+//----------------------------------------------------------
+//------ JAVASCRIPT HOOK FUNCTIONS FOR GRAVITY FORMS -------
+//----------------------------------------------------------
+
+if ( ! gform ) {
+	document.addEventListener( 'gform_main_scripts_loaded', function() { gform.scriptsLoaded = true; } );
+	window.addEventListener( 'DOMContentLoaded', function() { gform.domLoaded = true; } );
+
+	var gform = {
+		domLoaded: false,
+		scriptsLoaded: false,
+		initializeOnLoaded: function( fn ) {
+			if ( gform.domLoaded && gform.scriptsLoaded ) {
+				fn();
+			} else if( ! gform.domLoaded && gform.scriptsLoaded ) {
+				window.addEventListener( 'DOMContentLoaded', fn );
+			} else {
+				document.addEventListener( 'gform_main_scripts_loaded', fn );
+			}
+		},
+		hooks: { action: {}, filter: {} },
+		addAction: function( action, callable, priority, tag ) {
+			gform.addHook( 'action', action, callable, priority, tag );
+		},
+		addFilter: function( action, callable, priority, tag ) {
+			gform.addHook( 'filter', action, callable, priority, tag );
+		},
+		doAction: function( action ) {
+			gform.doHook( 'action', action, arguments );
+		},
+		applyFilters: function( action ) {
+			return gform.doHook( 'filter', action, arguments );
+		},
+		removeAction: function( action, tag ) {
+			gform.removeHook( 'action', action, tag );
+		},
+		removeFilter: function( action, priority, tag ) {
+			gform.removeHook( 'filter', action, priority, tag );
+		},
+		addHook: function( hookType, action, callable, priority, tag ) {
+			if ( undefined == gform.hooks[hookType][action] ) {
+				gform.hooks[hookType][action] = [];
+			}
+			var hooks = gform.hooks[hookType][action];
+			if ( undefined == tag ) {
+				tag = action + '_' + hooks.length;
+			}
+			if( priority == undefined ){
+				priority = 10;
+			}
+
+			gform.hooks[hookType][action].push( { tag:tag, callable:callable, priority:priority } );
+		},
+		doHook: function( hookType, action, args ) {
+
+			// splice args from object into array and remove first index which is the hook name
+			args = Array.prototype.slice.call(args, 1);
+
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action], hook;
+				//sort by priority
+				hooks.sort(function(a,b){return a["priority"]-b["priority"]});
+
+				hooks.forEach( function( hookItem ) {
+					hook = hookItem.callable;
+
+					if(typeof hook != 'function')
+						hook = window[hook];
+					if ( 'action' == hookType ) {
+						hook.apply(null, args);
+					} else {
+						args[0] = hook.apply(null, args);
+					}
+				} );
+			}
+			if ( 'filter'==hookType ) {
+				return args[0];
+			}
+		},
+		removeHook: function( hookType, action, priority, tag ) {
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action];
+				hooks = hooks.filter( function(hook, index, arr) {
+					var removeHook = (undefined==tag||tag==hook.tag) && (undefined==priority||priority==hook.priority);
+					return !removeHook;
+				} );
+				gform.hooks[hookType][action] = hooks;
+			}
+		}
+	};
+}
+</script>
+                <div class='gf_browser_safari gform_wrapper gravity-theme' id='gform_wrapper_1' ><div id='gf_1' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1'  action='/topics/health/has-the-suicide-rate-increased-200-during-the-covid-19-lockdown-period/#gf_1' >
+                        <div class='gform_body gform-body'><div id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below'><div id="field_1_1"  class="gfield gfield--width-half field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_1"><label class='gfield_label' for='input_1_1' >Full name</label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_1_1' type='text' value='' class='large'    placeholder='Please enter'  aria-invalid="false"   /> </div></div><div id="field_1_2"  class="gfield gfield--width-half field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_2"><label class='gfield_label' for='input_1_2' >Email</label><div class='ginput_container ginput_container_email'>
+                            <input name='input_2' id='input_1_2' type='text' value='' class='large'   placeholder='Please email'  aria-invalid="false"  />
+                        </div></div><fieldset id="field_1_3"  class="gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible"  data-js-reload="field_1_3"><legend class='gfield_label'  >I agree to the terms and conditions outlined in the privacy policy</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_1_3'>
+			<div class='gchoice gchoice_1_3_0'>
+					<input class='gfield-choice-input' name='input_3' type='radio' value='I agree to the terms and conditions outlined in the privacy policy'  id='choice_1_3_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_1_3_0' id='label_1_3_0'>I agree to the terms and conditions outlined in the privacy policy</label>
+			</div></div></div></fieldset><div id="field_1_4"  class="gfield gfield--width-full field_sublabel_below field_description_below hidden_label gfield_visibility_visible"  data-js-reload="field_1_4"><label class='gfield_label' for='input_1_4' >CAPTCHA</label><div id='input_1_4' class='ginput_container ginput_recaptcha' data-sitekey='6LfftAgfAAAAAPYM5W2Pf0W1-KceoKMm4f5Xj1KO'  data-theme='light' data-tabindex='-1' data-size='invisible' data-badge='bottomright'></div></div><div id="field_1_5"  class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_5"><label class='gfield_label' for='input_1_5' >Email</label><div class='ginput_container'><input name='input_5' id='input_1_5' type='text' value='' /></div><div class='gfield_description' id='gfield_description_1_5'>This field is for validation purposes and should be left unchanged.</div></div></div></div>
+        <div class='gform_footer top_label'> <input type="submit" id="gform_submit_button_1" class=" btn" value="Subscribe" onclick='if(window["gf_submitting_1"]){return false;}  window["gf_submitting_1"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1"]){return false;} window["gf_submitting_1"]=true;  jQuery("#gform_1").trigger("submit",[true]); }'> <input type='hidden' name='gform_ajax' value='form_id=1&amp;title=&amp;description=&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_1' value='WyJ7XCIzXCI6W1wiYWEyY2ZkZjgzN2E3ODgwMDA0ZWM3NTRjYjc0Y2VkZDRcIl19IiwiNGMwODMzMzM1NjM1MGRlNDU5YWFmZWVlZTU3YjY3M2IiXQ==' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1' id='gform_ajax_frame_1' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+                <script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 1, 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' );jQuery('#gform_ajax_frame_1').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1').text());}, 50);}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1, current_page]);} );} );
+</script>
+            </div>
+
+            <!-- <div style="column-count:2;">  -->
+                <div class="w-1/2 sm:w-2/12 w-full mb-5 footer-links inline-block">
+                   <h4 class="font-bold">Topics</h4>
+                                           <ul>
+                                                           <li><a href="https://factcheckni.org/category/topics/economy/">Economy </a></li>
+                                                           <li><a href="https://factcheckni.org/category/topics/education/">Education </a></li>
+                                                           <li><a href="https://factcheckni.org/category/topics/elections/">Elections </a></li>
+                                                           <li><a href="https://factcheckni.org/category/topics/environment/">Environment </a></li>
+                                                           <li><a href="https://factcheckni.org/category/topics/europe/">Europe </a></li>
+                                                           <li><a href="https://factcheckni.org/category/topics/health/">Health </a></li>
+                                                           <li><a href="https://factcheckni.org/category/topics/law/">Law </a></li>
+                                                           <li><a href="https://factcheckni.org/category/topics/peace/">Peace </a></li>
+                                                    </ul>
+                </div>
+
+                <div class="w-1/2 sm:w-2/12 w-full mb-5 footer-links inline-block">
+                   <h4 class="font-bold">FactCheck NI</h4>
+                   <ul>
+<li><a href="https://factcheckni.org/about-us/">About Us</a></li>
+<li><a href="https://factcheckni.org/about-us/the-team/">The Team</a></li>
+<li><a href="https://factcheckni.org/about-us/funding/">Funding</a></li>
+<li><a href="https://factcheckni.org/contact/">Contact Us</a></li>
+<li><a href="/news">News</a></li>
+</ul>
+                </div> 
+                
+                <div class="w-1/2 sm:w-2/12 w-full mb-5 footer-links inline-block">
+                   <h4 id="governance" class="font-bold">Governance</h4>
+                   <ul>
+<li><a href="https://factcheckni.org/about-us/code-of-principles/">Code of Principles</a></li>
+<li><a href="https://factcheckni.org/about/process/">Process</a></li>
+</ul>
+                    <span> © 2022 FactCheckNI. All rights reserved </span>
+                    <ul class="data-privacy">
+                        <li><a href="https://factcheckni.org/about-us/data-protection-policy/">Data Protection</a></li>
+                        <li><a href="https://factcheckni.org/policies/privacy-policy-2/">Privacy Policy</a></li>
+                        <li><a href="https://factcheckni.org/policies/cookie-policy">Cookies</a></li>
+                        <li><a href="https://factcheckni.org/sitemap">Sitemap</a></li>
+                    </ul>
+                </div> 
+            <!-- </div> -->
+
+        </div>
+
+        <div class="flex flex-wrap md:justify-between md:items-center">
+            <div class="w-full md:w-1/3 flex footer-logos justify-center md:justify-start">
+                <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/fact-check-white-logo.png" class="mr-6">
+                <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/ifcn-logo.svg">
+
+            </div>
+
+            <div class="w-full md:w-1/3">
+                <div class="socials flex justify-center mt-6 md:justify-end">
+                    <a href="https://twitter.com/FactCheckNI" target="blank" class="mr-2">
+                        <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/twitter-red.svg">
+                    </a>
+                    <a href="https://www.linkedin.com/company/factcheckni" target="blank" class="mr-2">
+                        <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/linkedin-red.svg">
+                    </a>
+                    <a href="https://www.facebook.com/factcheckni" target="blank" class="mr-2">
+                        <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/facebook-red.svg">
+                    </a>
+                    <a href="https://www.instagram.com/factcheckni_" target="blank" class="mr-2">
+                        <img src="https://factcheckni.org/wp-content/themes/factcheckni/assets/img/instagram.svg">
+                    </a>
+                </div>
+
+                <div class='wibble-copyright text-center md:text-right my-8 md:mt-3'>
+                    <span><a href="https://www.wearewibble.com/" target="blank">web design</a> and <a href="https://www.wearewibble.com/" target="blank">web development by</a> </span>
+                    <a target='_blank' href="https://www.wearewibble.com/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60.61" height="20.147" viewBox="0 0 60.61 20.147" class="inline-block align-baseline"><title>We Are Wibble</title><g transform="translate(-1.783 -5.968)"><circle cx="1.835" cy="1.835" r="1.835" transform="translate(18.96 11.133)" fill="currentColor"></circle><path d="M32.566,16.735c-1.884-.245-3.108,2.325-3.744,4.184-.024-3.377.319-8.442.514-11.061.318-4.037-3.842-3.108-3.842-3.108.388,1.454-.8,9.45-.543,14.685a7.238,7.238,0,0,1-1.561,1.685C21.7,24.3,21.627,22.315,22.165,18.6c.416-2.863-3.279-2.178-3.279-2.178a16.278,16.278,0,0,1-.291,2.962,3.564,3.564,0,0,1-1.862.121,11.922,11.922,0,0,0,.074-1.346V17.91a1.2,1.2,0,0,0-.024-.294,2.382,2.382,0,0,0-.073-.563,5.539,5.539,0,0,0-.172-.587A3.474,3.474,0,0,0,16.2,15.9a1.683,1.683,0,0,0-.563-.441,1.32,1.32,0,0,0-.686-.2,1.72,1.72,0,0,0-1.248.367,1.88,1.88,0,0,0-.759,1.028,1.916,1.916,0,0,0-.049.636,1.739,1.739,0,0,0,.172.612,2.513,2.513,0,0,0,.636.856,4.04,4.04,0,0,0,.783.538,6.511,6.511,0,0,0,.831.416c-.024.049-.024.122-.049.2a9.077,9.077,0,0,1-.44,1.566,5.958,5.958,0,0,1-.661,1.248,4.441,4.441,0,0,1-.66.783,22.535,22.535,0,0,1-.905-4.136c-.564-3.548-3.964-1.884-3.964-1.884.073.416.122,1.077.2,1.884a10.8,10.8,0,0,1-1.322,2.741c-1.566,2.374-1.3-.293-1.492-4.355s-4.233-2.619-4.233-2.619c.881,2.129-.955,10.767,2.912,10.277a5.438,5.438,0,0,0,4.38-3.695c.367,2.5,1.126,4.992,3.132,4.527a4.807,4.807,0,0,0,1.64-.759,4.55,4.55,0,0,0,.759-.66,5.975,5.975,0,0,0,.93-1.223A8.085,8.085,0,0,0,16.245,22a11.084,11.084,0,0,0,.416-1.836,3.61,3.61,0,0,0,1.853-.041c-.244,2.515-.151,5.362,2.159,5.449,1.807.063,3.285-1.174,4.4-2.642.242,1.893.78,3.159,1.836,3.132a2.759,2.759,0,0,0,1.1-.22C32.663,24.3,35.5,17.127,32.566,16.735Zm-17.031,1.15a.68.68,0,0,1-.024.22c0,.294-.049.563-.073.856-.172-.1-.368-.22-.538-.318a5.97,5.97,0,0,1-.612-.49,1.86,1.86,0,0,1-.392-.612.974.974,0,0,1-.024-.587.983.983,0,0,1,.979-.612.648.648,0,0,1,.44.294,1.913,1.913,0,0,1,.22.636,2.376,2.376,0,0,1,.024.416Zm13.605,6.24s1.223-6.607,2.691-6.509C33.128,17.689,31.586,22.437,29.14,24.126Z" transform="translate(0 -0.195)" fill="currentColor"></path><path d="M55.019,16.735c-1.884-.245-3.108,2.325-3.744,4.184-.025-3.377.318-8.442.513-11.061.319-4.037-3.842-3.108-3.842-3.108.588,2.2-2.446,19.4,1.42,19.307a2.762,2.762,0,0,0,1.1-.22C55.117,24.3,57.955,17.127,55.019,16.735Zm-3.426,7.39s1.223-6.607,2.691-6.509C55.582,17.689,54.04,22.437,51.593,24.126Z" transform="translate(-12.861 -0.195)" fill="currentColor"></path><path d="M78.54,18.156c-.857,1.762-7.684,9.225-7.023,3.328A3.541,3.541,0,0,0,74.7,20.162c1.077-1.737.2-2.937-.783-3.255a4.856,4.856,0,0,0-5.805,3.411,9.711,9.711,0,0,1-2.319,2.143c-.978.636-1.1.416-1.2-1.1-.024-1.322,0-3.01.073-4.8a6.314,6.314,0,0,0,1.077-1.444,7.207,7.207,0,0,0,.637-4.625,7.066,7.066,0,0,0-.857-2.569,4.638,4.638,0,0,0-1.3-1.37,3.222,3.222,0,0,0-1.688-.587c-1.077-.049-1.15,1.273-1.37,3.45-.049.588-1.566,16.175,1.444,16.2h.024a.755.755,0,0,0,.245-.024,1.993,1.993,0,0,0,.808-.172A10.964,10.964,0,0,0,67.82,22c-.439,6.252,7.247,3.927,11.208-3.458Zm-5.066.1c.955.024.759,1.1.587,1.444a2.289,2.289,0,0,1-2.446,1.174C72.079,18.156,73.181,18.229,73.474,18.253ZM65.082,9.542a5.752,5.752,0,0,1,.66,3.254,5.487,5.487,0,0,1-1.028,2.619C64.813,13.286,64.96,11.157,65.082,9.542Z" transform="translate(-16.636 0)" fill="currentColor"></path></g></svg>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>jQuery(document).ready(function ($) {
+
+    Defer.dom('.lazyload', '200', 'loaded', null);
+
+    //cookie policy
+    !function (m) {
+        m.cookieBar = function (o, e) {
+            if ("cookies" == o) var i = "cookies"; else if ("set" == o) i = "set"; else i = !1;
+            var c = {
+                message: "This website uses cookies to make sure you get the best experience.",
+                acceptButton: !0,
+                acceptText: "OK",
+                declineButton: !1,
+                declineText: "Disable Cookies",
+                policyButton: !0,
+                policyText: "Cookie Policy",
+                policyURL: "/cookie-policy/",
+                autoEnable: !0,
+                acceptOnContinue: !1,
+                expireDays: 365,
+                forceShow: !1,
+                effect: "fade",
+                element: "footer",
+                append: !1,
+                redirect: String(window.location.href),
+                domain: String(window.location.hostname),
+                referrer: String(document.referrer)
+            }, t = (o = m.extend(c, o), new Date);
+            t.setTime(t.getTime() + 24 * o.expireDays * 60 * 60 * 1e3);
+            var a, n, r = "cb-enabled={value}; expires=" + (t = t.toGMTString()) + "; path=/", d = "",
+                l = document.cookie.split("; ");
+            for (a = 0; a < l.length; a++) "cb-enabled" == (n = l[a].split("="))[0] && (d = n[1]);
+            if ("" == d && o.autoEnable && (d = "enabled", document.cookie = r.replace("{value}", "enabled")), o.acceptOnContinue && 0 <= o.referrer.indexOf(o.domain) && -1 == String(window.location.href).indexOf(o.policyURL) && "cookies" != i && "set" != i && "accepted" != d && "declined" != d && (i = "set", e = "accepted"), "cookies" == i) return "enabled" == d || "accepted" == d;
+            if ("set" == i && ("accepted" == e || "declined" == e)) return document.cookie = r.replace("{value}", e), "accepted" == e;
+            var p = o.message.replace("{policy_url}", o.policyURL);
+            if (o.acceptButton) var f = '<a href="#" class="cb-enable self-center block bg-black text-white p-2 text-center rounded-lg w-full max-w-xs mx-auto hover:opacity-75 transition-opacity duration-200">' + o.acceptText + "</a>"; else f = "";
+            if (o.declineButton) var s = '<a href="" class="cb-disable">' + o.declineText + "</a>"; else s = "";
+            if (o.policyButton) var u = '<a href="' + o.policyURL + '" class="block underline mt-2">' + o.policyText + "</a>"; else u = "";
+            (o.forceShow || "enabled" == d || "" == d) && (o.append ? m(o.element).append('<div id="cookie-bar"><p>' + p + f + s + u + "</p></div>") : m(o.element).prepend('<div id="cookie-bar" class="bg-white text-black fixed bottom-0 right-0 p-4 rounded-sm mb-4 mx-4 max-w-sm flex border border-black shadow"><p class="mb-0">' + p + s + u + "</p>" + f + "</div>")), m("#cookie-bar .cb-enable").click(function () {
+                if (document.cookie = r.replace("{value}", "accepted"), "enabled" == d || "accepted" == d) return "slide" == o.effect ? m("#cookie-bar").slideUp(300, function () {
+                    m("#cookie-bar").remove()
+                }) : "fade" == o.effect ? m("#cookie-bar").fadeOut(300, function () {
+                    m("#cookie-bar").remove()
+                }) : m("#cookie-bar").hide(0, function () {
+                    m("#cookie-bar").remove()
+                }), !1;
+                window.location = o.currentLocation
+            }), m("#cookie-bar .cb-disable").click(function () {
+                var e = new Date;
+                for (e.setTime(e.getTime() - 864e6), e = e.toGMTString(), l = document.cookie.split("; "), a = 0; a < l.length; a++) 0 <= (n = l[a].split("="))[0].indexOf("_") ? document.cookie = n[0] + "=0; expires=" + e + "; domain=" + o.domain.replace("www", "") + "; path=/" : document.cookie = n[0] + "=0; expires=" + e + "; path=/";
+                if (document.cookie = r.replace("{value}", "declined"), "enabled" != d || "accepted" == d) return "slide" == o.effect ? m("#cookie-bar").slideUp(300, function () {
+                    m("#cookie-bar").remove()
+                }) : "fade" == o.effect ? m("#cookie-bar").fadeOut(300, function () {
+                    m("#cookie-bar").remove()
+                }) : m("#cookie-bar").hide(0, function () {
+                    m("#cookie-bar").remove()
+                }), !1;
+                window.location = o.currentLocation
+            })
+        }
+    }(jQuery), $.cookieBar({});
+
+
+    //Object Fit Fix for IE
+    if ('objectFit' in document.documentElement.style === false) {
+        var wrap = $('.lazyload');
+        wrap.each(function () {
+            var $container = $(this),
+                imgUrl = $container.find('img').attr('src');
+            if (imgUrl) {
+                $container
+                    .css('backgroundImage', 'url(' + imgUrl + ')')
+                    .addClass('compat-object-fit');
+            }
+        });
+    }
+
+    $('.mobile-toggle').click(function () {
+        $('header nav').toggleClass('active');
+        $('body').toggleClass('overflow-hidden');
+    });
+
+    document.querySelector("#nav-toggle")
+        .addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+
+    if ($(window).width() < 1024) {
+        $(".menu-item-has-children > a").each(function () {
+            $(this).removeAttr('href');
+        });
+
+        $(".menu-item-has-children").click(function () {
+
+            if($(this).hasClass('appear')) {
+                $(this).removeClass('appear');
+                $(this).children('.sub-menu').removeClass('appear');
+            } else {
+                $('.menu-item-has-children.appear').removeClass('appear');
+                $('.sub-menu.appear').removeClass('appear');
+                $(this).addClass('appear');
+                $(this).children('.sub-menu').addClass('appear');
+            }
+        });
+
+        $(".menu-item-has-children > .sub-menu > .menu-item-has-children").hover(function () {
+
+            $(this).children('.sub-menu').toggleClass('open');
+        });
+    } else {
+        var timer;
+
+        $(".menu-item-has-children").on("mouseover", function () {
+            clearTimeout(timer);
+            $('.menu-item-has-children.appear').removeClass('appear')
+            $('.sub-menu.appear').removeClass('appear')
+            $(this).addClass('appear');
+            $(this).children('.sub-menu').addClass('appear');
+        }).on("mouseleave", function () {
+            timer = setTimeout(closeSubmenu, 300);
+        });
+    }
+
+    function closeSubmenu() {
+        $('.menu-item-has-children.appear').removeClass('appear')
+        $('.sub-menu.appear').removeClass('appear')
+    }
+
+    $('.cat-filter').click(function(){
+        $('.cat-filter').addClass('active');
+    });
+
+
+    var mybutton = document.getElementById("scrollToTopBtn");
+
+    if(mybutton) {
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+    }
+
+
+    jQuery('.dark-mode-toggle').click(function(){
+        if(localStorage.theme === 'light'){
+            localStorage.theme = 'dark';
+            document.documentElement.classList.add('dark');
+        } else {
+             localStorage.theme = 'light';
+             document.documentElement.classList.remove('dark');
+        }
+    });
+
+    $('#burger-menu').click(function(){
+        $(this).toggleClass('open');
+    });
+
+    /**
+     * Accordion JS
+     */
+    $('.accordion').click(function () {
+        if (!$(this).hasClass('active')) {
+            $('.accordion.active').removeClass('active');
+            $(this).addClass('active');
+        } else {
+            $(this).removeClass('active');
+        }
+    });
+
+    /**
+     * List/Grid view on posts
+     */
+    var wrapper = document.getElementById("posts-wrapper");
+    var gridview = document.getElementById("gridview");
+    var listview = document.getElementById("listview");
+
+    document.addEventListener("click", function (event) {
+      if (!event.target.matches(".listview")) return;
+
+      // List view
+      event.preventDefault();
+      wrapper.classList.add("listview");
+      gridview.classList.remove("active");
+      listview.classList.add("active");
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!event.target.matches(".gridview")) return;
+
+      // Grid view
+      event.preventDefault();
+      wrapper.classList.remove("listview");
+      listview.classList.remove("active");
+      gridview.classList.add("active");
+    });
+
+
+    Defer.dom('.waves', 200, 'loaded', function (element) {
+
+        Defer.js('https://cdn.jsdelivr.net/npm/greensock@1.20.2/dist/TweenMax.min.js');
+        Defer.js('https://cdn.jsdelivr.net/npm/wavify@1.0.0/wavify.min.js', 'wavify', '100', function () {
+
+
+            var wave1 = wavify(document.querySelectorAll('.wave-1'), {
+                height: 0,
+                bones: 4,
+                amplitude: 100,
+                color: '#FFA7A3',
+                speed: .15
+            });
+
+            var wave2 = wavify(document.querySelectorAll('.wave-2'), {
+                height: 80,
+                bones: 3,
+                amplitude: 80,
+                color: '#F0434D',
+                speed: .25
+            });
+
+            var wave3 = wavify(document.querySelectorAll('.wave-3'), {
+                height: 120,
+                bones: 4,
+                amplitude: 60,
+                color: 'currentColor',
+                speed: .15
+            });
+
+            setTimeout(function () {
+                wave1.pause();
+                wave2.pause();
+                wave3.pause();
+            }, 2000);
+
+            window.addEventListener("resize", function() {
+                setTimeout(function () {
+                    wave1.pause();
+                    wave2.pause();
+                    wave3.pause();
+                }, 500);
+            });
+
+        });
+
+    });
+
+});</script><script>jQuery(document).ready(function ($) {
+    /**
+     * custom swiper
+     */
+    Defer.dom('.swiper', 200, 'loaded', function (element) {
+
+        Defer.css('https://unpkg.com/swiper@7/swiper-bundle.min.css');
+        Defer.js('https://unpkg.com/swiper@7/swiper-bundle.min.js', 'swiper-js', '100', function () {
+
+            if ($('.mySwiper').length) {
+                factChecksSlider();
+            }
+
+            if ($('.uspSwiper').length) {
+                uspSlider();
+            }
+
+            if ($('.testimonialSwiper').length) {
+                testimonialSlider();
+            }
+
+            if ($('.category-swiper').length) {
+                category_swiper();
+            }
+        });
+    });
+
+    function category_swiper() {
+        var swiper = new Swiper(".category-swiper", {
+            spaceBetween: 8,
+            slidesPerView: 'auto',
+            loop: false,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+    }
+
+    function factChecksSlider() {
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 16,
+            slidesPerView: 1.2,
+            loop: true,
+            speed: 1000,
+            autoplay: {
+                delay: 1200,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4.4,
+                }
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+    }
+
+    function uspSlider() {
+        var swiper = new Swiper(".uspSwiper", {
+            spaceBetween: 16,
+            slidesPerView: 1,
+            loop: true,
+            speed: 1000,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4.4,
+                }
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+    }
+
+    function testimonialSlider() {
+        var swiper = new Swiper(".testimonialSwiper", {
+            spaceBetween: 16,
+            slidesPerView: 1,
+            loop: true,
+            speed: 1000,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 3.2,
+                }
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+    }
+
+});</script><style>@media (max-width: 782px) {html #wpadminbar { display:none;} html {margin:0 !important;}}</style>
+<script type="text/javascript">
+function searchfetch(){
+
+    jQuery.ajax({
+        url: 'https://factcheckni.org/wp-admin/admin-ajax.php',
+        type: 'post',
+        data: { action: 'data_fetch', keyword: jQuery('#keyword').val() },
+        success: function(data) {
+            jQuery('#datafetch').html( data );
+        }
+    });
+
+}
+</script>
+
+    <script type="text/javascript">
+        jQuery(document).on('click',function(){
+            jQuery("#datafetch").hide(); 
+        });
+        jQuery("#datafetch").on('click',function(e){
+            e.stopPropagation(); 
+        }); 
+    </script>
+    <script type="text/javascript">
+        jQuery("#keyword").on('keyup',function(){ 
+            jQuery("#datafetch").show(); 
+        });
+    </script>
+<link rel='stylesheet' id='gform_basic-css'  href='https://factcheckni.org/wp-content/plugins/gravityforms/assets/css/dist/basic.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css'  href='https://factcheckni.org/wp-content/plugins/gravityforms/assets/css/dist/theme-components.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gform_theme_ie11-css'  href='https://factcheckni.org/wp-content/plugins/gravityforms/assets/css/dist/theme-ie11.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gform_theme-css'  href='https://factcheckni.org/wp-content/plugins/gravityforms/assets/css/dist/theme.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://factcheckni.org/wp-includes/js/dist/vendor/regenerator-runtime.js' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://factcheckni.org/wp-includes/js/dist/vendor/wp-polyfill.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://factcheckni.org/wp-includes/js/dist/dom-ready.js' id='wp-dom-ready-js'></script>
+<script type='text/javascript' src='https://factcheckni.org/wp-includes/js/dist/hooks.js' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://factcheckni.org/wp-includes/js/dist/i18n.js' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='wp-a11y-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src='https://factcheckni.org/wp-includes/js/dist/a11y.js' id='wp-a11y-js'></script>
+<script type='text/javascript' defer='defer' src='https://factcheckni.org/wp-content/plugins/gravityforms/js/jquery.json.js' id='gform_json-js'></script>
+<script type='text/javascript' id='gform_gravityforms-js-extra'>
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/factcheckni.org\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"Pound Sterling","symbol_left":"&#163;","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"GBP"},"base_url":"https:\/\/factcheckni.org\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/factcheckni.org\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer='defer' src='https://factcheckni.org/wp-content/plugins/gravityforms/js/gravityforms.js' id='gform_gravityforms-js'></script>
+<script type='text/javascript' defer='defer' src='https://www.google.com/recaptcha/api.js?hl=en&#038;ver=5.9.3#038;render=explicit' id='gform_recaptcha-js'></script>
+<script type='text/javascript' defer='defer' src='https://factcheckni.org/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js' id='gform_placeholder-js'></script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [1, 1]) } );
+</script>
+</body>
+</html>
+<!-- Cache served by breeze CACHE - Last modified: Thu, 16 Jun 2022 13:57:43 GMT -->

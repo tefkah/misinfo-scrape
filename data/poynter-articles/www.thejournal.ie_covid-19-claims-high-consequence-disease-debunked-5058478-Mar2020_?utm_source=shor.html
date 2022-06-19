@@ -1,0 +1,1637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  class="theme--thejournal viewable-ads active-publication-masthead" style="" lang="en" xml:lang="en" xmlns:og="http://opengraphprotocol.org/schema/">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading </title>
+        
+<script src="//d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js"></script>
+<script type="application/json" id="bugsnagConfig">{"apiKey":"d8ea1607a1890612140d557a3e0159b8","releaseStage":"production","appVersion":"20220616144058"}</script>
+<script>
+    var bugsnagConfig = JSON.parse(document.getElementById("bugsnagConfig").innerHTML);
+    Bugsnag.start(bugsnagConfig);
+</script>
+        
+    <!-- OneTrust Cookies Consent Notice start -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+            type="text/javascript"
+            charset="UTF-8"
+            data-domain-script="63cd008f-9d04-450b-80d1-e1bc919d732a"
+    ></script>
+
+    <script type="text/javascript">
+
+        if (!String.prototype.startsWith) {
+            try {
+                Object.defineProperty(String.prototype, 'startsWith', {
+                    value: function (search, rawPos) {
+                        var pos = rawPos > 0 ? rawPos | 0 : 0;
+                        return this.substring(pos, pos + search.length) === search;
+                    }
+                });
+            } catch (e) {
+                String.prototype.startsWith = function (search, rawPos) {
+                    var pos = rawPos > 0 ? rawPos | 0 : 0;
+                    return this.substring(pos, pos + search.length) === search;
+                };
+            }
+        }
+
+        var CookieConsentListener = {};
+        var CookieConsentRepository = {};
+        var CookieConsentBanner = {};
+
+        (function()
+        {
+            function CookieConsent(functional, performance, targeting)
+            {
+                this.functional = functional;
+                this.performance = performance;
+                this.targeting = targeting;
+            }
+
+            /**
+             * @returns {CookieConsent}
+             */
+            CookieConsent.makeDefaultNoConsent = function()
+            {
+                var functional = false, performance = false, targeting = false;
+                return new CookieConsent(functional, performance, targeting);
+            };
+
+            /**
+             * @returns {CookieConsent}
+             */
+            CookieConsentRepository.fetch = function()
+            {
+                var rawConsentCookie = document.cookie
+                    .split('; ')
+                    .filter(function (row) {
+                        return row.startsWith('OptanonConsent');
+                    })[0];
+
+                if (rawConsentCookie === undefined) {
+                    return CookieConsent.makeDefaultNoConsent();
+                }
+
+                var consentCookie = new QueryString(rawConsentCookie.substring(15));
+
+                var consentGroups = consentCookie.get('groups');
+
+                if (!consentCookie.has('groups')) {
+                    return CookieConsent.makeDefaultNoConsent();
+                }
+
+                var consentByCategory = {};
+
+                consentGroups.split(",").forEach(function (category) {
+                    var parts = category.split(":");
+                    consentByCategory[parts[0]] = parts[1] === "1";
+                });
+
+                var functional = consentByCategory.C0003 === true;
+                var performance = consentByCategory.C0002 === true;
+                var targeting = consentByCategory.C0004 === true;
+
+                return new CookieConsent(functional, performance, targeting);
+            };
+
+            function QueryString(stringValue)
+            {
+                this.valuesByKey = {};
+
+                var keyValuePairs = stringValue.split("&");
+
+                for (var i = 0; i < keyValuePairs.length; i++) {
+                    var keyValuePair = keyValuePairs[i].split("=");
+                    var key = decodeURIComponent(keyValuePair[0]);
+                    var value = decodeURIComponent(keyValuePair[1]);
+                    this.valuesByKey[key] = value;
+                }
+            }
+
+            QueryString.prototype.get = function (key)
+            {
+                return this.valuesByKey[key];
+            }
+
+            QueryString.prototype.has = function (key)
+            {
+                return this.valuesByKey.hasOwnProperty(key);
+            }
+
+            CookieConsentListener = {
+                functional: [],
+                performance: [],
+                targeting: [],
+            };
+
+            CookieConsentListener.onFunctionalConsentChange = function(callback)
+            {
+                CookieConsentListener.functional.push(callback);
+            };
+
+            CookieConsentListener.onPerformanceConsentChange = function(callback)
+            {
+                CookieConsentListener.performance.push(callback);
+            };
+
+            CookieConsentListener.onTargetingConsentChange = function(callback)
+            {
+                CookieConsentListener.targeting.push(callback);
+            };
+
+            var previousConsent = CookieConsentRepository.fetch();
+
+            CookieConsentListener.triggerChange = function()
+            {
+                var consent = CookieConsentRepository.fetch();
+
+                var key;
+
+                if (previousConsent.functional !== consent.functional) {
+                    for (key in CookieConsentListener.functional) {
+                        CookieConsentListener.functional[key](consent.functional);
+                    }
+                }
+
+                if (previousConsent.performance !== consent.performance) {
+                    for (key in CookieConsentListener.performance) {
+                        CookieConsentListener.performance[key](consent.performance);
+                    }
+                }
+
+                if (previousConsent.targeting !== consent.targeting) {
+                    for (key in CookieConsentListener.targeting) {
+                        CookieConsentListener.targeting[key](consent.targeting);
+                    }
+                }
+
+                previousConsent = consent;
+            };
+
+            CookieConsentBanner.pagesWhereBannerIsHidden = [
+                "/cookies-privacy-policy/",
+            ];
+
+            CookieConsentBanner.hide = function () {
+                document.getElementById("onetrust-consent-sdk").style.display = "none";
+            };
+
+            CookieConsentBanner.show = function () {
+                document.getElementById("onetrust-consent-sdk").style.display = "block";
+            };
+
+            CookieConsentBanner.onCookiePreferencesClick = function (callback) {
+                if (document.getElementById("ot-sdk-btn") !== null) {
+                    document.getElementById("ot-sdk-btn").addEventListener("click", callback);
+                }
+            }
+        }());
+
+        function bootYoutubeIframes()
+        {
+            function consentYes()
+            {
+                var iframes = document.getElementsByClassName('youtube-player');
+                for (var i = 0; i < iframes.length; i++) {
+                    var src = iframes[i].getAttribute('data-src');
+                    iframes[i].setAttribute('src', src);
+                }
+            }
+
+            function consentNo()
+            {
+                var iframes = document.getElementsByClassName('youtube-player');
+                for (var i = 0; i < iframes.length; i++) {
+                    iframes[i].setAttribute('src', '');
+                }
+            }
+
+            var consent = CookieConsentRepository.fetch();
+            if (consent.targeting) {
+                consentYes();
+            }
+
+            CookieConsentListener.onTargetingConsentChange(function(hasTargetingConsent) {
+                if (hasTargetingConsent) {
+                    consentYes();
+                    return;
+                }
+                consentNo();
+            });
+        }
+
+        function bootVimeoIframes()
+        {
+            function consentYes()
+            {
+                var iframes = document.getElementsByClassName('vimeo-player');
+                for (var i = 0; i < iframes.length; i++) {
+                    var src = iframes[i].getAttribute('data-src');
+                    iframes[i].setAttribute('src', src);
+                }
+            }
+
+            function consentNo()
+            {
+                var iframes = document.getElementsByClassName('vimeo-player');
+                for (var i = 0; i < iframes.length; i++) {
+                    iframes[i].setAttribute('src', '');
+                }
+            }
+
+            var consent = CookieConsentRepository.fetch();
+            if (consent.functional) {
+                consentYes();
+            }
+
+            CookieConsentListener.onFunctionalConsentChange(function(hasFunctionalConsent) {
+                if (hasFunctionalConsent) {
+                    consentYes();
+                    return;
+                }
+                consentNo();
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function(){
+            bootYoutubeIframes();
+            bootVimeoIframes();
+        });
+
+        window.addEventListener("message", function (event) {
+            if (event.data === "openCookieConsentDialog") {
+                OneTrust.ToggleInfoDisplay();
+            }
+        }, false);
+
+        function OptanonWrapper()
+        {
+            const pageUrlPath = (new URL(window.location.href)).pathname;
+
+            if (CookieConsentBanner.pagesWhereBannerIsHidden.includes(pageUrlPath)) {
+                CookieConsentBanner.hide();
+            }
+
+            CookieConsentBanner.onCookiePreferencesClick(function () {
+                CookieConsentBanner.show();
+            });
+
+            OneTrust.OnConsentChanged(function (e) {
+                CookieConsentListener.triggerChange();
+            });
+        }
+    </script>
+
+        
+        <meta name="author" content="Orla Dwyer"/>
+<link rel="amphtml" href="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/?amp=1">
+        <link href="//b0.thejournal.ie/desktop/i/thejournal/favicon.ico" type="image/x-icon" rel="icon" />
+        <link href="//b0.thejournal.ie/desktop/i/thejournal/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+        <link href="//b0.thejournal.ie/desktop/i/thejournal/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+                    <meta property="al:ios" name="al:ios" />            <meta property="al:ios:url" name="al:ios:url" content="jrnl://article/5058478" />
+            <meta property="al:ios:app_name" name="al:ios:app_name" content="TheJournal.ie" />
+            <meta property="al:ios:app_store_id" name="al:ios:app_store_id" content="409359491" />
+                        <meta property="al:android" name="al:android" />            <meta property="al:android:url" name="al:android:url" content="jrnl://article/5058478?source=fbal" />
+            <meta property="al:android:app_name" name="al:android:app_name" content="TheJournal.ie" />
+            <meta property="al:android:package" name="al:android:package" content="com.distilledmedia.thejournal" />
+            <meta name="apple-itunes-app" content="app-id=409359491, app-argument=https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/">
+<script type="text/javascript">
+    document.documentElement.className+=' js';
+    var ajaxurl = '//www.thejournal.ie/ajax.php';
+    var stats_url = 'https://www.thejournal.ie/statsscript.php';
+    var current_url = 'www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/?utm_source=shortlink';
+    var load_time = '2022-06-19 21:34:03';
+    var current_post_id = 5058478;
+    var current_post_permalink = 'https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/';
+    var stats_key = "b9514c826bc40f00abec35f00e3acbc9";
+    var wp_logged_in = false;
+    var current_title = "Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading ";
+
+    window.jrnl_social_connected = false;
+
+    var _sf_startpt=(new Date()).getTime()
+
+    var app_cookie_domain = '.thejournal.ie';
+    var session_domain = "https://www.thejournal.ie";
+    var root_domain = "thejournal.ie";
+</script>
+<script type="text/javascript">
+    document.domain = "thejournal.ie";
+
+    window.on_front = false;
+                window.authenticator = '';
+    window.login_expires = 1813437243;
+    window.users_token = '';
+
+                window.fbAsyncInit = function() {
+                FB.init({appId: "116141121768215", status: true, cookie: true,
+                xfbml: true});
+                                        if(typeof sync_with_server != 'undefined')
+                        {
+                            sync_with_server();
+                        }
+                                    };
+            (function(d){
+                var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+                js = d.createElement('script'); js.id = id; js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js";
+                d.getElementsByTagName('head')[0].appendChild(js);
+            }(document));
+                window.email_permission = false;
+        window.share_permission = false;
+            var jrnl_social_window = null;
+        function jrnl_social_login(service, submit_comment, callback) {
+            var link = '';
+            if(service == 'twitter')
+            {
+                link = "https://www.thejournal.ie/utils/login/twitter/?";
+                if(submit_comment)
+                {
+                    link = link + "&comment=1";
+                }
+                else if(callback
+                    && callback.length > 0
+                )
+                {
+                    link = link + "?cb=" + callback;
+                }
+            }
+            else if(service == 'facebook')
+            {
+                // Facebook link is a bit messier - need to bounce through popup
+                link = "https://www.thejournal.ie/utils/login/facebook/?url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fdisplay%3Dpopup%26client_id%3D116141121768215%26scope%3D" + get_fb_perm_string() + "%26redirect_uri%3Dhttps%3A%2F%2Fwww.thejournal.ie%2Futils%2Flogin%2Ffacebook%2F";
+                // Are we submitting after log-in?
+                if(submit_comment)
+                {
+                    link = link + "?comment=1";
+                }
+                else if(callback
+                    && callback.length > 0
+                )
+                {
+                    link = link + "?cb=" + callback;
+                }
+            }
+
+            if ( jrnl_social_window != null && !jrnl_social_window.closed )
+                jrnl_social_window.close();
+
+            jrnl_social_window = window.open(
+                link,
+                'jrnl_social_window',
+                'status,scrollbars,location,resizable,width=600,height=350'
+            )
+            jrnl_social_window.focus();
+
+            return false;
+        }
+</script>
+        <link rel="alternate" type="application/rss+xml" title="TheJournal.ie &raquo; Feed" href="/feed/" />
+
+                    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+            <script>
+                window.jQuery || document.write('<script src="https://b0.thejournal.ie/desktop/js/jquery-1.7.2.min.js"><\/script>')
+            </script>
+        
+        <!-- Start dmlpool Tag -->
+        <script type="text/javascript" src="//pool.journalmedia.ie/js/lscache.min.js"></script>
+        <script>
+            var _pool = _pool || [];
+            (function(){
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = '//pool.journalmedia.ie/js/pool.min.js';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            })();
+            _pool.push(['cacheBucketLocally', ['_dml']]);
+
+            // viewability js
+            _jrnl_viewability = {"enabled":true};
+            _jrnl_sidebar = {"enabled":true};
+        </script>
+        <!-- End dmlpool Tag -->
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+        
+                <script type='text/javascript'>
+                    var is_box_window = false;
+                    var is_box_name = '';
+                </script>
+
+            
+            <script type="text/javascript" src="//b0.thejournal.ie/desktop/js/build/current-3a05c20f46.js"></script>
+            <script type="text/javascript" src="//b0.thejournal.ie/desktop/js/build/legacy-common-b20ddc47c0.js"></script>
+
+            
+            <script type="text/javascript" src=""></script>
+
+                            <link rel='shortlink' href='https://jrnl.ie/5058478' />
+                    <link rel="stylesheet" type="text/css" href="//b0.thejournal.ie/desktop/css/build/desktop-b31cd37b1b.css" />
+        <link rel="stylesheet" type="text/css" href="//b0.thejournal.ie/desktop/css/build/legacy-common-941963e826.css" />
+        <link rel="stylesheet" type="text/css" href="" />
+                <meta name="description" content="A screenshot shared online is true, but doesn&#8217;t tell the full story. " />
+        <meta name="keywords" content="Coronavirus, Covid-19, debunked, factcheck" />
+        <meta name="news_keywords" content="Coronavirus, Covid-19, debunked, factcheck" />
+<link rel="alternate" href="android-app://com.distilledmedia.thejournal/jrnl_ie/article/5058478" />
+<link rel="canonical" href="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/" /><link href="" rel="author" /><meta name="fb:app_id" content="116141121768215" />
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading "/>
+<meta property="og:description" content="A screenshot shared online is true, but doesn&#8217;t tell the full story. "/>
+<meta property="og:url" content="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/"/>
+<meta property="og:image" content="https://img2.thejournal.ie/article/5058478/river/?height=400&version=5058517"/>
+<meta property="og:site_name" content="TheJournal.ie"/>
+<meta property="article:author" content="https://www.thejournal.ie/author/orla-dwyer/"/>
+<meta property="article:post_date" content="2020-03-26T18:13:17+0000"/>
+<meta property="article:post_modified" content="2020-05-28T16:42:35+0100"/>
+<meta property="fb:pages" content="137576076262825"/>
+<meta name="twitter:card" content="summary_large_image" >
+<meta name="twitter:image" content="https://img2.thejournal.ie/article/5058478/listing?version=5058517&amp;width=590" >
+<meta name="twitter:title" content="Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading " >
+<meta name="twitter:url" content="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/" >
+<meta name="twitter:description" content="A screenshot shared online is true, but doesn&amp;#8217;t tell the full story. " >
+<meta name="twitter:site" content="@thejournal_ie" >
+
+<meta name="twitter:creator" content="@orladwyer_" >
+
+<meta name="twitter:app:name:iphone" content="TheJournal.ie" >
+<meta name="twitter:app:name:ipad" content="TheJournal.ie" >
+<meta name="twitter:app:name:googleplay" content="TheJournal.ie" >
+<meta name="twitter:app:id:iphone" content="409359491" >
+<meta name="twitter:app:id:ipad" content="409359491" >
+<meta name="twitter:app:id:googleplay" content="com.distilledmedia.thejournal" >
+
+<meta name="twitter:app:url:iphone" content="jrnl://article/5058478/?app=Twitter&amp;callback=twitter%3A%2F%2F" >
+<meta name="twitter:app:url:ipad" content="jrnl://article/5058478/?app=Twitter&amp;callback=twitter%3A%2F%2F" >
+<meta name="twitter:app:url:googleplay" content="jrnl://article/5058478/?app=twitter" >
+<script>
+    var commentSec = {
+        token : "7f06d73bb"
+    }
+</script>
+<input type="hidden" id="js-retargeting" value='[{"key":"factcheck_aud","bucket_ttl":7776000,"threshold":1,"threshold_window":604800},{"key":"irish_audience","bucket_ttl":7776000,"threshold":1,"threshold_window":604800},{"key":"irish_audience","bucket_ttl":7776000,"threshold":1,"threshold_window":604800}]'>
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+
+googletag.cmd.push(function() {
+    
+    var consent = CookieConsentRepository.fetch();
+    var areCookiesDisabled = consent.targeting ? 0 : 1;
+    googletag.pubads().setCookieOptions(areCookiesDisabled);
+    console.log("User Consent: Google Ads " + (consent.targeting ? "enabled" : "disabled"));
+
+    CookieConsentListener.onTargetingConsentChange(function (hasTargetingConsent) {
+        var areCookiesDisabled = hasTargetingConsent ? 0 : 1;
+        googletag.pubads().setCookieOptions(areCookiesDisabled);
+        googletag.pubads().refresh();
+        console.log("User Consent: Google Ads " + (hasTargetingConsent ? "enabled" : "disabled"));
+    });
+googletag.defineSlot('/5512429/J_MPU', [["fluid"],[1,1],[300,250],[300,600]], 'div-gpt-ad-1365092406213-0').addService(googletag.pubads());
+googletag.defineSlot('/5512429/J_Riverblock', [[2,1],[630,172],[630,250],[630,300],[630,350]], 'div-gpt-ad-1365092406213-1').addService(googletag.pubads());
+googletag.defineSlot('/5512429/J_Leaderboard', [[1,1],[728,90],[970,250]], 'div-gpt-ad-1365092406213-2').addService(googletag.pubads());
+googletag.defineSlot('/5512429/J_Sponsored_Article_Logo', [[2,1],[140,80],[180,90]], 'div-gpt-ad-1365092406213-3').addService(googletag.pubads());
+googletag.pubads().setTargeting('platform', 'desktop');
+googletag.pubads().setTargeting('sitemode', 'default');
+
+googletag.pubads().setTargeting('site', 'thejournal');
+googletag.pubads().setTargeting('publication', 'thejournal');
+googletag.pubads().setTargeting('section', "article");
+googletag.pubads().setTargeting('tags', ["coronavirus","covid-19","debunked","factcheck","irish"]);
+googletag.pubads().setTargeting('targeting-key', ["coronavirus","covid-19","debunked","factcheck","irish-vertical"]);
+                googletag.pubads().setTargeting('targetingkey', ["coronavirus","covid-19","debunked","factcheck","irish-vertical"]);
+                googletag.pubads().setTargeting('admantxcustom', ["BrandProtection_DeathAndInjury","BrandSafety_Diageo_1","BrandSafety_Vodafone"]);
+                googletag.pubads().setTargeting('admantxcategories', ["diseases and conditions","epidemic","infectious diseases","medical health","medicine"]);
+                googletag.pubads().setTargeting('admantxentities', ["Boris Johnson","British government","Coordination Group","ECDC","Facebook","Google","Health and Safety Executive","International Fact-Checking Network","Ireland","Middle East respiratory syndrome","Twitter","United Kingdom","World Health Organization","coronavirus","infectious disease","severe acute respiratory syndrome","website"]);
+                googletag.pubads().setTargeting('admantxfeelings', ["emotions","fear","negative emotions","negative sentiment","sentiment"]);
+                googletag.pubads().setTargeting('tiling', '2');
+googletag.pubads().setTargeting('pageid', 'id-5058478');
+    
+if ($("#js-retargeting").length > 0)
+{
+    try
+    {
+        var retargeting = new RetargetingClient();
+        retargeting.trackView();
+    }
+    catch (e)
+    {
+        console.error(e.message);
+        console.log(e);
+    }
+}
+
+//googletag.pubads().disableInitialLoad();
+if(lscache && Object.keys)
+{
+    var _dml = Object.keys(lscache.getBucket('_dml')).join(",");
+    googletag.pubads().setTargeting('_dml', _dml);
+}
+
+
+
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+
+    googletag.pubads().addEventListener('slotOnload', function(event) {
+        if (event.slot.getSlotElementId() === "div-gpt-ad-1365092406213-1") {
+            let adContainer = document.getElementById("mid-article-riverblock");
+            let adFrame = adContainer.querySelector("iframe");
+
+            let adFrameIsDisplayed = adFrame.style.display !== "none";
+            let adSizeIs1x1 = adFrame.width === "1" && adFrame.height === "1";
+
+            if (adFrameIsDisplayed && !adSizeIs1x1) {
+                adContainer.style.display = "block";
+            }
+        }
+    });
+
+});
+
+
+dfpLoadCheck('div-gpt-ad-1365092406213-3');
+
+</script>
+        <!-- IE9 Pinning -->
+        <meta name="application-name" content="TheJournal" />
+        <meta name="msapplication-tooltip" content="TheJournal.ie - Read, Share and Shape the news" />
+        <meta name="msapplication-starturl" content="https://www.thejournal.ie/" />
+        <meta name="msapplication-task" content="name=The 9 at 9;action-uri=https://www.thejournal.ie/9at9;icon-uri=//b0.thejournal.ie/desktop/i/thejournal/favicon.ico" />
+        <meta name="msapplication-task" content="name=The42;action-uri=https://www.the42.ie/;icon-uri=//b0.thejournal.ie/desktop/i/the42/favicon.ico" />
+        <meta name="msapplication-task" content="name=Business Etc;action-uri=https://businessetc.thejournal.ie/;icon-uri=//b0.thejournal.ie/desktop/i/businessetc/favicon.ico" />
+        <meta name="msapplication-task" content="name=DailyEdge.ie;action-uri=https://thedailyedge.thejournal.ie/;icon-uri=//b0.thejournal.ie/desktop/i/thedailyedge/favicon.ico" />
+        <meta name="msapplication-task" content="name=Irish News;action-uri=https://www.thejournal.ie/irish/;icon-uri=//b0.thejournal.ie/desktop/i/thejournal/favicon.ico" />
+        <!-- /IE9 Pinning -->
+
+
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+            </head>
+
+    
+    <!--[if IE 6]><body class="ie ie6 ie-lt8 "><![endif]-->
+    <!--[if IE 7]><body class="ie ie7 ie-lt8 "><![endif]-->
+    <!--[if IE 8]><body class="ie ie8 "><![endif]-->
+    <!--[if gte IE 9]><body class="ie9up "><![endif]-->
+    <!--[if !IE]><!-->
+    <body class="nie ">
+    <!--<![endif]-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17456403-37"></script>
+<script type="application/json" id="gtag-property-ids">["UA-17456403-37"]</script>
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    (function(){
+
+        function GoogleAnalytics(propertyIds) {
+            this.propertyIds = propertyIds;
+            this.hasSentPageView = false;
+        }
+
+        GoogleAnalytics.prototype.disableCookies = function () {
+            this.propertyIds.forEach(function (propertyId) {
+                window['ga-disable-' + propertyId] = true;
+            });
+        };
+
+        GoogleAnalytics.prototype.enableCookies = function () {
+            this.propertyIds.forEach(function (propertyId) {
+                window['ga-disable-' + propertyId] = false;
+            });
+        };
+
+        GoogleAnalytics.prototype.sendPageView = function () {
+            if (this.hasSentPageView !== false) {
+                return;
+            }
+
+            gtag('event', 'page_view');
+
+            this.hasSentPageView = true;
+        };
+
+        GoogleAnalytics.prototype.load = function () {
+            gtag('js', new Date());
+            this.propertyIds.forEach(function (propertyId) {
+                gtag('config', propertyId, {
+                    send_page_view: false
+                });
+            });
+        };
+
+        GoogleAnalytics.prototype.consentGrantedOnLoad = function () {
+            this.enableCookies();
+            this.load();
+            this.sendPageView();
+        };
+
+        GoogleAnalytics.prototype.consentGrantedByUser = function () {
+            this.enableCookies();
+            this.sendPageView();
+        }
+
+        GoogleAnalytics.prototype.consentRevokedOnLoad = function () {
+            this.disableCookies();
+            this.load();
+        }
+
+        GoogleAnalytics.prototype.consentRevokedByUser = function () {
+            this.disableCookies();
+        }
+
+        function boot()
+        {
+            var googleAnalytics = new GoogleAnalytics(
+                JSON.parse(document.getElementById("gtag-property-ids").innerText)
+            );
+
+            if (CookieConsentRepository.fetch().performance) {
+                googleAnalytics.consentGrantedOnLoad();
+            } else {
+                googleAnalytics.consentRevokedOnLoad();
+            }
+
+            CookieConsentListener.onPerformanceConsentChange(function(hasPerformanceConsent) {
+                if (hasPerformanceConsent) {
+                    googleAnalytics.consentGrantedByUser();
+                } else {
+                    googleAnalytics.consentRevokedByUser();
+                }
+            });
+        }
+
+        boot();
+    }());
+</script>
+        <div id="fb-root"></div>
+        <section id="contribution-prompt-overlay" class="contribution-prompt">
+    <img class="close-button" src="//b0.thejournal.ie/desktop/i//contribution-prompt/close-button.svg" alt="">
+
+    <div class="text-content">
+        <span class="hashtag">#Open journalism</span>
+
+        <span class="title">No news is bad news</span>
+        <p>
+            Your <b>contributions</b> will help us continue to deliver the stories that are important to you
+        </p>
+    </div>
+
+    <a href="/contribute?utm_source=thejournal&utm_medium=overlay-prompt&utm_campaign=launch">
+        Support The Journal
+    </a>
+</section>
+
+        <header>
+    <div class="header-wrapper">
+        <div class="logo-wrapper">
+            <a class="logo-link"
+                                  href="https://www.thejournal.ie/?utm_source=thejournal&utm_medium=masthead"
+                              data-analytics-label="Homepage">
+                <img class="logo" src="//b0.thejournal.ie/desktop/i/thejournal/logo.svg">
+            </a>
+                            <a class="additional-button has-hover" href="/contribute" data-analytics-label="Contribute [Logo Button]">Contribute : <b>Support us now</b></a>
+                    </div>
+        <div class="additional-infos">
+            <a class="weather has-hover" href="/weather">
+                                    <span>Dublin: 14°C</span>
+                
+                                    <img src="//b0.thejournal.ie/desktop/i/thejournal/weather-icons/03.svg">
+                            </a>
+
+            <span>
+                Sunday 19 June 2022
+            </span>
+        </div>
+    </div>
+</header>
+
+<nav id="main-navigation">
+    <div class="nav-links">
+        <ul class="nav-categories">
+                            <li >
+                    <a href="https://www.thejournal.ie/irish/">
+                        Irish News
+                    </a>
+                </li>
+                            <li >
+                    <a href="https://www.thejournal.ie/factcheck/news/">
+                        FactCheck
+                    </a>
+                </li>
+                            <li >
+                    <a href="https://www.thejournal.ie/voices/">
+                        Voices
+                    </a>
+                </li>
+                            <li >
+                    <a href="https://www.thejournal.ie/the-good-information-project/news/">
+                        The Good Information Project
+                    </a>
+                </li>
+                            <li >
+                    <a href="https://www.thejournal.ie/ukraine/news/">
+                        Ukraine
+                    </a>
+                </li>
+                    </ul>
+            </div>
+    <div id="main-nav-toggle-handler">
+        <div class="nav-toggle-open">
+            <div class="nav-toggle">
+                <ul>
+                                            <li>Newsletters</li>
+                                            <li>Podcasts</li>
+                                            <li>More</li>
+                                    </ul>
+                <svg width="30" height="30" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12.5" cy="12.5" r="12.5" fill="currentColor" />
+                    <path d="M18.125 10.083H6.875" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18.125 13H6.875" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18.125 15.916H6.875" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+        <div class="nav-toggle-close hidden">
+            <div class="nav-toggle">
+                <ul><li>Close</li></ul>
+                <svg width="30" height="30" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12.5" cy="12.5" r="12.5" fill="currentColor" />
+                    <path d="M9.16602 9.16602L16.8327 16.8327" stroke="white"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16.8327 9.16602L9.16602 16.8327" stroke="white"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="main-nav-dropdown" class="closed">
+    <a class="left-link-section"
+                  href="https://www.thejournal.ie/the-explainer/news/?utm_source=thejournal&utm_medium=menu"
+              data-analytics-label="The Explainer">
+        <div class="details">
+            <div class="heading">Weekly Podcast</div>
+            <div class="title">The Explainer</div>
+            <div class="description">The Explainer is a weekly podcast from TheJournal.ie that takes a deeper look at one big news story you need to know about. Listen now wherever you get your podcasts</div>
+        </div>
+    </a>
+    <div class="options">
+        <div class="sections">
+                        <div class="section">
+                <div class="heading">Newsletters : Sign Up</div>
+                <ul class="section-links">
+                                        <li><a href="https://www.thejournal.ie/morning-memo-business-newsletter-5081408-Apr2020/">Morning Memo</a></li>
+                                        <li><a href="https://www.thejournal.ie/coronavirus-information-email-newsletter-5039553-Mar2020/">Coronavirus</a></li>
+                                        <li><a href="https://www.thejournal.ie/brexit-newsletter-signup-4774811-Sep2019/">Brexit</a></li>
+                                        <li><a href="https://www.thejournal.ie/climate-newsletter-temperature-check-5650289-Jan2022/">Temperature Check</a></li>
+                                        <li><a href="https://www.thejournal.ie/evening-fix-sign-up-5177724-Aug2020/">The Evening Fix</a></li>
+                                    </ul>
+            </div>
+                        <div class="section">
+                <div class="heading">Sections & Topics</div>
+                <ul class="section-links">
+                                        <li><a href="https://www.thejournal.ie/international/">International</a></li>
+                                        <li><a href="https://www.thejournal.ie/family/">Family</a></li>
+                                        <li><a href="https://www.thejournal.ie/politics/">Politics</a></li>
+                                        <li><a href="https://www.thejournal.ie/property-magazine/news/">Property</a></li>
+                                        <li><a href="https://www.thejournal.ie/culture/">Culture</a></li>
+                                        <li><a href="https://www.thejournal.ie/home-magazine/news/">Home</a></li>
+                                        <li><a href="https://www.thejournal.ie/business/">Business</a></li>
+                                    </ul>
+            </div>
+                    </div>
+        <div class="partner-pubs-holder">
+            <div class="heading">
+                Partner Publications
+            </div>
+            <div class="partner-pubs">
+                                <a class="partner" href="https://www.the42.ie/" data-analytics-label="The42" target="_blank">
+                    <div class="title">
+                        The42
+                    </div>
+                    <div class="description">
+                        The latest Irish and international sports news for readers and members
+                    </div>
+                </a>
+                                <a class="partner" href="https://www.noteworthy.ie/" data-analytics-label="Noteworthy" target="_blank">
+                    <div class="title">
+                        Noteworthy
+                    </div>
+                    <div class="description">
+                        A platform helping fund the type of in-depth journalism that the public wants to see
+                    </div>
+                </a>
+                            </div>
+        </div>
+        <a class="btn-support"
+                          href="https://www.thejournal.ie/contribute/?utm_source=thejournal&utm_medium=menu"
+                   >
+            <span class="text">Support The Journal</span>
+            <img class="arrow" src="//b0.thejournal.ie/desktop/i/contribution-prompt/link-arrow.svg">
+        </a>
+    </div>
+</div>
+
+
+        <div class="mainContainer content">
+        <div id="header_leaderboard_container">
+    <center id="header_leaderboard" class="header_leaderboard article_leaderboard">
+        <span class="information">Advertisement</span>
+        <div style='width: 970px;'><div id='div-gpt-ad-1365092406213-2'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1365092406213-2'); });
+</script>
+</div></div>    </center>
+</div>
+                                    
+<div class="mainContent container">
+
+    <div class="river span-8" itemscope itemtype="https://schema.org/Article" id="scroll-header">
+
+
+<meta itemprop="image" content="https://c0.thejournal.ie/media/2020/03/debunked-example-752x501.png" />
+
+<div class="post postMain  postMainLandscape">
+
+                <div style="float:right">
+                <div id='div-gpt-ad-1365092406213-3'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1365092406213-3'); });
+</script>
+</div>            </div>
+    
+
+    <h1 itemprop="headline">Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading </h1>
+    	<h2 class="main_excerpt" itemprop="description">A screenshot shared online is true, but doesn&#8217;t tell the full story. </h2>
+
+        <div class="infos border">
+                        <div class="metadata">
+                <div class="print_hidden">
+                    <span>
+                        By <span class="print-author">Orla Dwyer</span>
+                    </span>
+                    <span class="date">Thursday 26 Mar 2020, 6:13 PM</span>
+                </div>
+                <span class="date screen_only">
+                    Mar 26th 2020, 6:13 PM                </span>
+                <span class="views">
+                    <span class="red-views icon iconViewVeryPopular"></span>20,987<span class="show-on-desktop">  Views</span>                </span>
+                <a href="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/#comments" title="Comment on Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading " class="comments-count">
+                    <span class="icon iconComment"></span> 3<span class="show-on-desktop"> Comments</span>                </a>
+                <div class="meta-link print_hidden">
+                    <span>
+                        https://jrnl.ie/5058478                    </span>
+                </div>
+            </div>
+            <span class="share"><a href="https://www.facebook.com/dialog/feed?app_id=116141121768215&display=popup&link=https%3A%2F%2Fwww.thejournal.ie%2Fcovid-19-claims-high-consequence-disease-debunked-5058478-Mar2020%2F&picture=https%3A%2F%2Fc0.thejournal.ie%2Fmedia%2F2020%2F03%2Fdebunked-example-197x197.png&name=Debunked%3A+The+UK+no+longer+considers+Covid-19+a+high+consequence+infectious+disease%2C+but+social+media+posts+about+it+are+misleading+&description=A+screenshot+shared+online+is+true%2C+but+doesn%E2%80%99t+tell+the+full+story.+&message=&redirect_uri=https%3A%2F%2Fthejournal.ie%2Futils%2Ffb_post.php%3Fp_id%3D5058478 " target="_blank" title="Share on Facebook" class="open-window social"><span class="icon iconFacebook"></span> Share<span class="number">60</span></a> <a href="https://twitter.com/share?url=https%3A%2F%2Fjrnl.ie%2F5058478&text=Debunked%3A+The+UK+no+longer+considers+Covid-19+a+high+consequence+infectious+disease%2C+but+social+medi+%28via+%40thejournal_ie%29&related=@thejournal_ie" target="_blank" title="Tweet this" class="open-window social share-twitter twitter-tweet jrnl-tweet-5058478"><span class="icon iconTwitter"></span> Tweet</a> <a href="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/#EmailArticle" title="Email this article" class="social share-email lightboxTrigger"><span class="icon iconEmailSend"></span> Email</a></span>        </div>
+        <div class="text" itemprop="articleBody">
+        
+            <!-- Text content -->
+
+            <div id="articleContent">
+
+                                    <p><span class="journal_embed_container" style="align:center" ><span class="journal_caption_container"><span class="journal_caption_container"><img src="https://img2.thejournal.ie/inline/5063091/original/?width=630&version=5063091" alt="download (2)" class="alignnone inline-image"  /></span></span></span></p>
+<p>A SCREENSHOT OF the <a href="https://www.gov.uk/guidance/high-consequence-infectious-diseases-hcid">UK government website</a> saying Covid-19 is no longer considered a high consequence infectious disease (HCID) has been shared online over the past week. </p>
+<p>Although the screenshot is correct, it alone does not provide enough information to explain a HCID and what this classification means. </p>
+<p>It is also often accompanied by messages saying the UK government’s response is now different, even lessened, because of this classification change. This is misleading. </p>
+<p><span class="journal_embed_container" style="align:center" ><span class="journal_caption_container"><span class="journal_caption_container"><img src="https://img2.thejournal.ie/inline/5058517/original/?width=592&version=5058517" alt="debunked-example" class="alignnone inline-image"  /></span><span class="journal_credit">
+    Source: Gov.uk via Facebook</span></span></span></p>
+<p>This image, which is an accurate screenshot from the UK government website, states:
+</p>
+<blockquote class="coloured">
+<div>As of 19 March 2020, COVID-19 is no longer considered to be a high consequence infectious diseases (<abbr title="high consequence infectious disease">HCID</abbr>) in the UK.</div>
+</blockquote>
+<blockquote class="coloured">
+<div>The 4 nations public health <abbr title="high consequence infectious disease">HCID</abbr> group made an interim recommendation in January 2020 to classify COVID-19 as an <abbr title="high consequence infectious disease">HCID</abbr>. This was based on consideration of the UK <abbr title="high consequence infectious disease">HCID</abbr> criteria about the virus and the disease with information available during the early stages of the outbreak. Now that more is known about COVID-19, the public health bodies in the UK have reviewed the most up to date information about COVID-19 against the UK <abbr title="high consequence infectious disease">HCID</abbr> criteria. They have determined that several features have now changed; in particular, more information is available about mortality rates (low overall), and there is now greater clinical awareness and a specific and sensitive laboratory test, the availability of which continues to increase.</div>
+</blockquote>
+<blockquote class="coloured">
+<div>The Advisory Committee on Dangerous Pathogens (ACDP) is also of the opinion that COVID-19 should no longer be classified as an <abbr title="high consequence infectious disease">HCID</abbr>. </div>
+</blockquote>
+<p>On its website, the UK government statement says Covid-19 cases are no longer managed by HCID treatment centres only.  </p>
+<p>As a result, healthcare workers in the UK managing possible and confirmed cases of Covid-19 are now being advised to follow national infection and prevention <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/874316/Infection_prevention_and_control_guidance_for_pandemic_coronavirus.pdf">(IPC) guidance</a>.</p>
+<p>A high consequence infectious disease (HCID) is defined under the following terms:</p>
+<ul>
+<li>it is an <strong>acute infectious disease</strong>
+</li>
+<li>it typically has a <strong>high-case</strong> fatality rate</li>
+<li>it may not have effective prophylaxis or <strong>treatment</strong>
+</li>
+<li>it is often <strong>difficult to recognise</strong> and detect rapidly</li>
+<li>it has the ability to <strong>spread</strong> in the community and within healthcare settings</li>
+<li>it requires an enhanced, individual, population and system <strong>response</strong> to ensure it’s managed effectively, efficiently and safely</li>
+</ul>
+<p>According to the European Centre for Disease Prevention and Control (ECDC), these diseases constitute “serious human health threats”. </p>
+<p>Patients with diseases in this category typically develop severe symptoms and need a high level of care. </p>
+<p><div id="mid-article-riverblock" class="content_riverblock" style="display: none;"><div class="content_riverblock_title">Advertisement</div><div id='div-gpt-ad-1365092406213-1'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1365092406213-1'); });
+</script>
+</div></div></p>
+<p>The UK government said it changed this classification of Covid-19 recently due to more information about mortality rates, greater clinical awareness and a laboratory test for the disease. </p>
+<p>HCIDs are rare in the UK and tend to be sporadic, the government said. </p>
+<p>Severe acute respiratory syndrome (SARS) and Middle East respiratory syndrome (MERS), two previous coronaviruses, are both on the UK’s list of HCIDs.</p>
+<p>SARS and MERS had higher mortality rates than SARS-C0V-2, the coronavirus that causes the Covid-19 disease.</p>
+<p>According to the ECDC, <a href="https://www.ecdc.europa.eu/en/severe-acute-respiratory-syndrome/facts">SARS had a mortality rate</a> of approximately 10%, but exceeded 50% in patients aged over 60 years. </p>
+<p>MERS had a mortality rate of approximately 36%, according to the ECDC. </p>
+<p>Although no proper estimate of the mortality rate from Covid-19 can be gathered while the situation is constantly changing, the World Health Organisation said current data indicates a mortality rate of 3-4%. </p>
+<p>Seasonal flu has a mortality rate of around 0.1%. </p>
+<p>The laboratory test to identify Covid-19 was discovered relatively quickly after the disease began to spread a few months ago, meaning it can be detected rapidly.</p>
+<p>Despite its change of classification on 19 March, the UK government said the need for a national and coordinated response to the disease remains in place.</p>
+<p>People in the UK are being advised to stay at home, stay two metres from others and wash your hands regularly. </p>
+<p>British Prime Minister Boris Johnson said yesterday that the UK is “coping very well indeed under the most challenging possible circumstances”.</p>
+<p>As of Thursday, there are 9,529 coronavirus cases and 422 deaths from the disease in the UK, according to the ECDC.</p>
+<p><section id="contribution-prompt-article" class="contribution-prompt">
+    <div class="text-content">
+        <span class="hashtag">#Open journalism</span>
+
+        <span class="title">No news is bad news</span>
+        <span class="title">Support The Journal</span>
+        <p>
+            Your <b>contributions</b> will help us continue
+            to deliver the stories that are important to you
+        </p>
+    </div>
+
+    <a href="/contribute?utm_source=thejournal&utm_medium=banner&utm_campaign=launch">
+        Support us now
+    </a>
+</section>
+</p>
+<p>In Ireland, detailed plans and guidance for Covid-19 have been prepared by the HSE High Consequences Infectious Diseases Planning and Coordination Group since January to prepare the health service for the outbreak. </p>
+<p>The HSE’s advice for Irish citizens is to maintain social distancing, wash hands properly and often and stay at least two metres away from other people to prevent the spread of the disease.  </p>
+<p>**** </p>
+<p>There is a lot of false news and scaremongering being spread in Ireland at the moment about the coronavirus. Here are some practical ways for you to assess whether the messages that you’re seeing – especially on WhatsApp – are true or not. </p>
+<p><strong>STOP, THINK AND CHECK  </strong></p>
+<p>Look at where it’s coming from. Is it someone you know? Do they have a source for the information (e.g. the HSE website) or are they just saying that the information comes from someone they know? A lot of the false news being spread right now is from people claiming that messages from ‘a friend’ of theirs. Have a look yourself – do a quick Google search and see if the information is being reported elsewhere. </p>
+<p>Secondly, get the whole story, not just a headline. A lot of these messages have got vague information (“all the doctors at this hospital are panicking”) and don’t mention specific details. This is often – but not always a sign – that it may not be accurate. </p>
+<p>Finally, see how you feel after reading it. A lot of these false messages are designed to make people feel panicked. They’re deliberately manipulating your feelings to make you more likely to share it. If you feel panicked after reading something, check it out and see if it really is true.</p>
+<p><em>TheJournal.ie’s FactCheck is a signatory to the International Fact-Checking Network’s Code of Principles. You can read it <a href="http://www.thejournal.ie/factcheck-thejournal-ie-fact-checking-code-of-principles-ireland-2987721-Sep2016/">here</a>. For information on how FactCheck works, what the verdicts mean, and how you can take part, check out our Reader’s Guide <a href="http://www.thejournal.ie/factcheck-a-readers-guide-to-how-it-works-and-how-you-can-take-part-2987611-Sep2016/">here</a>. You can read about the team of editors and reporters who work on the factchecks <a href="http://www.thejournal.ie/meet-the-team-thejournal-ie-factcheck-bios-4267874-Oct2018/">here</a></em></p>
+<p><em>Have you gotten a message on WhatsApp or Facebook or Twitter about coronavirus that you’re not sure about and want us to check it out? Message or mail us and we’ll look into debunking it. WhatsApp: 085 221 4696 or Email: answers@thejournal.ie </em></p>
+<span id='subscription-link'></span><span id='subscription-link'></span>
+            </div>
+
+                        <!-- /Text content -->
+            <div id="subscription-form-containter" class="factcheck-email">
+                <img id="email-loading" class="hidden" src="https://static.thejournal.ie/desktop/i/loading.gif">
+                <label for="email">The Journal's monthly FactCheck newsletter keeps you in the loop about what misinformation trends Ireland is experiencing - and how we're fighting back. Sign up here:</label>
+                <form id="subscription-form" action="/subscriptions/" method="POST">
+                    <input type="text" id="email" name="email" placeholder="Email address">
+                    <input type="hidden" id="subscription-tag" value="factcheck">
+                    <input type="hidden" id="subscription-label" value="FactCheck">
+                    <input type="hidden" name="id" id="id" value="">
+                    <input type="submit" value="Sign up" class="action-button submit">
+                </form>
+                <div style="clear:both;"></div>
+            </div>
+
+            
+
+            <span id="follow_connect_box">
+                            </span>
+        </div>
+
+
+        <div class="clearfix">
+            <!-- Short URL -->
+            <div class="shortUrl">
+                <label for="shortUrl">Short URL</label>
+                <input type="text" name="shortURL" id="shortURL" value="https://jrnl.ie/5058478" />
+            </div>
+            <!-- /Short URL -->
+        </div>
+
+        <!-- Sharing -->
+                <!-- /Sharing -->
+
+    </div>
+
+                <!-- About the author v2 -->
+        <div class="articleExtraDetails clearfix border">
+                    <div class="author_info">
+        <h4>About the author:</h4>
+        <div class="author_avatar" >
+                            <a href="https://www.thejournal.ie/author/orla-dwyer/6480/">
+                    <img src="https://f3.thejournal.ie/media/2019/07/Orla-Dwyer-Byline-133x133.png" height="70" width="70">                </a>
+                    </div>
+        <div class="author_details">
+        <div class="print_hidden section_lead">About the author</div>
+        <div class="contact_box auth_named_desc">
+                <span class="name">
+                    Orla Dwyer                </span>
+                    </div>
+                                        <div class="contact_box">
+                <a href="https://twitter.com/orladwyer_">
+                    <span class="icon iconTwitter author_icon"></span>@orladwyer_                </a>
+            </div>
+                                <div class="contact_box">
+                <a href="mailto:orladwyer@thejournal.ie">
+                    <span class="icon iconEmailSmall"></span><span
+                        class="contact_link">orladwyer@thejournal.ie</span>
+                </a>
+            </div>
+                                </div>
+                            <div class="contact_box clear_left_contact">
+            <a rel="author" href="https://www.thejournal.ie/author/orla-dwyer/6480/"><span class="icon iconAuthorMore"></span>See more articles by Orla Dwyer</a>
+        </div>
+                </div>
+                    <div class="post_info">
+                <h4>Contribute to this story:</h4>
+                <div class="story_contribution">
+                                            <div class="contact_box">
+                            <a href="#respond"><span class="icon iconCommentBubble"></span>Leave a Comment</a>
+                        </div>
+                                        <div class="contact_box">
+                        <a href="mailto:corrections@thejournal.ie?subject=Correction%20from%20a%20reader&body=Debunked%3A+The+UK+no+longer+considers+Covid-19+a+high+consequence+infectious+disease%2C+but+social+media+posts+about+it+are+misleading+%0D%0Ahttps%3A%2F%2Fwww.thejournal.ie%2Fcovid-19-claims-high-consequence-disease-debunked-5058478-Mar2020%2F"
+                           target="_blank" title="Corrections">
+                            <span class="icon iconCorrectionLink"></span>Send a Correction
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /About the author -->
+        <div id="storage_read_next_bottom" class="read_next_block in_article clearfix " >
+    <h3>Read next:</h3>
+</div>
+
+<script type="text/javascript">
+<!--
+    var newest_articles = [{"id":5794704,"title":"Here's What Happened Today: Sunday","permalink":"https:\/\/www.thejournal.ie\/heres-what-happened-today-103-5794704-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>3,939<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/evening-fix\/news\/","name":"evening fix"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.thejournal.ie\/heres-what-happened-today-103-5794704-Jun2022\/\"><img src=\"https:\/\/c2.thejournal.ie\/media\/2022\/06\/2201-body-and-soul-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5790400,"title":"Money Diaries: A laboratory aide on \u20ac28K living in Kildare","permalink":"https:\/\/www.thejournal.ie\/readme\/how-i-spend-my-money-70-5790400-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>8,371<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/hismm\/news\/","name":"HISMM"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.thejournal.ie\/readme\/how-i-spend-my-money-70-5790400-Jun2022\/\"><img src=\"https:\/\/c3.thejournal.ie\/media\/2022\/06\/money-diary-series-river-image-6-99-290x120.png\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5794720,"title":"Young motorcyclist killed in collision at Kells Road Races","permalink":"https:\/\/www.thejournal.ie\/motorcyclist-killed-in-collision-at-kells-road-races-5794720-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>15,423<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/rip\/news\/","name":"RIP"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.thejournal.ie\/motorcyclist-killed-in-collision-at-kells-road-races-5794720-Jun2022\/\"><img src=\"https:\/\/c1.thejournal.ie\/media\/2022\/06\/shutterstock_1991964515-5-390x285-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5794680,"title":"US recession not 'inevitable,' Treasury secretary says","permalink":"https:\/\/www.thejournal.ie\/us-recession-not-inevitable-says-treasury-secretary-janet-yellen-5794680-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>9,096<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/united-states\/news\/","name":"United States"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.thejournal.ie\/us-recession-not-inevitable-says-treasury-secretary-janet-yellen-5794680-Jun2022\/\"><img src=\"https:\/\/c3.thejournal.ie\/media\/2022\/06\/us-dollar-2-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5794647,"title":"Murder investigation launched after body of a woman in her 70s found in Co Tyrone","permalink":"https:\/\/www.thejournal.ie\/murder-investigation-tyrone-cookstown-woman-70s-5794647-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>6,138<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/tyrone-murder-investigation\/news\/","name":"Tyrone murder investigation"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.thejournal.ie\/murder-investigation-tyrone-cookstown-woman-70s-5794647-Jun2022\/\"><img src=\"https:\/\/c3.thejournal.ie\/media\/2022\/06\/90175280-10-310x415-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5794607,"title":"Germany resorts to coal amid Russia gas supply cuts","permalink":"https:\/\/www.thejournal.ie\/germany-russia-coal-gas-supply-cut-5794607-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>19,829<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/germany\/news\/","name":"Germany"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.thejournal.ie\/germany-russia-coal-gas-supply-cut-5794607-Jun2022\/\"><img src=\"https:\/\/c0.thejournal.ie\/media\/2022\/06\/ukraine-russia-war-2-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5794575,"title":"Cell phones: \u20ac1.1m spent installing telephones in every cell at four prisons","permalink":"https:\/\/www.thejournal.ie\/telephones-in-prison-cells-cost-5794575-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>28,475<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/prison-cells\/news\/","name":"prison cells"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.thejournal.ie\/telephones-in-prison-cells-cost-5794575-Jun2022\/\"><img src=\"https:\/\/c2.thejournal.ie\/media\/2022\/06\/prison-corridor-2-290x120.jpeg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""}];
+    var popular_articles = [{"id":5794308,"title":"Seamus Power shoots up US Open leaderboard as McIlroy scrambles to stay in the hunt","permalink":"https:\/\/www.the42.ie\/seamus-power-us-open-5794308-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>55,238<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/irish-eye\/news\/","name":"Irish Eye"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.the42.ie\/seamus-power-us-open-5794308-Jun2022\/\"><img src=\"https:\/\/c0.thejournal.ie\/media\/2022\/06\/us-open-golf-238-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5778112,"title":"'Now, I look back on my time at Man United as a success. When I came home, I felt like a failure'","permalink":"https:\/\/www.the42.ie\/anto-whelan-interview-5778112-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>41,895<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/perspective\/news\/","name":"perspective"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.the42.ie\/anto-whelan-interview-5778112-Jun2022\/\"><img src=\"https:\/\/c2.thejournal.ie\/media\/2022\/05\/inpho_00004435-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5794467,"title":"Man United chief executive secretly filmed saying club 'burnt through cash'","permalink":"https:\/\/www.the42.ie\/man-united-chief-executive-meets-with-disgruntled-fans-at-local-pub-5794467-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>36,932<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/anger\/news\/","name":"Anger"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.the42.ie\/man-united-chief-executive-meets-with-disgruntled-fans-at-local-pub-5794467-Jun2022\/\"><img src=\"https:\/\/c0.thejournal.ie\/media\/2022\/06\/file-photo-dated-2-09-2018-of-manchester-united-chief-executive-richard-arnold-who-met-disgruntled-fans-in-a-pub-to-address-concerns-about-the-future-of-the-club-issue-date-sunday-june-19-2022-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""},{"id":5793495,"title":"'Of course I miss GAA but every player in their right mind wants to play for Ireland in a World Cup'","permalink":"https:\/\/www.the42.ie\/amber-barrett-ireland-2-5793495-Jun2022\/","stats":"<span class=\"red-views icon iconViewVeryPopular\"><\/span>34,812<span class=\"show-on-desktop\">  Views<\/span>","primary_tag":{"slug":"https:\/\/www.thejournal.ie\/proud\/news\/","name":"proud"},"image":"<div id=\"read_next_banner\"><a href=\"https:\/\/www.the42.ie\/amber-barrett-ireland-2-5793495-Jun2022\/\"><img src=\"https:\/\/c2.thejournal.ie\/media\/2022\/06\/amber-barrett-celebrates-after-scoring-irelands-11th-goal-of-the-match-290x120.jpg\"  id=\"r_n_image\" \/><\/a><\/div>","no_image":""}];
+
+    if( typeof(current_post_id) != 'undefined' && !isNaN(current_post_id))
+    {
+        var current_article_id = current_post_id;
+    }
+    else
+    {
+        var current_article_id = 5058478;
+    }
+
+    jQuery(document).ready(function($){
+        var div_read_next = $('#storage_read_next_bottom');
+        readNext.display_read_next_block(div_read_next);
+    });
+-->
+</script>
+<div class="lightboxes">
+    <div id="EmbedArticle" class="lightbox">
+            <div class="form-element border">Embed this post</div>
+            <p class="">To embed this post, copy the code below on your site</p>
+            <p class="">
+                <label for="embedWide600">600px wide</label>
+                <textarea name="embedWide600" id="embedWide600">&lt;iframe width=&quot;600&quot; height=&quot;460&quot; frameborder=&quot;0&quot; style=&quot;border:0px;&quot; src=&quot;https://www.thejournal.ie/https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/?embedpost=5058478&amp;width=600&amp;height=460&quot; &gt;&lt;/iframe&gt;</textarea>
+            </p>
+            <p class="">
+                <label for="embedWide400">400px wide</label>
+                <textarea name="embedWide400" id="embedWide400">&lt;iframe width=&quot;600&quot; height=&quot;460&quot; frameborder=&quot;0&quot; style=&quot;border:0px;&quot; src=&quot;https://www.thejournal.ie/https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/?embedpost=5058478&amp;width=400&amp;height=460&quot; &gt;&lt;/iframe&gt;</textarea>
+            </p>
+            <p class="">
+                <label for="embedWide300">300px wide</label>
+                <textarea name="embedWide300" id="embedWide300">&lt;iframe width=&quot;600&quot; height=&quot;460&quot; frameborder=&quot;0&quot; style=&quot;border:0px;&quot; src=&quot;https://www.thejournal.ie/https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/?embedpost=5058478&amp;width=300&amp;height=460&quot; &gt;&lt;/iframe&gt;</textarea>
+            </p>
+    </div>
+
+    
+<div id="EmailArticle" class="lightbox emailArticle">
+    <form id="email-popup-form" method="post" >
+        <input type="hidden" name="post_id" value="5058478" />
+        <input type="hidden" name="action" value="post_email_form" />
+        <input type="hidden" name="_csrf_token_645a83a41868941e4692aa31e7235f2" value="4cf37966ffd363a7d6a38189434e63e3a992fcfb">
+        <div class="articleTitle form-element border">
+            Email &ldquo;Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading &rdquo;.
+        </div>
+        <div class="form-element clearfix">
+            <div class="info-block">
+                <div class="form-element">
+                    <label for="yourEmail">Your Email</label>
+                    <input type="email" class="text" id="yourEmail" name="email-from" />
+                </div>
+            </div>
+            <div class="info-block recipient-info">
+                <div class="form-element">
+                    <label for="yourEmail">Recipient's Email</label>
+                    <input type="email" class="text" id="yourEmail" name="email-to" />
+                </div>
+            </div>
+        </div>
+
+        <div class="recaptcha-container"></div>
+
+        <div class="clearfix">
+            <button
+                class="buttonSubmit"
+                disabled>Submit</button>
+            <img src="//b0.thejournal.ie/desktop/i/loading.gif"  width="16" height="16"  class="loading" alt="One moment..." />
+        </div>
+
+    </form>
+</div>
+
+    <div id="AlertAuthor" class="lightbox alertAuthor">
+        <form id="alert-author-popup-form" method="post">
+            <input type="hidden" name="post_id" value="5058478" />
+            <input type="hidden" name="action" value="post_alert_form" />
+            <div class="form-element border">Feedback on &ldquo;Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading &rdquo;.</div>
+
+            <div class="form-element message">
+                <div id="AlertAuthorMessage" class="field">
+                    <label for="AlertAuthorMessage">Your Feedback</label>
+                    <textarea name="message" id="AlertAuthorMessage"></textarea>
+                </div>
+            </div>
+                        <div class="form-element">
+                <label for="yourEmail">Your Email (optional)</label>
+                <input type="email" class="text" id="yourEmail" name="email-from" />
+            </div>
+                        <div class="clearfix">
+                <button class="buttonSubmit" type="submit">Submit</button>
+                <img src=""  width="16" height="16" class="loading" alt="One moment..." />
+            </div>
+        </form>
+    </div>
+    
+    
+    
+    <div id="ReportComment" class="lightbox alertAuthor">
+        <form id="report-comment-popup-form" method="post">
+            <input type="hidden" name="post_id" value="5058478" />
+
+            <input type="hidden" name="action" value="comment_actions" />
+
+            <input type="hidden" name="flag_comment" value="" id="report_comment_id" />
+            <div class="form-element border">Report a Comment</div>
+
+            <div class="error-message hidden"></div>
+
+            <div class="form-element message">
+                <label for="yourEmail">Please select the reason for reporting this comment.</label>
+                <select name="report_comment_reason" id="report_comment_reason">
+                    <option value="">
+                        Please select your reason for reporting...
+                    </option>
+                    <option value="offensive">
+                        It contains offensive language, is hateful or incites violence
+                    </option>
+                    <option value="libel">
+                        It contains a libellous/defamatory statement
+                    </option>
+                    <option value="other">
+                        Some other reason...
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-element message">
+                <div class="field">
+                    <label>Please give full details of the problem with the comment...</label>
+                    <textarea name="message" id="report_comment_details" style="height:100px"></textarea>
+                </div>
+            </div>
+            
+                        <div class="form-element">
+                <label for="yourEmail">Your Email</label>
+                <input type="email" class="text" id="report_comment_email" name="email-from" />
+            </div>
+                        <div class="clearfix">
+                <button class="buttonSubmit" type="submit">Submit</button>
+                <img src="//b0.thejournal.ie/desktop/i/loading.gif"  width="16" height="16" class="loading" alt="One moment..." />
+            </div>
+        </form>
+    </div>
+</div>
+<div id="comments">
+    <h2>COMMENTS (3)    </h2>
+            <div class="policy">
+            This is YOUR comments community. Stay civil, stay constructive, stay on topic. Please familiarise yourself with our comments policy <a href="/comments-policy/" target="_BLANK">here</a> before taking part.
+        </div>
+        <a class="big-button" href="#respond">write a comment</a>
+    
+    <ul class="commentList border"></ul>
+</div>
+    <div id="respond">
+        <h2><span id="respond-title">Leave a comment</span><span id="respond-cancel">cancel</span></h2>
+
+        <form action="/submit.php" method="post" class="" id="commentform">
+            <input type="hidden" name="redirect" value="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/">
+            <input type="hidden" name="action" value="new_comment">
+            <input type="hidden" name="auth_service" value="">
+                <div class="login" id="user_login_box">
+        <div id="comment-user-details">
+            <span class="empty-user">
+                <span class="icon-user-circle">
+                    <span class="comment-icon icon-user">
+                    </span>
+                </span>
+                Log in with:            </span>
+            <div id="alt-login-methods">
+                                <p>
+                    <span>
+                        <span class="social-login facebook-login label" id="" onclick="jrnl_social_login('facebook', false, 'false')">
+                            Facebook
+                        </span>
+                    </span>
+                </p>
+                                <p>
+                    <span class="social-login twitter-login label" id="" onclick="jrnl_social_login('twitter', false, 'false')">
+                        Twitter
+                    </span>
+                </p>
+                                <p>
+                    <img id="auth_loading" class="login_loading_throb" src="//b0.thejournal.ie/desktop/i/loading.gif">
+                </p>
+            </div>
+        </div>
+    </div>
+            <div class="login" id="user_details"  style="display: none;">
+                <div id="comment-user-details" >
+    <span class="icon-user-circle">
+        <a href="/user/">
+            <img src="" id="user_details_img" width="50" height="50" />
+        </a>
+    </span>
+    <div class="user-text">
+        <span class="user-name">
+            <a href="/user/" id="user_details_name"></a>
+        </span>
+        <span class="user-logout">
+            <a href="https://www.thejournal.ie/logout.php?callback=https%253A%252F%252Fwww.thejournal.ie%252Fcovid-19-claims-high-consequence-disease-debunked-5058478-Mar2020%252F">Log out</a>
+        </span>
+        <span class="user-service">
+        Logged in with <span id="user_details_auth"></span>
+        </span>
+    </div>
+</div>
+            </div>
+            <div class="comment-toxicity">
+                <div class="loading">&nbsp;</div>
+                <div class="result">
+                    <div class="message"></div>
+                    <div class="feedback"></div>
+                </div>
+            </div>
+
+            <div id="banned-info" class="comment-info hidden">
+                <div class="comment-modal">
+                    <div class="banned-icon"></div>
+                    <div class="text-div">
+                        <p id="banned-text">Access to the comments facility has been disabled for this user</p>
+                        <a href="/comments-policy/" target="_BLANK">View our policy</a>
+                    </div>
+                </div>
+            </div>
+            <div id="duplicate-info" class="comment-info hidden">
+                <div class="comment-modal">⚠️ Duplicate comment</div>
+            </div>
+
+            <textarea name="comment" id="comment"></textarea>
+
+            <div id="commentExtraFields">
+                <div id="comment_options">
+                                            <label id="share_comment_cbox_label" for="share_comment_cbox">Share Comment on Facebook or Twitter</label>
+                        <span id="share_comment_cbox_twitter" class="hidden" title="Send Comment to Twitter"></span>
+                        <span id="share_comment_cbox_facebook" class="hidden" title="Share Comment on Facebook"></span>
+                        <input style="width: auto;" type="checkbox" name="share_comment" id="share_comment_cbox" value="1"  checked="checked">
+                                        </div>
+            </div>
+            <div class="commentSubmitFields">
+                <button class="comment-submit" type="">
+                    Post Comment
+                </button>
+                <input type="hidden" name="comment_post_ID" value="5058478" id="comment_post_ID">
+                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+            </div>
+        </form>
+        <span id="comments_js"></span>
+        <div style="clear:both"></div>
+    </div>
+
+</div><div id="scroll-sidebar"><div class="read_next_block sidebar" id="storage_read_next_widget">
+        <h3>Read Next:</h3>
+</div>
+<script type="text/javascript">
+<!--
+    jQuery(document).ready(function($){
+        var widget_read_next = $('#storage_read_next_widget');
+        readNext.display_read_next_sidebar(widget_read_next);
+    });
+-->
+</script>
+<!-- Sidebar -->
+<div class="sidebar span-4 last" id="sidebar-holder">
+<div class="advert adserverad">
+<div id='div-gpt-ad-1365092406213-0'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1365092406213-0'); });
+</script>
+</div></div>
+    <div class="widget">
+        <div class="sectionSeparator">
+        <h3>Download our app</h3>
+        </div>
+        <div class="widgetContent" style="height:75px; margin:0px;  padding:0px">
+            <div class="single_app_link" style="margin-top:5px; width:100%">
+
+                <span style="float:left; margin-left: 15px">
+                    <a href="https://itunes.apple.com/ie/app/thejournal-ie/id409359491?mt=8" title="Download the TheJournal.ie for the iPhone, iPad and iPod">
+                        <img src="//b0.thejournal.ie/desktop/i/itunes_icon.png" class="itunes_image" width="134" height="45" />
+                        <!--span class="app_link_text app_link_text_ios">Get our free app for<br/>the iPhone & iPad</span-->
+                    </a>
+                </span>
+                <span style="float:right; margin-right:5px">
+                    <a href="https://play.google.com/store/apps/details?id=com.distilledmedia.thejournal" title="Download the TheJournal.ie for Android">
+                        <img src="//b0.thejournal.ie/desktop/i/android_get_it_on_play_logo_small.png" class="itunes_image" width="129" height="45" />
+                        <!--span class="app_link_text app_link_text_android">Also available in<br/>the Android Market</span-->
+                    </a>
+                </span>
+
+            </div>
+
+            <!--div style="padding:10px 20px 0; clear:both; line-height:1em">
+            <h3>Top Features:</h3>
+            <ul>
+                <li>5x faster loading of articles
+                <li>In-flight/offline reading
+                <li>Swipe between articles & photos
+                <li>Live-scores from rugby and football matches
+            </ul>
+
+            </div-->
+
+        </div>
+    </div>
+
+
+</div>
+<!-- /Sidebar -->
+</div><script>_pool.push(['add', ['_dml', 'irish']]);_pool.push(['add', ['_dml', 'irish7', 10080]]);_pool.push(['add', ['_dml', 'thejournal']]);_pool.push(['add', ['_dml', 'thejournal7', 10080]]);</script>    <!-- Latest Opinions -->
+    <div class="trendingTags span-12" id="scroll-footer">
+        <div class="sectionSeparator">
+            <h3>Trending Opinions</h3>
+        </div>
+                <div class="footer_lo">
+            <table>
+                <tr>
+                    <td class="footer_lo_avatar">
+                        <a href="https://www.thejournal.ie/author/thejournal.ie-reader/"><img src="https://f1.thejournal.ie/media/2018/09/money-diary-series-river-image1-133x133.png" alt="TheJournal.ie reader" width="60" height="60"  class="footer_lo_avatar" /></a>
+                    </td>
+                    <td class="footer_lo_article">
+                        <a href="https://www.thejournal.ie/readme/how-i-spend-my-money-70-5790400-Jun2022/" class="article">Money Diaries: A laboratory aide on €28K living in Kildare</a><br />
+                        <a href="https://www.thejournal.ie/author/thejournal.ie-reader/" class="author">TheJournal.ie reader</a>
+                    </td>
+                </tr>
+            </table>
+            <div class="footer_lo footer_lo_2nd_row">
+                <a class="excerpt" href="https://www.thejournal.ie/readme/how-i-spend-my-money-70-5790400-Jun2022/">This week, our reader is busy saving in preparation for moving into a new house with her husband. </a>
+            </div>
+        </div>
+                <div class="footer_lo">
+            <table>
+                <tr>
+                    <td class="footer_lo_avatar">
+                        <a href="https://www.thejournal.ie/author/john-connell/"><img src="https://f0.thejournal.ie/media/2015/03/Screen-Shot-2015-03-25-at-14.44.41-133x133.png" alt="John Connell" width="60" height="60"  class="footer_lo_avatar" /></a>
+                    </td>
+                    <td class="footer_lo_article">
+                        <a href="https://www.thejournal.ie/readme/opinion-rivers-waterways-nature-wilderness-5790594-Jun2022/" class="article">Opinion: Rivers are our last true wilderness in Ireland</a><br />
+                        <a href="https://www.thejournal.ie/author/john-connell/" class="author">John Connell</a>
+                    </td>
+                </tr>
+            </table>
+            <div class="footer_lo footer_lo_2nd_row">
+                <a class="excerpt" href="https://www.thejournal.ie/readme/opinion-rivers-waterways-nature-wilderness-5790594-Jun2022/">Author John Connell writes about how a canoe trip in lockdown showed him the importance of the country&#8217;s waterways. </a>
+            </div>
+        </div>
+                <div class="footer_lo">
+            <table>
+                <tr>
+                    <td class="footer_lo_avatar">
+                        <a href="https://www.thejournal.ie/author/dr-david-robbins/"><img src="https://f0.thejournal.ie/media/2022/06/Screenshot-2022-06-14-at-21.47.311-133x133.png" alt="Dr David Robbins" width="60" height="60"  class="footer_lo_avatar" /></a>
+                    </td>
+                    <td class="footer_lo_article">
+                        <a href="https://www.thejournal.ie/readme/climate-crisis-reporting-5791050-Jun2022/" class="article">Opinion: We are all climate reporters now</a><br />
+                        <a href="https://www.thejournal.ie/author/dr-david-robbins/" class="author">Dr David Robbins</a>
+                    </td>
+                </tr>
+            </table>
+            <div class="footer_lo footer_lo_2nd_row">
+                <a class="excerpt" href="https://www.thejournal.ie/readme/climate-crisis-reporting-5791050-Jun2022/">The public is telling the media what it wants, writes Dr David Robbins, and that is trustworthy, engaging climate coverage.</a>
+            </div>
+        </div>
+            </div>
+    <!-- /Latest Opinions -->
+        </div>
+        <!-- /Main content -->
+        <!-- Footer -->
+        <div class="footer background">
+            <div id="server_identifier">
+                <span title="Rendered at 2022-06-19 21:34:03 Europe/Dublin +0100 DST:0 on 06c905109d0e2468e.thejournal.ie.aws.loc">
+                                            &#8734;
+                                        </span>
+            </div>
+            <div class="span-2">
+                <h3 class="border">About Us</h3>
+                <ul>
+                    <li><a href="https://www.thejournal.ie/about-us/">About Us</a></li>
+                    <li><a href="https://careers.thejournal.ie/">We're Hiring!</a></li>
+                    <li><a href="https://www.thejournal.ie/contact/">Contact Us</a></li>
+                    <li><a href="https://advertising.thejournal.ie">Advertise With Us</a></li>
+                    <li><a href="https://www.thejournal.ie/the-journal-factcheck/">The Journal FactCheck</a></li>
+                </ul>
+            </div>
+            <div class="span-2">
+                <h3 class="border">Follow Us</h3>
+                <ul>
+                    <li><a href="https://twitter.com/thejournal_ie">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/thejournal.ie">Facebook</a></li>
+                </ul>
+            </div>
+            <div class="span-2">
+                <h3 class="border">Corrections</h3>
+                <ul>
+                    <li><a class="lightboxTrigger" href="#ReportContent" title="Corrections">Report Content</a></li>
+
+                </ul>
+            </div>
+            <div class="span-2">
+                <h3 class="border">Policies</h3>
+                <ul>
+                    <li>
+                        <a href="/terms/">
+                            Terms of Use
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cookies-privacy-policy/" title="Cookies and Privacy">
+                            Cookies &amp; Privacy
+                        </a>
+                    </li>
+                    <li><a href="/advertising-policy/" title="Advertising">Advertising</a></li>
+                    <li><a href="/comments-policy/" title="Comments">Comments</a></li>
+                    <li><a href="/copyright-policy/" title="Copyright">Copyright</a></li>
+                    <li><a href="/competitions-terms-and-conditions/">Competition</a></li>
+                </ul>
+            </div>
+            <div class="copyright span-4 last">
+                <strong>Content copyright &copy; Journal Media Ltd. 2022</strong>
+                Registered in Dublin, registration number: 483623.
+                Registered office: 3rd floor, Latin Hall, Golden Lane, Dublin 8.
+            </div>
+            <div class="legal border span-12">
+            <span class='PCI-footer-logo PCI-logo'></span>
+            <p>
+              <b><i>TheJournal.ie</i></b> supports the work of the Press Council of Ireland and the Office of the Press Ombudsman, and our staff operate within the Code of Practice.  You can obtain a copy of the Code, or contact the Council, at <a href='http://www.presscouncil.ie' target="_blank">www.presscouncil.ie</a>, PH: (01) 6489130, Lo-Call 1890 208 080 or email: <a href="mailto:info@presscouncil.ie" target="_blank">info@presscouncil.ie</a>
+              <br>&nbsp;             </p>
+            <p>Please note that TheJournal.ie uses cookies to improve your experience and to provide services and advertising. For more information on cookies please refer to our <a href="https://www.thejournal.ie/cookies-policy">cookies policy</a>.</p>
+            <p>News images provided by <a href="https://www.pressassociation.com/images.html">Press Association</a> and <a href="https://www.photocallireland.com/">Photocall Ireland</a> unless otherwise stated. Irish sport images provided by <a href="https://www.inpho.ie">Inpho Photography</a> unless otherwise stated. Wire service provided by <a href="https://www.thejournal.ie/terms/?c=1#ap">Associated Press</a>.</p>
+
+            <p>Journal Media does not control and is not responsible for user created content, posts, comments, submissions or preferences. Users are reminded that they are fully responsible for their own created content and their own posts, comments and submissions and fully and effectively warrant and indemnify Journal Media in relation to such content and their ability to make such content, posts, comments and submissions available. Journal Media does not control and is not responsible for the content of external websites.</p>
+
+            <div class="footer-line">
+                <p class="switcher">
+                    <a href="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/?switcher=touch" rel="nofollow">Switch to Mobile Site</a>
+                </p>
+                <p class="distilled">Sites:
+                    <a href="https://www.thejournal.ie/">TheJournal.ie</a> |
+                    <a href="https://www.noteworthy.ie/">Noteworthy</a> |
+                    <a href="https://www.the42.ie/">The42</a> |
+                    <a href="https://www.boards.ie/">Boards.ie</a> |
+                    <a href="https://www.adverts.ie/">Adverts.ie</a> |
+                    <a href="https://www.daft.ie/">Daft.ie</a>
+                </p>
+            </div>
+            </div>
+
+        </div>
+
+        <!-- /Footer -->
+
+        </div>
+        <!-- /Main container -->
+
+        <!-- Lightboxes -->
+    <div class="lightboxes">
+
+<div id="CommentLogIn" class="lightbox">
+    <div class="border">Please log in to comment</div>
+    <div class="login-buttons clearfix">
+        <div id="alt-login-methods">
+            <p>
+                <span>
+                    <span class="facebook_connect_button label" id="" onclick="jrnl_social_login('facebook', true, false)">
+                        <img src="//b0.thejournal.ie/desktop/i/fb-login.png" width="169" height="22" />
+                    </span>
+                </span>
+            </p>
+            <p>
+                <span class="twitter_connect_button label" id="" onclick="jrnl_social_login('twitter', true, false)">
+                    <img width="151" height="24" border="0" src="//b0.thejournal.ie/desktop/i/tw-login.png">
+                </span>
+            </p>
+            <p>
+            <img id="main_page_login" class="login_loading_throb" src="//b0.thejournal.ie/desktop/i/loading.gif">
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="feed-popup" class="lightbox">
+
+    <div class="border">RSS feeds available here:</div>
+
+    <div class="feedlist border">
+<p class="rss"><a href="/feed/">TheJournal.ie Latest News Feed</a></p><p class="rss"><a href="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020//feed/">Debunked: The UK no longer considers Covid-19 a high consequence infectious disease, but social media posts about it are misleading  Comments</a></p>    </div>
+
+</div>
+<div id="ReportContent" class="lightbox reportContent">
+    <form id="report-content-popup-form" method="post">
+    <input type="hidden" name="current_page" value="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/?utm_source=shortlink" />
+        <input type="hidden" name="action" value="post_report_content_form" />
+        <input type="hidden" name="article-id" value="5058478" />
+        <div class="form-element border">Report an error, omission or problem:</div>
+
+        <div class="form-element message">
+            <div id="AlertAuthorMessage" class="field">
+                <label for="AlertAuthorMessage">Message:</label>
+                <textarea name="message" id="AlertAuthorMessage"></textarea>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <label for="yourEmail">Your Email (optional)</label>
+            <input type="email" class="text" id="yourEmail" name="email-from" />
+        </div>
+
+        <div class="clearfix">
+            <button class="buttonSubmit" type="submit">Submit</button>
+            <img src="//b0.thejournal.ie/desktop/i/loading.gif"  width="16" height="16"  class="loading" alt="One moment..." />
+        </div>
+
+    </form>
+</div>
+<div id="EmailAlert" class="lightbox emailAlert">
+    <form id="create-email-alert-form" method="post">
+    <input type="hidden" name="current_page" value="https://www.thejournal.ie/covid-19-claims-high-consequence-disease-debunked-5058478-Mar2020/?utm_source=shortlink" />
+        <input type="hidden" name="action" value="post_create_email_alert_form" />
+        <div class="form-element border">Create Email Alert</div>
+        <p>Create an email alert based on the current article</p>
+
+        <div class="form-element">
+            <label for="alertEmailAddress">Email Address</label>
+            <input type="text" class="text" id="alertEmailAddress" name="email-address" />
+        </div>
+
+        <div class="form-element">
+            <input type="radio" class="radio emailAlert" id="alertFrequencyDaily" name="alert-frequency" value="daily" checked="checked" />
+            <label for="alertFrequencyDaily" class="emailAlert">One email every morning</label>
+            <input type="radio" class="radio emailAlert" id="alertFrequencyInstantly" name="alert-frequency" value="instantly" />
+            <label for="alertFrequencyInstantly" class="emailAlert">As soon as new articles come online</label>
+        </div>
+
+        <input type="hidden" name="ip-address" value="86.95.211.83" />
+        <input type="hidden" name="feed-url" value="/topic//feed" />
+        <input type="hidden" name="feed-description" value="Articles related to " />
+
+        <div class="clearfix">
+            <button class="buttonSubmit" type="submit">Submit</button>
+            <img src="//b0.thejournal.ie/desktop/i/loading.gif"  width="16" height="16"  class="loading" alt="One moment..." />
+        </div>
+
+    </form>
+</div>
+
+<div id="Thanks" class="lightbox">
+    <h1 id="thanks-message" style="color:#cc0000"></h1>
+</div>
+</div>
+        <!-- /Lightboxes -->
+
+        <script type="text/javascript">
+            var _ac = 'thejournal.ie';
+            var _sid = '234604';
+            var _un = 'thejournal.ie';
+            var _pa = '76af0b4d8a69839c0d361c0862fd0ed8';
+        </script>
+
+        <img src='/i.php?i=5058478&r=165567084320427&key=article_5058478&interaction=view' />    </body>
+</html>

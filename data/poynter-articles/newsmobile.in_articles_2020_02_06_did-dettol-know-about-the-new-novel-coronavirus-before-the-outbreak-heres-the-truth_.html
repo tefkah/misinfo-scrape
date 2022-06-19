@@ -1,0 +1,1991 @@
+<!DOCTYPE html><!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]--><!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]--><!--[if gt IE 8]><!--><html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#"><!--<![endif]--><head><meta charset="UTF-8"/>
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function markLoaded(filename){if(!filename||0===filename.length){return;}
+if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
+log("markLoaded dummyfile: "+items[filename].name);}
+function logWhatsBlocked(){for(var i in items){if(items.hasOwnProperty(i)===false)continue;var item=items[i];isBlocked(item)}}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,logWhatsBlocked:logWhatsBlocked,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+if(typeof isOrig==='undefined'){isOrig=false;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){if((impId!=="0"||isOrig===true)&&adUnit!==""){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}}
+function AddPixelById(impFullId,pixelData,isOrig,revenue){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];var pix={type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig};if(typeof revenue!=='undefined'){pix.revenue=revenue;}
+pixels.push(pix);}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length>0){var isOrig=pixels[0].is_orig||false;var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+__ez.dot.Fire(pixelURL);}});}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false;}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();</script>
+
+    
+
+    
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<meta name="google-site-verification" content="gJyCsxP7mWEkSM33FV3kyPtHYurZD04oufa00IRVWj8"/>
+
+	<meta name="B-verify" content="eaa1ed07b3b07e48d3811f1ebd07c2c70a3bc605"/>
+
+	
+
+	<meta property="fb:pages" content="207001832817081"/>
+
+	<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+	<script async="" src="//"></script>
+
+	<script>
+
+  	(adsbygoogle = window.adsbygoogle || []).push({
+
+    google_ad_client: "ca-pub-9419436853807952",
+
+    enable_page_level_ads: true
+
+ 	});
+
+	</script>
+
+	
+
+	<!-- Messenger Chat Plugin Code -->
+
+    <script type="text/javascript">var ezouid = "1";</script><base href="https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/"><script type='text/javascript'>
+var ezoTemplate = 'old_site_noads';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 355354;
+var ezdomain = 'newsmobile.in';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Utrecht","country":"NL","days_since_last_visit":-1,"domain_id":355354,"engaged_time_visit":0,"ezcache_level":1,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"9428a5f1-50b2-4b5e-77a4-bf365654b869","position_selection_id":0,"postal_code":"3532","pv_event_count":0,"response_size_orig":133273,"response_time_orig":461,"serverid":"54.220.243.215:19322","state":"UT","t_epoch":1655670475,"template_id":120,"time_on_site_visit":0,"url":"https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/","user_id":0,"word_count":912,"worst_bad_word_level":1};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_355354=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["9428a5f1-50b2-4b5e-77a4-bf365654b869", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script>
+<script type="text/javascript">var _audins_dom="newsmobile_in",_audins_did=355354;__ez.queue.addFile('/detroitchicago/cmbv2.js', '/detroitchicago/cmbv2.js?gcb=195-0&cb=04-1y02-5y06-12y07-1y19-6y0b-5y0d-16y13-3y17-4y1c-2y21-3y2d-4y55-1&cmbcb=84&sj=x04x02x06x07x19x0bx0dx13x17x1cx21x2dx55', true, [], true, false, true, false);</script>
+<script type="text/javascript" defer>__ez.queue.addFile('/detroitchicago/cmbdv2.js', '/detroitchicago/cmbdv2.js?gcb=195-0&cb=03-5y0c-5y18-4&cmbcb=84&sj=x03x0cx18', true, ['/detroitchicago/cmbv2.js'], true, false, true, false);</script></head><body data-rsssl="1" class="post-template-default single single-post postid-1092964 single-format-standard did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth global-block-template-1 wpb-js-composer js-comp-ver-6.7.0 vc_responsive aa-prefix-newsm- aa-disabled-bots td-animation-stack-type0 td-full-layout" itemscope="itemscope" itemtype="https://schema.org/WebPage"><div id="fb-root"></div>
+
+
+
+    <!-- Your Chat Plugin code -->
+
+    <div id="fb-customer-chat" class="fb-customerchat">
+
+    </div>
+
+
+
+    <script>
+
+      var chatbox = document.getElementById('fb-customer-chat');
+
+      chatbox.setAttribute("page_id", "207001832817081");
+
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+
+
+      window.fbAsyncInit = function() {
+
+        FB.init({
+
+          xfbml            : true,
+
+          version          : 'v11.0'
+
+        });
+
+      };
+
+
+
+      (function(d, s, id) {
+
+        var js, fjs = d.getElementsByTagName(s)[0];
+
+        if (d.getElementById(id)) return;
+
+        js = d.createElement(s); js.id = id;
+
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+
+        fjs.parentNode.insertBefore(js, fjs);
+
+      }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-108364550-1"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+
+
+  gtag('config', 'UA-108364550-1');
+
+</script>
+
+	
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-49958448-1"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+
+
+  gtag('config', 'UA-49958448-1');
+
+</script>
+
+
+
+
+
+    
+
+<link rel="pingback" href="https://newsmobile.in/xmlrpc.php"/>
+
+	
+
+    	<script type="text/javascript">function theChampLoadEvent(e){var t=window.onload;if(typeof window.onload!="function"){window.onload=e}else{window.onload=function(){t();e()}}}</script>
+		<script type="text/javascript">var theChampDefaultLang = 'en_US', theChampCloseIconPath = 'https://newsmobile.in/wp-content/plugins/super-socializer/images/close.png';</script>
+		<script>var theChampSiteUrl = 'https://newsmobile.in', theChampVerified = 0, theChampEmailPopup = 0, heateorSsMoreSharePopupSearchText = 'Search';</script>
+			<script> var theChampFBKey = '', theChampFBLang = 'en_US', theChampFbLikeMycred = 0, theChampSsga = 0, theChampCommentNotification = 0, theChampHeateorFcmRecentComments = 0, theChampFbIosLogin = 0; </script>
+						<script type="text/javascript">var theChampFBCommentUrl = 'https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/'; var theChampFBCommentColor = ''; var theChampFBCommentNumPosts = ''; var theChampFBCommentWidth = '100%'; var theChampFBCommentOrderby = ''; var theChampCommentingTabs = "wordpress,facebook,disqus", theChampGpCommentsUrl = 'https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/', theChampDisqusShortname = '', theChampScEnabledTabs = 'wordpress,fb', theChampScLabel = 'Leave a reply', theChampScTabLabels = {"wordpress":"Default Comments (0)","fb":"Facebook Comments","disqus":"Disqus Comments"}, theChampGpCommentsWidth = 0, theChampCommentingId = 'respond'</script>
+					<style type="text/css">
+						.the_champ_button_instagram span.the_champ_svg,a.the_champ_instagram span.the_champ_svg{background:radial-gradient(circle at 30% 107%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+					.the_champ_horizontal_sharing .the_champ_svg,.heateor_ss_standard_follow_icons_container .the_champ_svg{
+					color: #fff;
+				border-width: 0px;
+		border-style: solid;
+		border-color: transparent;
+	}
+		.the_champ_horizontal_sharing .theChampTCBackground{
+		color:#666;
+	}
+		.the_champ_horizontal_sharing span.the_champ_svg:hover,.heateor_ss_standard_follow_icons_container span.the_champ_svg:hover{
+				border-color: transparent;
+	}
+		.the_champ_vertical_sharing span.the_champ_svg,.heateor_ss_floating_follow_icons_container span.the_champ_svg{
+					color: #fff;
+				border-width: 0px;
+		border-style: solid;
+		border-color: transparent;
+	}
+		.the_champ_vertical_sharing .theChampTCBackground{
+		color:#666;
+	}
+		.the_champ_vertical_sharing span.the_champ_svg:hover,.heateor_ss_floating_follow_icons_container span.the_champ_svg:hover{
+						border-color: transparent;
+		}
+	</style>
+	
+		<!-- All in One SEO 4.2.1.1 -->
+		<title>Did Dettol know about the new ‘novel Coronavirus’ before the outbreak? Here’s the truth | Newsmobile</title>
+		<meta name="description" content="A picture of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to &#39;kill coronavirus&#39; and that they knew about the new strain since 2019. &#34;Did Dettol knew about this Corona Virus in 2019 ?&#34; the text read."/>
+		<meta name="robots" content="max-image-preview:large"/>
+		<link rel="canonical" href="https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/"/>
+		<meta property="og:locale" content="en_US"/>
+		<meta property="og:site_name" content="Newsmobile"/>
+		<meta property="og:type" content="article"/>
+		<meta property="og:title" content="Did Dettol know about the new ‘novel Coronavirus’ before the outbreak? Here’s the truth | Newsmobile"/>
+		<meta property="og:description" content="A picture of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to &#39;kill coronavirus&#39; and that they knew about the new strain since 2019. &#34;Did Dettol knew about this Corona Virus in 2019 ?&#34; the text read."/>
+		<meta property="og:url" content="https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/"/>
+		<meta property="article:published_time" content="2020-02-06T06:54:36+00:00"/>
+		<meta property="article:modified_time" content="2020-03-12T09:37:57+00:00"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:title" content="Did Dettol know about the new ‘novel Coronavirus’ before the outbreak? Here’s the truth | Newsmobile"/>
+		<meta name="twitter:description" content="A picture of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to &#39;kill coronavirus&#39; and that they knew about the new strain since 2019. &#34;Did Dettol knew about this Corona Virus in 2019 ?&#34; the text read."/>
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/newsmobile.in\/#website","url":"https:\/\/newsmobile.in\/","name":"Newsmobile","description":"News for your mobile","inLanguage":"en-US","publisher":{"@id":"https:\/\/newsmobile.in\/#organization"}},{"@type":"Organization","@id":"https:\/\/newsmobile.in\/#organization","name":"Newsmobile","url":"https:\/\/newsmobile.in\/"},{"@type":"BreadcrumbList","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/newsmobile.in\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/newsmobile.in\/","name":"Home","description":"Get latest news headlines including breaking news and current news from Delhi, Mumbai, Kolkata, Chennai, Bangalore, and other parts of world at Newsmobile.in.","url":"https:\/\/newsmobile.in\/"},"nextItem":"https:\/\/newsmobile.in\/articles\/2020\/#listItem"},{"@type":"ListItem","@id":"https:\/\/newsmobile.in\/articles\/2020\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/newsmobile.in\/articles\/2020\/","name":"2020","url":"https:\/\/newsmobile.in\/articles\/2020\/"},"nextItem":"https:\/\/newsmobile.in\/articles\/2020\/02\/#listItem","previousItem":"https:\/\/newsmobile.in\/#listItem"},{"@type":"ListItem","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/#listItem","position":3,"item":{"@type":"WebPage","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/","name":"February","url":"https:\/\/newsmobile.in\/articles\/2020\/02\/"},"nextItem":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/#listItem","previousItem":"https:\/\/newsmobile.in\/articles\/2020\/#listItem"},{"@type":"ListItem","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/#listItem","position":4,"item":{"@type":"WebPage","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/","name":"6","url":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/"},"nextItem":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#listItem","previousItem":"https:\/\/newsmobile.in\/articles\/2020\/02\/#listItem"},{"@type":"ListItem","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#listItem","position":5,"item":{"@type":"WebPage","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/","name":"Did Dettol know about the new 'novel Coronavirus' before the outbreak? Here's the truth","description":"A picture of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to 'kill coronavirus' and that they knew about the new strain since 2019. \"Did Dettol knew about this Corona Virus in 2019 ?\" the text read.","url":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/"},"previousItem":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/#listItem"}]},{"@type":"Person","@id":"https:\/\/newsmobile.in\/articles\/author\/newsmobilefactcheckbureau\/#author","url":"https:\/\/newsmobile.in\/articles\/author\/newsmobilefactcheckbureau\/","name":"News Mobile Fact Check Bureau","image":{"@type":"ImageObject","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#authorImage","url":"https:\/\/newsmobile.in\/wp-content\/uploads\/2017\/06\/1-1-96x96.jpeg","width":96,"height":96,"caption":"News Mobile Fact Check Bureau"}},{"@type":"WebPage","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#webpage","url":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/","name":"Did Dettol know about the new \u2018novel Coronavirus\u2019 before the outbreak? Here\u2019s the truth | Newsmobile","description":"A picture of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to 'kill coronavirus' and that they knew about the new strain since 2019. \"Did Dettol knew about this Corona Virus in 2019 ?\" the text read.","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/newsmobile.in\/#website"},"breadcrumb":{"@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#breadcrumblist"},"author":"https:\/\/newsmobile.in\/articles\/author\/newsmobilefactcheckbureau\/#author","creator":"https:\/\/newsmobile.in\/articles\/author\/newsmobilefactcheckbureau\/#author","datePublished":"2020-02-06T06:54:36+05:30","dateModified":"2020-03-12T09:37:57+05:30"},{"@type":"Article","@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#article","name":"Did Dettol know about the new \u2018novel Coronavirus\u2019 before the outbreak? Here\u2019s the truth | Newsmobile","description":"A picture of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to 'kill coronavirus' and that they knew about the new strain since 2019. \"Did Dettol knew about this Corona Virus in 2019 ?\" the text read.","inLanguage":"en-US","headline":"Did Dettol know about the new 'novel Coronavirus' before the outbreak? Here's the truth","author":{"@id":"https:\/\/newsmobile.in\/articles\/author\/newsmobilefactcheckbureau\/#author"},"publisher":{"@id":"https:\/\/newsmobile.in\/#organization"},"datePublished":"2020-02-06T06:54:36+05:30","dateModified":"2020-03-12T09:37:57+05:30","articleSection":"Coronavirus Fact Check, NM FACT CHECKER, 2019, 2019-nCoV, Coronaviruses, Dettol, Did Dettol know about the new 'novel Coronavirus' before the outbreak? Here's the truth, Fact check, misleading, Reckitt Benckiser","mainEntityOfPage":{"@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#webpage"},"isPartOf":{"@id":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/#webpage"},"image":{"@type":"ImageObject","@id":"https:\/\/newsmobile.in\/#articleImage","url":"https:\/\/newsmobile.in\/wp-content\/uploads\/2020\/02\/Screenshot-2020-02-06-at-12.20.33.png","width":449,"height":640}}]}
+		</script>
+		<!-- All in One SEO -->
+
+
+<!-- Twitter Card generated by MashShare 3.8.1 - https://www.mashshare.net -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Did Dettol know about the new ‘novel Coronavirus’ before the outbreak? Here’s the truth"/>
+<meta name="twitter:description" content="A picture of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to &#39;kill coronavirus&#39; and that they"/>
+<meta name="twitter:site" content="@newsmobileindia"/>
+<!-- Twitter Card generated by MashShare 3.8.1 - https://www.mashshare.net -->
+
+<meta name="author" content="News Mobile Fact Check Bureau"/>
+<link rel="icon" type="image/png" href="https://www.newsmobile.in/wp-content/uploads/2017/06/1-1.jpeg"/><link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="//s.w.org"/>
+<link rel="alternate" type="application/rss+xml" title="Newsmobile » Feed" href="https://newsmobile.in/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Newsmobile » Comments Feed" href="https://newsmobile.in/comments/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Newsmobile » Did Dettol know about the new ‘novel Coronavirus’ before the outbreak? Here’s the truth Comments Feed" href="https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/feed/"/>
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/newsmobile.in\/wp-includes\/js\/wp-emoji-release.min.js?ver=e9aca596f03aec42d042ae53466f858d"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<!-- newsmobile.in is managing ads with Advanced Ads --><script id="newsm-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="font-awesome-icons-v4.7.0-css" href="https://newsmobile.in/wp-content/plugins/everest-counter-lite/css/font-awesome/font-awesome.min.css?ver=2.1.0" type="text/css" media="all"/>
+<link rel="stylesheet" id="ec_gener_icons-css" href="https://newsmobile.in/wp-content/plugins/everest-counter-lite/css/genericons.css?ver=2.1.0" type="text/css" media="all"/>
+<link rel="stylesheet" id="dashicons-css" href="https://newsmobile.in/wp-includes/css/dashicons.min.css?ver=e9aca596f03aec42d042ae53466f858d" type="text/css" media="all"/>
+<link rel="stylesheet" id="google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%7CABeeZee%7CAguafina+Script%7COpen+Sans%7CRoboto%7CRoboto+Slab%7CLato%7CTitillium+Web%7CSource+Sans+Pro%7CPlayfair+Display%7CMontserrat%7CKhand%7COswald%7CEk+Mukta%7CRubik%7CPT+Sans+Narrow%7CPoppins%7COxygen%3A300%2C400%2C600%2C700&amp;ver=2.1.0" type="text/css" media="all"/>
+<link rel="stylesheet" id="ec_frontend_css-css" href="https://newsmobile.in/wp-content/plugins/everest-counter-lite/css/frontend/ec-frontend.css?ver=2.1.0" type="text/css" media="all"/>
+<link rel="stylesheet" id="wp-block-library-css" href="https://newsmobile.in/wp-includes/css/dist/block-library/style.min.css?ver=e9aca596f03aec42d042ae53466f858d" type="text/css" media="all"/>
+<link rel="stylesheet" id="contact-form-7-css" href="https://newsmobile.in/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.6.1" type="text/css" media="all"/>
+<link rel="stylesheet" id="mashsb-styles-css" href="https://newsmobile.in/wp-content/plugins/mashsharer/assets/css/mashsb.min.css?ver=3.8.1" type="text/css" media="all"/>
+<style id="mashsb-styles-inline-css" type="text/css">
+.mashsb-count {color:#cccccc;}@media only screen and (min-width:568px){.mashsb-buttons a {min-width: 177px;}}
+</style>
+<link rel="stylesheet" id="wpcloudy-css" href="https://newsmobile.in/wp-content/plugins/wp-cloudy/css/wpcloudy.min.css?ver=e9aca596f03aec42d042ae53466f858d" type="text/css" media="all"/>
+<link rel="stylesheet" id="ppress-frontend-css" href="https://newsmobile.in/wp-content/plugins/wp-user-avatar/assets/css/frontend.min.css?ver=3.2.14" type="text/css" media="all"/>
+<link rel="stylesheet" id="ppress-flatpickr-css" href="https://newsmobile.in/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.css?ver=3.2.14" type="text/css" media="all"/>
+<link rel="stylesheet" id="ppress-select2-css" href="https://newsmobile.in/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.css?ver=e9aca596f03aec42d042ae53466f858d" type="text/css" media="all"/>
+<link rel="stylesheet" id="mashnet-styles-css" href="https://newsmobile.in/wp-content/plugins/mashshare-networks/assets/css/mashnet.min.css?ver=2.4.2" type="text/css" media="all"/>
+<link rel="stylesheet" id="wordpress-popular-posts-css-css" href="https://newsmobile.in/wp-content/plugins/wordpress-popular-posts/assets/css/wpp.css?ver=5.5.1" type="text/css" media="all"/>
+<link rel="stylesheet" id="google-fonts-style-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400%2C400italic%2C600%2C600italic%2C700%7CRoboto%3A300%2C400%2C400italic%2C500%2C500italic%2C700%2C900&amp;ver=e9aca596f03aec42d042ae53466f858d" type="text/css" media="all"/>
+<link rel="stylesheet" id="the_champ_frontend_css-css" href="https://newsmobile.in/wp-content/plugins/super-socializer/css/front.css?ver=7.13.35" type="text/css" media="all"/>
+<link rel="stylesheet" id="tablepress-default-css" href="https://newsmobile.in/wp-content/plugins/tablepress/css/default.min.css?ver=1.14" type="text/css" media="all"/>
+<link rel="stylesheet" id="__EPYT__style-css" href="https://newsmobile.in/wp-content/plugins/youtube-embed-plus/styles/ytprefs.min.css?ver=14.1.1" type="text/css" media="all"/>
+<style id="__EPYT__style-inline-css" type="text/css">
+
+                .epyt-gallery-thumb {
+                        width: 33.333%;
+                }
+                
+                         @media (min-width:0px) and (max-width: 767px) {
+                            .epyt-gallery-rowbreak {
+                                display: none;
+                            }
+                            .epyt-gallery-allthumbs[class*="epyt-cols"] .epyt-gallery-thumb {
+                                width: 100% !important;
+                            }
+                          }
+</style>
+<link rel="stylesheet" id="js_composer_front-css" href="https://newsmobile.in/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.7.0" type="text/css" media="all"/>
+<link rel="stylesheet" id="td-theme-css" href="https://newsmobile.in/wp-content/themes/SocialOrbit/SocialOrbit/style.css?ver=7.7.1" type="text/css" media="all"/>
+<!--n2css--><script type="text/javascript" src="https://newsmobile.in/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="mashsb-js-extra">
+/* <![CDATA[ */
+var mashsb = {"shares":"2100","round_shares":"1","animate_shares":"0","dynamic_buttons":"0","share_url":"https:\/\/newsmobile.in\/articles\/2020\/02\/06\/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth\/","title":"Did+Dettol+know+about+the+new+%E2%80%98novel+Coronavirus%E2%80%99+before+the+outbreak%3F+Here%E2%80%99s+the+truth","image":null,"desc":"A picture of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to 'kill coronavirus' and that they \u2026","hashtag":"@newsmobileindia","subscribe":"content","subscribe_url":"www.newsmobile.in","activestatus":"1","singular":"1","twitter_popup":"1","refresh":"0","nonce":"e9744432a6","postid":"1092964","servertime":"1655669818","ajaxurl":"https:\/\/newsmobile.in\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/mashsharer/assets/js/mashsb.min.js?ver=3.8.1" id="mashsb-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=e9aca596f03aec42d042ae53466f858d" id="ppress-flatpickr-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=e9aca596f03aec42d042ae53466f858d" id="ppress-select2-js"></script>
+<script type="text/javascript" id="mashnet-js-extra">
+/* <![CDATA[ */
+var mashnet = {"body":"Check out this article: ","subject":"Check out this site","pinterest_select":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/mashshare-networks/assets/js/mashnet.min.js?ver=2.4.2" id="mashnet-js"></script>
+<script type="application/json" id="wpp-json">
+{"sampling_active":0,"sampling_rate":100,"ajax_url":"https:\/\/newsmobile.in\/wp-json\/wordpress-popular-posts\/v1\/popular-posts","api_url":"https:\/\/newsmobile.in\/wp-json\/wordpress-popular-posts","ID":1092964,"token":"1840da9002","lang":0,"debug":0}
+</script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/wordpress-popular-posts/assets/js/wpp.min.js?ver=5.5.1" id="wpp-js-js"></script>
+<script type="text/javascript" id="__ytprefs__-js-extra">
+/* <![CDATA[ */
+var _EPYT_ = {"ajaxurl":"https:\/\/newsmobile.in\/wp-admin\/admin-ajax.php","security":"dfe1932afa","gallery_scrolloffset":"20","eppathtoscripts":"https:\/\/newsmobile.in\/wp-content\/plugins\/youtube-embed-plus\/scripts\/","eppath":"https:\/\/newsmobile.in\/wp-content\/plugins\/youtube-embed-plus\/","epresponsiveselector":"[\"iframe.__youtube_prefs__\",\"iframe[src*='youtube.com']\",\"iframe[src*='youtube-nocookie.com']\",\"iframe[data-ep-src*='youtube.com']\",\"iframe[data-ep-src*='youtube-nocookie.com']\",\"iframe[data-ep-gallerysrc*='youtube.com']\"]","epdovol":"1","version":"14.1.1","evselector":"iframe.__youtube_prefs__[src], iframe[src*=\"youtube.com\/embed\/\"], iframe[src*=\"youtube-nocookie.com\/embed\/\"]","ajax_compat":"","ytapi_load":"light","pause_others":"","stopMobileBuffer":"1","not_live_on_channel":"","vi_active":"","vi_js_posttypes":[]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/youtube-embed-plus/scripts/ytprefs.min.js?ver=14.1.1" id="__ytprefs__-js"></script>
+<link rel="https://api.w.org/" href="https://newsmobile.in/wp-json/"/><link rel="alternate" type="application/json" href="https://newsmobile.in/wp-json/wp/v2/posts/1092964"/><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://newsmobile.in/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://newsmobile.in/wp-includes/wlwmanifest.xml"/> 
+
+<link rel="shortlink" href="https://newsmobile.in/?p=1092964"/>
+<link rel="alternate" type="application/json+oembed" href="https://newsmobile.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F"/>
+<link rel="alternate" type="text/xml+oembed" href="https://newsmobile.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F&amp;format=xml"/>
+<script type="text/javascript">window._taboola = window._taboola || [];
+_taboola.push({article:'auto'});
+_taboola.push({listenTo:'render',handler:function(p){TRC.modDebug.logMessageToServer(2,"wordpress-integ");}});
+_taboola.push({additional_data:{sdkd:{
+    "os" : "Wordpress",
+    "osv" : "5.8.4",
+    "sdkt" : "Taboola Wordpress Plugin",
+    "sdkv" : "1.0.9"
+}}});
+!function (e, f, u) {
+	e.async = 1;
+  e.src = u;
+  f.parentNode.insertBefore(e, f);
+}(document.createElement('script'), document.getElementsByTagName('script')[0], '//cdn.taboola.com/libtrc/newsmobile/loader.js');
+</script><meta property="fb:pages" content="207001832817081"/>
+<meta property="ia:markup_url_dev" content="https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/?wpna_ia_markup=true"/>
+            <style id="wpp-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-placeholder,.wpp-widget-block-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
+            <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+            <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+                      OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+                      OneSignal.SERVICE_WORKER_PARAM = { scope: "/" };
+        OneSignal.setDefaultNotificationUrl("https://newsmobile.in");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '37a1a47f-359b-4bf2-8f14-6e9a7a0a823c';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['httpPermissionRequest'] = { };
+oneSignal_options['httpPermissionRequest']['enable'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['subdomainName'] = "https://newsmobile.onesignal.com";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.30b8db8e-86b1-4367-8886-055d3d362718";
+oneSignal_options['persistNotification'] = false;
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-left';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'medium';
+oneSignal_options['notifyButton']['showCredit'] = true;
+oneSignal_options['notifyButton']['text'] = {};
+oneSignal_options['notifyButton']['text']['tip.state.subscribed'] = 'Well done, you can keep pace with the news on the go';
+oneSignal_options['notifyButton']['text']['message.action.unsubscribed'] = 'You will miss out on important Newsalerts';
+oneSignal_options['notifyButton']['text']['dialog.main.button.subscribe'] = 'For Latest news updates subscribe now';
+                OneSignal.init(window._oneSignalInitOptions);
+                OneSignal.showSlidedownPrompt();      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+
+<!-- JS generated by theme -->
+
+<script>
+    
+    
+
+	    var tdBlocksArray = []; //here we store all the items for the current page
+
+	    //td_block class - each ajax block uses a object of this class for requests
+	    function tdBlock() {
+		    this.id = '';
+		    this.block_type = 1; //block type id (1-234 etc)
+		    this.atts = '';
+		    this.td_column_number = '';
+		    this.td_current_page = 1; //
+		    this.post_count = 0; //from wp
+		    this.found_posts = 0; //from wp
+		    this.max_num_pages = 0; //from wp
+		    this.td_filter_value = ''; //current live filter value
+		    this.is_ajax_running = false;
+		    this.td_user_action = ''; // load more or infinite loader (used by the animation)
+		    this.header_color = '';
+		    this.ajax_pagination_infinite_stop = ''; //show load more at page x
+	    }
+
+
+        // td_js_generator - mini detector
+        (function(){
+            var htmlTag = document.getElementsByTagName("html")[0];
+
+            if ( navigator.userAgent.indexOf("MSIE 10.0") > -1 ) {
+                htmlTag.className += ' ie10';
+            }
+
+            if ( !!navigator.userAgent.match(/Trident.*rv\:11\./) ) {
+                htmlTag.className += ' ie11';
+            }
+
+            if ( /(iPad|iPhone|iPod)/g.test(navigator.userAgent) ) {
+                htmlTag.className += ' td-md-is-ios';
+            }
+
+            var user_agent = navigator.userAgent.toLowerCase();
+            if ( user_agent.indexOf("android") > -1 ) {
+                htmlTag.className += ' td-md-is-android';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Mac OS X')  ) {
+                htmlTag.className += ' td-md-is-os-x';
+            }
+
+            if ( /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()) ) {
+               htmlTag.className += ' td-md-is-chrome';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Firefox') ) {
+                htmlTag.className += ' td-md-is-firefox';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Safari') && -1 === navigator.userAgent.indexOf('Chrome') ) {
+                htmlTag.className += ' td-md-is-safari';
+            }
+
+            if( -1 !== navigator.userAgent.indexOf('IEMobile') ){
+                htmlTag.className += ' td-md-is-iemobile';
+            }
+
+        })();
+
+
+
+
+        var tdLocalCache = {};
+
+        ( function () {
+            "use strict";
+
+            tdLocalCache = {
+                data: {},
+                remove: function (resource_id) {
+                    delete tdLocalCache.data[resource_id];
+                },
+                exist: function (resource_id) {
+                    return tdLocalCache.data.hasOwnProperty(resource_id) && tdLocalCache.data[resource_id] !== null;
+                },
+                get: function (resource_id) {
+                    return tdLocalCache.data[resource_id];
+                },
+                set: function (resource_id, cachedData) {
+                    tdLocalCache.remove(resource_id);
+                    tdLocalCache.data[resource_id] = cachedData;
+                }
+            };
+        })();
+
+    
+    
+var td_viewport_interval_list=[{"limitBottom":767,"sidebarWidth":228},{"limitBottom":1018,"sidebarWidth":300},{"limitBottom":1140,"sidebarWidth":324}];
+var td_animation_stack_effect="type0";
+var tds_animation_stack=true;
+var td_animation_stack_specific_selectors=".entry-thumb, img";
+var td_animation_stack_general_selectors=".td-animation-stack img, .post img";
+var td_ajax_url="https:\/\/newsmobile.in\/wp-admin\/admin-ajax.php?td_theme_name=Newspaper&v=7.7.1";
+var td_get_template_directory_uri="https:\/\/newsmobile.in\/wp-content\/themes\/SocialOrbit\/SocialOrbit";
+var tds_snap_menu="";
+var tds_logo_on_sticky="";
+var tds_header_style="";
+var td_please_wait="Please wait...";
+var td_email_user_pass_incorrect="User or password incorrect!";
+var td_email_user_incorrect="Email or username incorrect!";
+var td_email_incorrect="Email incorrect!";
+var tds_more_articles_on_post_enable="show";
+var tds_more_articles_on_post_time_to_wait="";
+var tds_more_articles_on_post_pages_distance_from_top=0;
+var tds_theme_color_site_wide="#4db2ec";
+var tds_smart_sidebar="enabled";
+var tdThemeName="Newspaper";
+var td_magnific_popup_translation_tPrev="Previous (Left arrow key)";
+var td_magnific_popup_translation_tNext="Next (Right arrow key)";
+var td_magnific_popup_translation_tCounter="%curr% of %total%";
+var td_magnific_popup_translation_ajax_tError="The content from %url% could not be loaded.";
+var td_magnific_popup_translation_image_tError="The image #%curr% could not be loaded.";
+var tdsDateFormat="l, F j, Y";
+var tdDateNamesI18n={"month_names":["January","February","March","April","May","June","July","August","September","October","November","December"],"month_names_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"day_names":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"day_names_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]};
+var td_ad_background_click_link="";
+var td_ad_background_click_target="";
+</script>
+
+
+<!-- Header style compiled by theme -->
+
+<style>
+    
+ul.sf-menu > .td-menu-item > a {
+        font-size:12px;
+	
+    }
+    
+    .td-mobile-content .td-mobile-main-menu > li > a {
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+    }
+    
+    .td-mobile-content .sub-menu a {
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+    }
+
+
+
+	
+	.td_module_wrap .td-module-title {
+		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+	}
+     
+	#td-mobile-nav,
+	#td-mobile-nav .wpb_button,
+	.td-search-wrap-mob {
+		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+	}
+
+
+	
+	.post .td-post-header .entry-title {
+		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+	}
+    
+    .td-post-template-default .td-post-header .entry-title {
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	
+    }
+    
+    .td-post-content p,
+    .td-post-content {
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:17px;
+	
+    }
+    
+    .post blockquote p,
+    .page blockquote p,
+    .td-post-text-content blockquote p {
+        font-style:italic;
+	font-weight:bold;
+	text-transform:lowercase;
+	
+    }
+</style>
+
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+ <!-- Global jave script -->
+
+    
+
+    <script type="text/javascript" async=""> window.SmugglrStackSettings = { userData: {}, cookieDomain: null}; (function(w){ var SmuggleStackJS = { load: function(src, callback) { var script = document.createElement('script'), loaded; script.setAttribute('src', src); script.setAttribute('async', "true"); if (callback) { script.onreadystatechange = script.onload = function() { if (!loaded) { callback(); } loaded = true; }; } document.getElementsByTagName('head')[0].appendChild(script); } }; SmuggleStackJS.load("https://widgets.smugglr.in/grow/1720056e-09ee-43e9-9422-54d7c1c570b9/all.js?_=1588329544", function(){}); }(window)); </script>
+
+    
+
+ <!-- Global jave script -->   
+
+   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ba1b31f679eb6240aebce2f65/79389c6fe78b4624e1f1f7eaf.js");</script> 
+
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7_dtp.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+  We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://newsmobile.us20.list-manage.com/subscribe/post?u=ba1b31f679eb6240aebce2f65&amp;id=bdf56d50b8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+
+<strong>Subscribe to News Mobile Newsletter </strong>  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required=""/>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ba1b31f679eb6240aebce2f65_bdf56d50b8" tabindex="-1" value=""/></div>
+        <div class="clear foot">
+           <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"/>
+        </div>
+
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+	
+	<meta property="og:url" content="https://www.newsmobile.in"/>
+<meta property="og:image" content="https://newsmobile.in/image"/>
+
+
+
+
+
+
+
+
+    
+    <div class="td-scroll-up"><i class="td-icon-menu-up"></i></div>
+
+    
+
+    <div class="td-menu-background"></div>
+<div id="td-mobile-nav">
+    <div class="td-mobile-container">
+        <!-- mobile menu top section -->
+        <div class="td-menu-socials-wrap">
+            <!-- socials -->
+            <div class="td-menu-socials">
+                
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.facebook.com/NewsMobile/" title="Facebook">
+                <i class="td-icon-font td-icon-facebook"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://plus.google.com/+NewsmobileIn" title="Google+">
+                <i class="td-icon-font td-icon-googleplus"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.instagram.com/newsmobileindia/" title="Instagram">
+                <i class="td-icon-font td-icon-instagram"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="mailto:editor@newsmobile.in" title="Mail">
+                <i class="td-icon-font td-icon-mail-1"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://twitter.com/newsmobileindia" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.youtube.com/channel/UCJETshKS8-MgCm7nt74Oh7w/featured" title="Youtube">
+                <i class="td-icon-font td-icon-youtube"></i>
+            </a>
+        </span>            </div>
+            <!-- close button -->
+            <div class="td-mobile-close">
+                <a href="#"><i class="td-icon-close-mobile"></i></a>
+            </div>
+        </div>
+
+        <!-- login section -->
+        
+        <!-- menu section -->
+        <div class="td-mobile-content">
+            <div class="menu-temporary-main-menu-container"><ul id="menu-temporary-main-menu" class="td-mobile-main-menu"><li id="menu-item-926651" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-first menu-item-926651"><a href="https://newsmobile.in/articles/category/nm-fact-checker/">FACT CHECKER</a></li>
+<li id="menu-item-1097270" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1097270"><a href="https://newsmobile.in/articles/category/coronavirus-fact-check/">Coronavirus Fact Check</a></li>
+<li id="menu-item-1205216" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1205216"><a href="https://newsmobile.in/articles/category/politics/">Politics</a></li>
+<li id="menu-item-1134419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1134419"><a href="https://newsmobile.in/articles/category/climate/">climate</a></li>
+<li id="menu-item-1165032" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1165032"><a href="https://newsmobile.in/articles/category/nation/">Nation</a></li>
+<li id="menu-item-1180938" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1180938"><a href="https://newsmobile.in/articles/category/world/">WORLD</a></li>
+<li id="menu-item-842055" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-842055"><a href="#">MORE +<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-1205977" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1205977"><a href="https://newsmobile.in/articles/category/ipl/">IPL 2022</a></li>
+	<li id="menu-item-842071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842071"><a href="https://newsmobile.in/smart-edit/">SMART EDIT</a></li>
+	<li id="menu-item-1197759" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1197759"><a href="https://newsmobile.in/articles/category/coronavirus/">COVID 19</a></li>
+	<li id="menu-item-842080" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842080"><a href="https://newsmobile.in/articles/category/news-4-kidz/">NEWS 4 KIDZ</a></li>
+	<li id="menu-item-842067" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842067"><a href="https://newsmobile.in/articles/category/tech/">SCIENCE &amp; TECH</a></li>
+	<li id="menu-item-842043" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842043"><a href="https://newsmobile.in/articles/category/business/">BUSINESS</a></li>
+	<li id="menu-item-842057" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842057"><a href="https://newsmobile.in/articles/category/auto/">AUTO</a></li>
+	<li id="menu-item-842062" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842062"><a href="https://newsmobile.in/humour-central/">HUMOUR CENTRAL</a></li>
+	<li id="menu-item-842061" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842061"><a href="https://newsmobile.in/articles/category/ijourno/">IJOURNO</a></li>
+	<li id="menu-item-842069" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842069"><a href="https://newsmobile.in/news-tube/">NEWSTUBE</a></li>
+	<li id="menu-item-842051" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842051"><a href="https://newsmobile.in/articles/category/power-buzz/">POWER BUZZ</a></li>
+	<li id="menu-item-842047" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842047"><a href="https://newsmobile.in/articles/category/startosphere/">START-O-SPHERE</a></li>
+	<li id="menu-item-842073" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842073"><a href="https://newsmobile.in/special/">SPECIAL</a></li>
+	<li id="menu-item-1144168" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1144168"><a href="https://newsmobile.in/articles/category/music-entertainment/entertainment/">ENTERTAINMENT</a></li>
+	<li id="menu-item-842037" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842037"><a href="https://newsmobile.in/articles/category/sports/">SPORTS</a></li>
+	<li id="menu-item-842070" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842070"><a href="https://newsmobile.in/podium/">PODIUM</a></li>
+	<li id="menu-item-1079223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1079223"><a href="https://newsmobile.in/videos/">VIDEOS</a></li>
+	<li id="menu-item-842059" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842059"><a href="https://newsmobile.in/articles/category/global-traveler/">GLOBAL TRAVELER</a></li>
+	<li id="menu-item-842045" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842045"><a href="https://newsmobile.in/articles/category/lifestyle/">LIFESTYLE</a></li>
+	<li id="menu-item-842058" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842058"><a href="https://newsmobile.in/articles/category/face-off/">FACE OFF</a></li>
+	<li id="menu-item-842066" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842066"><a href="https://newsmobile.in/articles/category/photo-gallery/">PHOTO GALLERY</a></li>
+	<li id="menu-item-842041" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-842041"><a href="https://newsmobile.in/articles/category/cityscape/">CITYSCAPE</a></li>
+</ul>
+</li>
+<li id="menu-item-1117905" class="hindi-News menu-item menu-item-type-custom menu-item-object-custom menu-item-1117905"><a href="//hindi.newsmobile.in/">न्यूज़मोबाइल हिंदी</a></li>
+</ul></div>        </div>
+    </div>
+
+    <!-- register/login section -->
+    </div>
+    <div class="td-search-background"></div>
+<div class="td-search-wrap-mob">
+	<div class="td-drop-down-search" aria-labelledby="td-header-search-button">
+		<form method="get" class="td-search-form" action="https://newsmobile.in/">
+			<!-- close button -->
+			<div class="td-search-close">
+				<a href="#"><i class="td-icon-close-mobile"></i></a>
+			</div>
+			<div role="search" class="td-search-input">
+				<span>Search</span>
+				<input id="td-header-search-mob" type="text" value="" name="s" autocomplete="off"/>
+			</div>
+		</form>
+		<div id="td-aj-search-mob"></div>
+	</div>
+</div>
+    
+
+    
+
+    <div id="td-outer-wrap" class="td-theme-wrap">
+
+    
+
+
+        <!--
+Header style 1
+-->
+
+<div class="td-header-wrap td-header-style-1">
+
+    <div class="td-header-top-menu-full">
+        <div class="td-container td-header-row td-header-top-menu">
+            
+    <div class="top-bar-style-1">
+        
+<div class="td-header-sp-top-menu">
+
+
+	        <div class="td_data_time">
+            <div style="visibility:hidden;">
+
+                Monday, June 20, 2022
+            </div>
+        </div>
+    <div class="menu-top-container"><ul id="menu-footer" class="top-header-menu"><li id="menu-item-1141148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-first td-menu-item td-normal-menu menu-item-1141148"><a href="https://newsmobile.in/about-us/">About us</a></li>
+<li id="menu-item-1079880" class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-1079880"><a href="https://newsmobile.in/how-we-fact-check/">How We Fact Check</a></li>
+<li id="menu-item-904203" class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-904203"><a href="https://newsmobile.in/correction-policy/">Correction Policy</a></li>
+<li id="menu-item-774164" class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-774164"><a href="https://newsmobile.in/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-774174" class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-774174"><a href="https://newsmobile.in/contact/">Contact Us</a></li>
+</ul></div></div>
+        <div class="td-header-sp-top-widget">
+    
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.facebook.com/NewsMobile/" title="Facebook">
+                <i class="td-icon-font td-icon-facebook"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://plus.google.com/+NewsmobileIn" title="Google+">
+                <i class="td-icon-font td-icon-googleplus"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.instagram.com/newsmobileindia/" title="Instagram">
+                <i class="td-icon-font td-icon-instagram"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="mailto:editor@newsmobile.in" title="Mail">
+                <i class="td-icon-font td-icon-mail-1"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://twitter.com/newsmobileindia" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.youtube.com/channel/UCJETshKS8-MgCm7nt74Oh7w/featured" title="Youtube">
+                <i class="td-icon-font td-icon-youtube"></i>
+            </a>
+        </span></div>
+    </div>
+
+<!-- LOGIN MODAL -->
+        </div>
+    </div>
+
+    <div class="td-banner-wrap-full td-logo-wrap-full">
+        <div class="td-container td-header-row td-header-header">
+            <div class="td-header-sp-logo">
+                            <a class="td-main-logo" href="https://newsmobile.in/">
+                <img src="https://newsmobile.in/wp-content/uploads/2019/03/logo-300x60.png" alt=""/>
+                <span class="td-visual-hidden">Newsmobile</span>
+            </a>
+                    </div>
+            <div class="td-header-sp-recs">
+                <div class="td-header-rec-wrap">
+    <div class="td-a-rec td-a-rec-id-header  "><script>
+	setInterval(function(){
+		amad=document.getElementById('amazonheaderad_728x90');
+		jodi365ad=document.getElementById('jodi365headerad_728x90');
+		if(amad.style.display=='none'){
+			setTimeout(function(){
+				jodi365ad.style.display='none';
+				amad.style.display='block';
+			},100)
+			
+		}else{
+			setTimeout(function(){
+				amad.style.display='none';
+				jodi365ad.style.display='block';
+			
+			},100)
+			
+		}
+	},10000)
+</script>
+<div id="amazonheaderad_728x90" class="td-visible-desktop" style="display:none">
+	<a href="http://www.amazon.in/ref=assoc_aax_fallback_728x90?tag=531973-21&amp;linkCode=ur8" target="_blank"><img border="0" src="https://c.amazon-adsystem.com/aax2/lra/imgs/assoc_lra_s1_in_728x90.gif?p2"/></a>
+</div>
+
+<div id="jodi365headerad_728x90" class="td-visible-desktop" style="display:block">
+	<a href="" target="_blank"><img border="0" src="https://newsmobile.in/wp-content/uploads/2020/08/cv.png"/></a>
+</div></div>
+</div>            </div>
+        </div>
+    </div>
+
+    <div class="td-header-menu-wrap-full">
+        <div class="td-header-menu-wrap td-header-gradient">
+            <div class="td-container td-header-row td-header-main-menu">
+                <div id="td-header-menu" role="navigation">
+    <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>
+    <div class="td-main-menu-logo td-logo-in-header">
+        		<a class="td-mobile-logo td-sticky-disable" href="https://newsmobile.in/">
+			<img src="https://newsmobile.in/wp-content/uploads/2019/03/logo-300x60.png" alt=""/>
+		</a>
+			<a class="td-header-logo td-sticky-disable" href="https://newsmobile.in/">
+			<img src="https://newsmobile.in/wp-content/uploads/2019/03/logo-300x60.png" alt=""/>
+		</a>
+	    </div>
+    <div class="menu-temporary-main-menu-container"><ul id="menu-temporary-main-menu-1" class="sf-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-first td-menu-item td-normal-menu menu-item-926651"><a href="https://newsmobile.in/articles/category/nm-fact-checker/">FACT CHECKER</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent td-menu-item td-normal-menu menu-item-1097270"><a href="https://newsmobile.in/articles/category/coronavirus-fact-check/">Coronavirus Fact Check</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-1205216"><a href="https://newsmobile.in/articles/category/politics/">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-1134419"><a href="https://newsmobile.in/articles/category/climate/">climate</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-1165032"><a href="https://newsmobile.in/articles/category/nation/">Nation</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-1180938"><a href="https://newsmobile.in/articles/category/world/">WORLD</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-842055"><a href="#">MORE +</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-1205977"><a href="https://newsmobile.in/articles/category/ipl/">IPL 2022</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-842071"><a href="https://newsmobile.in/smart-edit/">SMART EDIT</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-1197759"><a href="https://newsmobile.in/articles/category/coronavirus/">COVID 19</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842080"><a href="https://newsmobile.in/articles/category/news-4-kidz/">NEWS 4 KIDZ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842067"><a href="https://newsmobile.in/articles/category/tech/">SCIENCE &amp; TECH</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842043"><a href="https://newsmobile.in/articles/category/business/">BUSINESS</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842057"><a href="https://newsmobile.in/articles/category/auto/">AUTO</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-842062"><a href="https://newsmobile.in/humour-central/">HUMOUR CENTRAL</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842061"><a href="https://newsmobile.in/articles/category/ijourno/">IJOURNO</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-842069"><a href="https://newsmobile.in/news-tube/">NEWSTUBE</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842051"><a href="https://newsmobile.in/articles/category/power-buzz/">POWER BUZZ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842047"><a href="https://newsmobile.in/articles/category/startosphere/">START-O-SPHERE</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-842073"><a href="https://newsmobile.in/special/">SPECIAL</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-1144168"><a href="https://newsmobile.in/articles/category/music-entertainment/entertainment/">ENTERTAINMENT</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842037"><a href="https://newsmobile.in/articles/category/sports/">SPORTS</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-842070"><a href="https://newsmobile.in/podium/">PODIUM</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-1079223"><a href="https://newsmobile.in/videos/">VIDEOS</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842059"><a href="https://newsmobile.in/articles/category/global-traveler/">GLOBAL TRAVELER</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842045"><a href="https://newsmobile.in/articles/category/lifestyle/">LIFESTYLE</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842058"><a href="https://newsmobile.in/articles/category/face-off/">FACE OFF</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842066"><a href="https://newsmobile.in/articles/category/photo-gallery/">PHOTO GALLERY</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-842041"><a href="https://newsmobile.in/articles/category/cityscape/">CITYSCAPE</a></li>
+</ul>
+</li>
+<li class="hindi-News menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-1117905"><a href="//hindi.newsmobile.in/">न्यूज़मोबाइल हिंदी</a></li>
+</ul></div></div>
+
+
+<div class="td-search-wrapper">
+    <div id="td-top-search">
+        <!-- Search -->
+        <div class="header-search-wrap">
+            <div class="dropdown header-search">
+                <a id="td-header-search-button" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+                <a id="td-header-search-button-mob" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-search-wrap">
+	<div class="dropdown header-search">
+		<div class="td-drop-down-search" aria-labelledby="td-header-search-button">
+			<form method="get" class="td-search-form" action="https://newsmobile.in/">
+				<div role="search" class="td-head-form-search-wrap">
+					<input id="td-header-search" type="text" value="" name="s" autocomplete="off"/><input class="wpb_button wpb_btn-inverse btn" type="submit" id="td-header-search-top" value="Search"/>
+				</div>
+			</form>
+			<div id="td-aj-search"></div>
+		</div>
+	</div>
+</div>            </div>
+        </div>
+    </div>
+
+</div><div class="td-main-content-wrap">
+
+    <div class="td-container td-post-template-default ">
+        <div class="td-crumb-container"><div class="entry-crumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList"><span class="td-bred-first"><a href="https://newsmobile.in/">Home</a></span> <i class="td-icon-right td-bread-sep"></i> <span itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                               <a title="View all posts in Coronavirus Fact Check" class="entry-crumb" itemscope="" itemprop="item" itemtype="http://schema.org/Thing" href="https://newsmobile.in/articles/category/coronavirus-fact-check/">
+                                  <span itemprop="name">Coronavirus Fact Check</span>    </a>    <meta itemprop="position" content="1"/></span> <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i> <span class="td-bred-no-url-last">Did Dettol know about the new ‘novel Coronavirus’ before the outbreak? Here’s...</span></div></div>
+
+        <div class="td-pb-row">
+                                    <div class="td-pb-span8 td-main-content" role="main">
+                            <div class="td-ss-main-content">
+                                
+    <article id="post-1092964" class="post-1092964 post type-post status-publish format-standard hentry category-coronavirus-fact-check category-nm-fact-checker tag-18665 tag-2019-ncov tag-coronaviruses tag-dettol tag-did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth tag-fact-check tag-misleading tag-reckitt-benckiser" itemscope="" itemtype="https://schema.org/Article">
+        <div class="td-post-header">
+
+            <ul class="td-category"><li class="entry-category"><a href="https://newsmobile.in/articles/category/coronavirus-fact-check/">Coronavirus Fact Check</a></li><li class="entry-category"><a href="https://newsmobile.in/articles/category/nm-fact-checker/">NM FACT CHECKER</a></li></ul>
+            <header class="td-post-title">
+                <h1 class="entry-title">Did Dettol know about the new ‘novel Coronavirus’ before the outbreak? Here’s the truth</h1>
+
+                
+
+                <div class="td-module-meta-info">
+                    <div class="td-post-author-name"><div class="td-author-by">By</div> <a href="https://newsmobile.in/articles/author/newsmobilefactcheckbureau/">News Mobile Fact Check Bureau</a><div class="td-author-line"> - </div> </div>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2020-02-06T12:24:36+00:00">2020-02-06</time></span>                                                        </div>
+
+            </header>
+
+        </div>
+
+        
+
+        <div class="td-post-content">
+
+        
+        <aside class="mashsb-container mashsb-main mashsb-stretched"><div class="mashsb-box"><div class="mashsb-buttons"><a class="mashicon-facebook mash-large mash-center mashsb-noshadow" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Share</span></a><a class="mashicon-twitter mash-large mash-center mashsb-noshadow" href="https://twitter.com/intent/tweet?text=Did%20Dettol%20know%20about%20the%20new%20%E2%80%98novel%20Coronavirus%E2%80%99%20before%20the%20outbreak%3F%20Here%E2%80%99s%20the%20truth&amp;url=https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/&amp;via=newsmobileindia" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Tweet</span></a><a class="mashicon-google mash-large mash-center mashsb-noshadow" href="https://plus.google.com/share?text=Did+Dettol+know+about+the+new+%E2%80%98novel+Coronavirus%E2%80%99+before+the+outbreak%3F+Here%E2%80%99s+the+truth&amp;url=https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Google</span></a><a class="mashicon-whatsapp mash-large mash-center mashsb-noshadow" href="whatsapp://send?text=Did%20Dettol%20know%20about%20the%20new%20%E2%80%98novel%20Coronavirus%E2%80%99%20before%20the%20outbreak%3F%20Here%E2%80%99s%20the%20truth%20https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Whatsapp</span></a><a class="mashicon-print mash-large mash-center mashsb-noshadow" href="http://www.printfriendly.com/print/?url=https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F&amp;item=Did+Dettol+know+about+the+new+%E2%80%98novel+Coronavirus%E2%80%99+before+the+outbreak%3F+Here%E2%80%99s+the+truth" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Print</span></a><div class="onoffswitch mash-large mashsb-noshadow"></div><div class="secondary-shares" style="display:none;"><a class="mashicon-mail mash-large mash-center mashsb-noshadow" href="mailto:?subject=Check%20out%20this%20site&amp;body=Check%20out%20this%20article%3A%20https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Mail</span></a><div class="onoffswitch2 mash-large mashsb-noshadow" style="display:none;"></div></div></div>
+            </div>
+                <div style="clear:both;"></div><div class="mashsb-toggle-container"></div></aside>
+            <!-- Share buttons by mashshare.net - Version: 3.8.1--><p>A <a href="https://www.facebook.com/dharmesh.patel.796/posts/3351843924829848">picture</a> of a Dettol disinfectant spray is being shared online in which the label on the back of a bottle shows the product claiming to have been proven to ‘kill coronavirus’ and that they knew about the new strain since 2019.</p>
+<p><a href="https://www.facebook.com/dharmesh.patel.796/posts/3351843924829848"><img loading="lazy" class="alignnone size-full wp-image-1092994" src="https://newsmobile.in/wp-content/uploads/2020/02/Screenshot-2020-02-06-at-12.20.33.png" alt="" width="449" height="640"/></a></p>
+<p>“Did Dettol knew about this Corona Virus in 2019 ?” the text read.</p>
+<p><iframe loading="lazy" style="border: none; overflow: hidden;" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdharmesh.patel.796%2Fposts%2F3351843924829848&amp;width=500" width="500" height="594" frameborder="0" scrolling="no"></iframe></p>
+<div class="td-a-rec td-a-rec-id-content_inline  "><script async="" src="//"></script>
+<!-- ADSENSE 2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8809079178113270" data-ad-slot="8945415141" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p><iframe loading="lazy" style="border: none; overflow: hidden;" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D125039575686127%26id%3D100045402544247&amp;width=500" width="500" height="638" frameborder="0" scrolling="no"></iframe></p>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">Explain this dettol cleaning spray kills corona virus this bottle is 2016 u can see.. But its a NEW virus 😂🤣 if a disinfectant kills corona virus why can’t we as humans fuck outtakes here 🤣😂 <a href="https://t.co/eVlc8bH2Fk">pic.twitter.com/eVlc8bH2Fk</a></p>
+<p>— kee❤ (@leyabean23) <a href="https://twitter.com/leyabean23/status/1223248056549871617?ref_src=twsrc%5Etfw">January 31, 2020</a></p></blockquote>
+<p><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p> </p>
+<h3><strong>FACT CHECK </strong></h3>
+<p>NewsMobile fact-checked the viral claim and found the claim attached to the viral video to be false.</p>
+<p>We ran a search online and found an article by <a href="https://www.livemint.com/companies/news/dettol-won-t-kill-novel-coronavirus-clarifies-company-11580747145494.html">Livemint</a> titled “Dettol won’t kill novel Coronavirus, clarifies company”</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1092965" src="https://newsmobile.in/wp-content/uploads/2020/02/1e8ae143-9292-4683-bdcc-4e68523bb1aa.png" alt="" width="569" height="521"/></p>
+<p>“As this is an emerging outbreak, RB, like all manufacturers, doesn’t yet have access to the new virus (2019-nCoV) for testing and, as a result, are not yet in a position to confirm levels of effectiveness against the new strain,” <a href="https://www.livemint.com/companies/news/dettol-won-t-kill-novel-coronavirus-clarifies-company-11580747145494.html">Livemint</a> quoted the official statement released by Dettol manufacturing company Reckitt Benckiser.</p>
+<p>In a video released by RB, Dr Rubino, RB Director of Microbiology and Virology also stated that since the virus is new, it has yet to be tested.</p>
+<p><iframe loading="lazy" src="https://www.youtube.com/embed/0io8DVmz3pI" width="853" height="480" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p> </p>
+<p>According to the <a href="https://www.ecdc.europa.eu/en/factsheet-health-professionals-coronaviruses">European Centre for Disease Prevention and Control</a>, “Coronaviruses (CoV) have been identified as human pathogens since the 1960s. Coronaviruses infect humans and many other vertebrates. Illness in humans is mostly respiratory or gastrointestinal infections, however, symptoms can range from the common cold to more severe lower respiratory infections such as pneumonia.</p>
+<p>The recent outbreak of coronavirus in China is a strain named 2019-nCoV. For this particular strain, the source of infection, animal host and reservoir are currently unknown.</p>
+<p>The above information proves that Dettol could not kill this particular strain (2019-nCoV) of coronavirus.</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-944545" src="https://newsmobile.in/wp-content/uploads/2018/10/6a5dcaa7-6945-4866-bdac-d329f715e60c.jpeg" alt="" width="352" height="352"/></p>
+<h4><strong>If you want to fact-check any story, WhatsApp it now on +91 88268 00707</strong></h4>
+<p><img loading="lazy" class="alignnone size-full wp-image-942412" src="https://newsmobile.in/wp-content/uploads/2018/10/WhatsApp-Image-2018-07-24-at-10.39.25-AM.jpeg" alt="" width="1280" height="720"/></p>
+<div role="form" class="wpcf7" id="wpcf7-f942581-p1092964-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/#wpcf7-f942581-p1092964-o1" method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="942581"/>
+<input type="hidden" name="_wpcf7_version" value="5.5.6.1"/>
+<input type="hidden" name="_wpcf7_locale" value="en_US"/>
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f942581-p1092964-o1"/>
+<input type="hidden" name="_wpcf7_container_post" value="1092964"/>
+<input type="hidden" name="_wpcf7_posted_data_hash" value=""/>
+</div>
+<div id="responsive-form" class="clearfix">
+<div class="form-row">
+<h1 style="margin-top:0px !important;margin-bottom:0px !important;">FAKE NEWS BUSTER</h1>
+<div class="column-half">Name <span class="wpcf7-form-control-wrap first-name"><input type="text" name="first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"/></span></div>
+</div>
+<div class="form-row">
+<div class="column-half">Email <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"/></span></div>
+<div class="column-half">Phone <span class="wpcf7-form-control-wrap your-phone"><input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"/></span></div>
+</div>
+<div class="form-row">
+<div class="column-full">Picture/video <span class="wpcf7-form-control-wrap videopicture"><input type="file" name="videopicture" size="40" class="wpcf7-form-control wpcf7-file" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-invalid="false"/></span></div>
+</div>
+<div>
+<div class="column-full">Picture/video url<span class="wpcf7-form-control-wrap url"><input type="text" name="url" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"/></span></div>
+</div>
+<div class="form-row">
+<div class="column-full">Description <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span></div>
+</div>
+<div class="form-row">
+<div class="column-full"><input type="submit" value="Send" class="wpcf7-form-control has-spinner wpcf7-submit"/></div>
+</div>
+</div>
+<p><!--end responsive-form--></p>
+<p style="display: none !important;"><label>Δ<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="_wpcf7_ak_js" value="246"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p><div class="wpcf7-response-output" aria-hidden="true"></div></form></div>
+<h3><strong><a href="https://m.me/NewsMobile?ref=facebook">Click here</a> for Latest News updates and viral videos on our AI-powered smart <a href="https://m.me/NewsMobile?ref=facebook">news </a></strong></h3>
+<p> </p>
+<p> </p>
+<p>.</p>
+<div id="taboola-below-article"></div><div id="taboola-below-article-second"></div><script type="text/javascript">window._taboola = window._taboola || [];
+_taboola.push({mode:'thumbnails-b', container:'taboola-below-article', placement:'below-article', target_type: 'mix'});
+window._taboola = window._taboola || [];
+_taboola.push({mode:'thumbnails-b', container:'taboola-below-article-second', placement:'below-article-2nd', target_type: 'mix'});</script><aside class="mashsb-container mashsb-main mashsb-stretched"><div class="mashsb-box"><div class="mashsb-buttons"><a class="mashicon-facebook mash-large mash-center mashsb-noshadow" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Share</span></a><a class="mashicon-twitter mash-large mash-center mashsb-noshadow" href="https://twitter.com/intent/tweet?text=Did%20Dettol%20know%20about%20the%20new%20%E2%80%98novel%20Coronavirus%E2%80%99%20before%20the%20outbreak%3F%20Here%E2%80%99s%20the%20truth&amp;url=https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/&amp;via=newsmobileindia" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Tweet</span></a><a class="mashicon-google mash-large mash-center mashsb-noshadow" href="https://plus.google.com/share?text=Did+Dettol+know+about+the+new+%E2%80%98novel+Coronavirus%E2%80%99+before+the+outbreak%3F+Here%E2%80%99s+the+truth&amp;url=https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Google</span></a><a class="mashicon-whatsapp mash-large mash-center mashsb-noshadow" href="whatsapp://send?text=Did%20Dettol%20know%20about%20the%20new%20%E2%80%98novel%20Coronavirus%E2%80%99%20before%20the%20outbreak%3F%20Here%E2%80%99s%20the%20truth%20https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Whatsapp</span></a><a class="mashicon-print mash-large mash-center mashsb-noshadow" href="http://www.printfriendly.com/print/?url=https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F&amp;item=Did+Dettol+know+about+the+new+%E2%80%98novel+Coronavirus%E2%80%99+before+the+outbreak%3F+Here%E2%80%99s+the+truth" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Print</span></a><div class="onoffswitch mash-large mashsb-noshadow"></div><div class="secondary-shares" style="display:none;"><a class="mashicon-mail mash-large mash-center mashsb-noshadow" href="mailto:?subject=Check%20out%20this%20site&amp;body=Check%20out%20this%20article%3A%20https%3A%2F%2Fnewsmobile.in%2Farticles%2F2020%2F02%2F06%2Fdid-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth%2F" target="_top" rel="nofollow"><span class="icon"></span><span class="text">Mail</span></a><div class="onoffswitch2 mash-large mashsb-noshadow" style="display:none;"></div></div></div>
+            </div>
+                <div style="clear:both;"></div><div class="mashsb-toggle-container"></div></aside>
+            <!-- Share buttons by mashshare.net - Version: 3.8.1-->
+ <!-- A generated by theme --> 
+
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><div class="td-g-rec td-g-rec-id-content_bottom ">
+<script type="text/javascript">
+var td_screen_width = window.innerWidth;
+
+                    if ( td_screen_width >= 1140 ) {
+                        /* large monitors */
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9419436853807952" data-ad-slot="1494347719"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
+            
+	                    if ( td_screen_width >= 1019  && td_screen_width < 1140 ) {
+	                        /* landscape tablets */
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-9419436853807952" data-ad-slot="1494347719"></ins>');
+	                        (adsbygoogle = window.adsbygoogle || []).push({});
+	                    }
+	                
+                    if ( td_screen_width >= 768  && td_screen_width < 1019 ) {
+                        /* portrait tablets */
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-9419436853807952" data-ad-slot="1494347719"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
+                
+                    if ( td_screen_width < 768 ) {
+                        /* Phones */
+                        document.write('<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9419436853807952" data-ad-slot="1494347719"></ins>');
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
+                </script>
+</div>
+
+ <!-- end A --> 
+
+        </div>
+
+
+        <footer>
+                        
+            <div class="td-post-source-tags">
+                                <ul class="td-tags td-post-small-box clearfix"><li><span>TAGS</span></li><li><a href="https://newsmobile.in/articles/tag/2019/">2019</a></li><li><a href="https://newsmobile.in/articles/tag/2019-ncov/">2019-nCoV</a></li><li><a href="https://newsmobile.in/articles/tag/coronaviruses/">Coronaviruses</a></li><li><a href="https://newsmobile.in/articles/tag/dettol/">Dettol</a></li><li><a href="https://newsmobile.in/articles/tag/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/">Did Dettol know about the new &#39;novel Coronavirus&#39; before the outbreak? Here&#39;s the truth</a></li><li><a href="https://newsmobile.in/articles/tag/fact-check/">Fact check</a></li><li><a href="https://newsmobile.in/articles/tag/misleading/">misleading</a></li><li><a href="https://newsmobile.in/articles/tag/reckitt-benckiser/">Reckitt Benckiser</a></li></ul>            </div>
+
+                        <div class="td-block-row td-post-next-prev"><div class="td-block-span6 td-post-prev-post"><div class="td-post-next-prev-content"><span>Previous article</span><a href="https://newsmobile.in/articles/2020/02/06/first-aap-and-now-bjp-heres-the-truth-behind-this-viral-video-of-the-magic-blankets/">First AAP and now BJP; here’s the truth behind this viral video of the ‘magic blankets’</a></div></div><div class="td-next-prev-separator"></div><div class="td-block-span6 td-post-next-post"><div class="td-post-next-prev-content"><span>Next article</span><a href="https://newsmobile.in/articles/2020/02/06/rbi-monetary-policy-repo-rate-remains-unchanged-at-5-15-here-are-the-key-takeaways/">RBI Monetary policy: Repo rate remains unchanged at 5.15%; here are the key takeaways</a></div></div></div>            <div class="author-box-wrap"><a href="https://newsmobile.in/articles/author/newsmobilefactcheckbureau/"><img alt="" src="https://newsmobile.in/wp-content/uploads/2017/06/1-1-96x96.jpeg" srcset="https://newsmobile.in/wp-content/uploads/2017/06/1-1.jpeg 2x" class="avatar avatar-96 photo" height="96" width="96" loading="lazy"/></a><div class="desc"><div class="td-author-name vcard author"><span class="fn"><a href="https://newsmobile.in/articles/author/newsmobilefactcheckbureau/">News Mobile Fact Check Bureau</a></span></div><div class="td-author-description"></div><div class="td-author-social"></div><div class="clearfix"></div></div></div>	        <span style="display: none;" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><meta itemprop="name" content="News Mobile Fact Check Bureau"/></span><meta itemprop="datePublished" content="2020-02-06T12:24:36+00:00"/><meta itemprop="dateModified" content="2020-03-12T15:07:57+05:30"/><meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://newsmobile.in/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/"/><span style="display: none;" itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization"><span style="display: none;" itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://newsmobile.in/wp-content/uploads/2019/03/logo-300x60.png"/></span><meta itemprop="name" content="Newsmobile"/></span><meta itemprop="headline " content="Did Dettol know about the new &#39;novel Coronavirus&#39; before the outbreak? Here&#39;s the truth"/><span style="display: none;" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://newsmobile.in/wp-content/themes/SocialOrbit/SocialOrbit/images/no-thumb/td_meta_replacement.png"/><meta itemprop="width" content="1068"/><meta itemprop="height" content="580"/></span>        </footer>
+
+    </article> <!-- /.post -->
+
+    
+	<div class="comments" id="comments">
+        	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">LEAVE A REPLY <small><a rel="nofollow" id="cancel-comment-reply-link" href="/articles/2020/02/06/did-dettol-know-about-the-new-novel-coronavirus-before-the-outbreak-heres-the-truth/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://newsmobile.in/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><div class="clearfix"></div>
+				<div class="comment-form-input-wrap td-form-comment">
+					<textarea placeholder="Comment:" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+					<div class="td-warning-comment">Please enter your comment!</div>
+				</div>
+		        <div class="comment-form-input-wrap td-form-author">
+			            <input class="" id="author" name="author" placeholder="Name:*" type="text" value="" size="30" aria-required="true"/>
+			            <div class="td-warning-author">Please enter your name here</div>
+			         </div>
+<div class="comment-form-input-wrap td-form-email">
+			            <input class="" id="email" name="email" placeholder="Email:*" type="text" value="" size="30" aria-required="true"/>
+			            <div class="td-warning-email-error">You have entered an incorrect email address!</div>
+			            <div class="td-warning-email">Please enter your email address here</div>
+			         </div>
+<div class="comment-form-input-wrap td-form-url">
+			            <input class="" id="url" name="url" placeholder="Website:" type="text" value="" size="30"/>
+                     </div>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"/> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"/> <input type="hidden" name="comment_post_ID" value="1092964" id="comment_post_ID"/>
+<input type="hidden" name="comment_parent" id="comment_parent" value="0"/>
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e052821a32"/></p><p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_2" name="ak_js" value="59"/><script>document.getElementById( "ak_js_2" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	    </div> <!-- /.content -->
+                            </div>
+                        </div>
+                        <div class="td-pb-span4 td-main-sidebar" role="complementary">
+                            <div class="td-ss-main-sidebar">
+                                <aside class="td_block_template_1 widget widget_text">			<div class="textwidget"></div>
+		</aside><div class="td_block_wrap td_block_weather td_block_widget td_uid_4_62af843a53b69_rand td-pb-border-top td_block_template_1" data-td-block-uid="td_uid_4_62af843a53b69"><h4 class="block-title"><span class="td-pulldown-size">News Mobile Weather Report</span></h4><div id="td_uid_4_62af843a53b69" class="td-weather-wrap td_block_inner td-column-1"><!-- td weather source: cache -->
+		<div class="td-weather-header">
+			<div class="td-weather-city">Delhi, IN</div>
+			<div class="td-weather-condition">mist</div>
+			<i class="td-location-icon td-icons-location" data-block-uid="td_uid_4_62af843a53b69"></i>
+		</div>
+
+		<div class="td-weather-set-location">
+			<form class="td-manual-location-form" action="#" data-block-uid="td_uid_4_62af843a53b69">
+				<input id="td_uid_4_62af843a53b69" class="td-location-set-input" type="text" name="location" value=""/>
+				<label>enter location</label>
+			</form>
+		</div>
+
+		<div class="td-weather-temperature">
+			<div class="td-weather-temp-wrap">
+				<div class="td-weather-animated-icon">
+					<span class="td_animation_sprite-27-100-80-0-0-1 mist-n td-w-today-icon" data-td-block-uid="td_uid_4_62af843a53b69"></span>
+				</div>
+				<div class="td-weather-now" data-block-uid="td_uid_4_62af843a53b69">
+					<span class="td-big-degrees">26.1</span>
+					<span class="td-circle">°</span>
+					<span class="td-weather-unit">C</span>
+				</div>
+				<div class="td-weather-lo-hi">
+					<div class="td-weather-degrees-wrap">
+						<i class="td-up-icon td-icons-arrows-up"></i>
+						<span class="td-small-degrees td-w-high-temp">30.2</span>
+						<span class="td-circle">°</span>
+					</div>
+					<div class="td-weather-degrees-wrap">
+						<i class="td-down-icon td-icons-arrows-down"></i>
+						<span class="td-small-degrees td-w-low-temp">26.1</span>
+						<span class="td-circle">°</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="td-weather-info-wrap">
+			<div class="td-weather-information">
+				<div class="td-weather-section-1">
+					<i class="td-icons-drop"></i>
+					<span class="td-weather-parameter td-w-today-humidity">78%</span>
+				</div>
+				<div class="td-weather-section-2">
+					<i class="td-icons-wind"></i>
+					<span class="td-weather-parameter td-w-today-wind-speed">2.1kmh</span>
+				</div>
+				<div class="td-weather-section-3">
+					<i class="td-icons-cloud"></i>
+					<span class="td-weather-parameter td-w-today-clouds">75%</span>
+				</div>
+			</div>
+
+
+			<div class="td-weather-week">
+									<div class="td-weather-days">
+						<div class="td-day-0">Tue</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-0">33</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-1">Wed</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-1">39</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-2">Thu</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-2">40</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-3">Fri</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-3">40</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-4">Sat</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-4">42</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+								</div>
+		</div>
+		</div></div> <!-- ./block --><div class="td_block_wrap td_block_weather td_block_widget td_uid_5_62af843a53f2e_rand td-pb-border-top td_block_template_1" data-td-block-uid="td_uid_5_62af843a53f2e"><div id="td_uid_5_62af843a53f2e" class="td-weather-wrap td_block_inner td-column-1"><!-- td weather source: cache -->
+		<div class="td-weather-header">
+			<div class="td-weather-city">Mumbai, IN</div>
+			<div class="td-weather-condition">moderate rain</div>
+			<i class="td-location-icon td-icons-location" data-block-uid="td_uid_5_62af843a53f2e"></i>
+		</div>
+
+		<div class="td-weather-set-location">
+			<form class="td-manual-location-form" action="#" data-block-uid="td_uid_5_62af843a53f2e">
+				<input id="td_uid_5_62af843a53f2e" class="td-location-set-input" type="text" name="location" value=""/>
+				<label>enter location</label>
+			</form>
+		</div>
+
+		<div class="td-weather-temperature">
+			<div class="td-weather-temp-wrap">
+				<div class="td-weather-animated-icon">
+					<span class="td_animation_sprite-27-100-80-0-0-1 rain-n td-w-today-icon" data-td-block-uid="td_uid_5_62af843a53f2e"></span>
+				</div>
+				<div class="td-weather-now" data-block-uid="td_uid_5_62af843a53f2e">
+					<span class="td-big-degrees">27</span>
+					<span class="td-circle">°</span>
+					<span class="td-weather-unit">C</span>
+				</div>
+				<div class="td-weather-lo-hi">
+					<div class="td-weather-degrees-wrap">
+						<i class="td-up-icon td-icons-arrows-up"></i>
+						<span class="td-small-degrees td-w-high-temp">27</span>
+						<span class="td-circle">°</span>
+					</div>
+					<div class="td-weather-degrees-wrap">
+						<i class="td-down-icon td-icons-arrows-down"></i>
+						<span class="td-small-degrees td-w-low-temp">27</span>
+						<span class="td-circle">°</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="td-weather-info-wrap">
+			<div class="td-weather-information">
+				<div class="td-weather-section-1">
+					<i class="td-icons-drop"></i>
+					<span class="td-weather-parameter td-w-today-humidity">94%</span>
+				</div>
+				<div class="td-weather-section-2">
+					<i class="td-icons-wind"></i>
+					<span class="td-weather-parameter td-w-today-wind-speed">3.1kmh</span>
+				</div>
+				<div class="td-weather-section-3">
+					<i class="td-icons-cloud"></i>
+					<span class="td-weather-parameter td-w-today-clouds">75%</span>
+				</div>
+			</div>
+
+
+			<div class="td-weather-week">
+									<div class="td-weather-days">
+						<div class="td-day-0">Tue</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-0">28</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-1">Wed</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-1">27</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-2">Thu</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-2">29</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-3">Fri</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-3">28</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-4">Sat</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-4">28</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+								</div>
+		</div>
+		</div></div> <!-- ./block --><div class="td_block_wrap td_block_weather td_block_widget td_uid_6_62af843a54087_rand td-pb-border-top td_block_template_1" data-td-block-uid="td_uid_6_62af843a54087"><div id="td_uid_6_62af843a54087" class="td-weather-wrap td_block_inner td-column-1"><!-- td weather source: cache -->
+		<div class="td-weather-header">
+			<div class="td-weather-city">Kolkata, IN </div>
+			<div class="td-weather-condition">moderate rain</div>
+			<i class="td-location-icon td-icons-location" data-block-uid="td_uid_6_62af843a54087"></i>
+		</div>
+
+		<div class="td-weather-set-location">
+			<form class="td-manual-location-form" action="#" data-block-uid="td_uid_6_62af843a54087">
+				<input id="td_uid_6_62af843a54087" class="td-location-set-input" type="text" name="location" value=""/>
+				<label>enter location</label>
+			</form>
+		</div>
+
+		<div class="td-weather-temperature">
+			<div class="td-weather-temp-wrap">
+				<div class="td-weather-animated-icon">
+					<span class="td_animation_sprite-27-100-80-0-0-1 rain-n td-w-today-icon" data-td-block-uid="td_uid_6_62af843a54087"></span>
+				</div>
+				<div class="td-weather-now" data-block-uid="td_uid_6_62af843a54087">
+					<span class="td-big-degrees">26</span>
+					<span class="td-circle">°</span>
+					<span class="td-weather-unit">C</span>
+				</div>
+				<div class="td-weather-lo-hi">
+					<div class="td-weather-degrees-wrap">
+						<i class="td-up-icon td-icons-arrows-up"></i>
+						<span class="td-small-degrees td-w-high-temp">26</span>
+						<span class="td-circle">°</span>
+					</div>
+					<div class="td-weather-degrees-wrap">
+						<i class="td-down-icon td-icons-arrows-down"></i>
+						<span class="td-small-degrees td-w-low-temp">26</span>
+						<span class="td-circle">°</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="td-weather-info-wrap">
+			<div class="td-weather-information">
+				<div class="td-weather-section-1">
+					<i class="td-icons-drop"></i>
+					<span class="td-weather-parameter td-w-today-humidity">89%</span>
+				</div>
+				<div class="td-weather-section-2">
+					<i class="td-icons-wind"></i>
+					<span class="td-weather-parameter td-w-today-wind-speed">4.1kmh</span>
+				</div>
+				<div class="td-weather-section-3">
+					<i class="td-icons-cloud"></i>
+					<span class="td-weather-parameter td-w-today-clouds">100%</span>
+				</div>
+			</div>
+
+
+			<div class="td-weather-week">
+									<div class="td-weather-days">
+						<div class="td-day-0">Tue</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-0">32</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-1">Wed</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-1">34</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-2">Thu</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-2">34</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-3">Fri</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-3">33</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-4">Sat</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-4">32</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+								</div>
+		</div>
+		</div></div> <!-- ./block --><div class="td_block_wrap td_block_weather td_block_widget td_uid_7_62af843a5413e_rand td-pb-border-top td_block_template_1" data-td-block-uid="td_uid_7_62af843a5413e"><div id="td_uid_7_62af843a5413e" class="td-weather-wrap td_block_inner td-column-1"><!-- td weather source: cache -->
+		<div class="td-weather-header">
+			<div class="td-weather-city">Chennai, IN</div>
+			<div class="td-weather-condition">overcast clouds</div>
+			<i class="td-location-icon td-icons-location" data-block-uid="td_uid_7_62af843a5413e"></i>
+		</div>
+
+		<div class="td-weather-set-location">
+			<form class="td-manual-location-form" action="#" data-block-uid="td_uid_7_62af843a5413e">
+				<input id="td_uid_7_62af843a5413e" class="td-location-set-input" type="text" name="location" value=""/>
+				<label>enter location</label>
+			</form>
+		</div>
+
+		<div class="td-weather-temperature">
+			<div class="td-weather-temp-wrap">
+				<div class="td-weather-animated-icon">
+					<span class="td_animation_sprite-27-100-80-0-0-1 broken-clouds-n td-w-today-icon" data-td-block-uid="td_uid_7_62af843a5413e"></span>
+				</div>
+				<div class="td-weather-now" data-block-uid="td_uid_7_62af843a5413e">
+					<span class="td-big-degrees">25</span>
+					<span class="td-circle">°</span>
+					<span class="td-weather-unit">C</span>
+				</div>
+				<div class="td-weather-lo-hi">
+					<div class="td-weather-degrees-wrap">
+						<i class="td-up-icon td-icons-arrows-up"></i>
+						<span class="td-small-degrees td-w-high-temp">25</span>
+						<span class="td-circle">°</span>
+					</div>
+					<div class="td-weather-degrees-wrap">
+						<i class="td-down-icon td-icons-arrows-down"></i>
+						<span class="td-small-degrees td-w-low-temp">25</span>
+						<span class="td-circle">°</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="td-weather-info-wrap">
+			<div class="td-weather-information">
+				<div class="td-weather-section-1">
+					<i class="td-icons-drop"></i>
+					<span class="td-weather-parameter td-w-today-humidity">94%</span>
+				</div>
+				<div class="td-weather-section-2">
+					<i class="td-icons-wind"></i>
+					<span class="td-weather-parameter td-w-today-wind-speed">2.6kmh</span>
+				</div>
+				<div class="td-weather-section-3">
+					<i class="td-icons-cloud"></i>
+					<span class="td-weather-parameter td-w-today-clouds">100%</span>
+				</div>
+			</div>
+
+
+			<div class="td-weather-week">
+									<div class="td-weather-days">
+						<div class="td-day-0">Tue</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-0">31</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-1">Wed</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-1">33</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-2">Thu</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-2">31</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-3">Fri</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-3">33</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+										<div class="td-weather-days">
+						<div class="td-day-4">Sat</div>
+						<div class="td-day-degrees">
+							<span class="td-degrees-4">32</span>
+							<span class="td-circle">°</span>
+						</div>
+					</div>
+								</div>
+		</div>
+		</div></div> <!-- ./block --><aside class="td_block_template_1 widget widget_media_image"><img width="368" height="796" src="https://newsmobile.in/wp-content/uploads/2021/06/fact-check-cat-3.jpeg" class="image wp-image-1172935  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;"/></aside>                            </div>
+                        </div>
+                            </div> <!-- /.td-pb-row -->
+    </div> <!-- /.td-container -->
+</div> <!-- /.td-main-content-wrap -->
+
+
+<!-- Instagram -->
+
+
+
+<!-- Footer -->
+<div class="td-footer-wrapper td-footer-template-2">
+    <div class="td-container">
+
+	    <div class="td-pb-row">
+		    <div class="td-pb-span12">
+			    <div class="td-a-rec td-a-rec-id-footer_top  "><script async="" src="//"></script>
+<!-- ADSENSE 2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9419436853807952" data-ad-slot="8226798092" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		    </div>
+	    </div>
+
+        <div class="td-pb-row">
+
+            <div class="td-pb-span4">
+                <div class="td-footer-info"><div class="footer-logo-wrap"><a href="https://newsmobile.in/"><img src="https://newsmobile.in/wp-content/uploads/2019/03/logo-300x60.jpg" alt="" title=""/></a></div><div class="footer-text-wrap">NewsMobile is the mobile first media platform that empowers you, entertains you and makes you smarter with its exclusive stories and user generated content selected by our team of award winning journalists and writers.<div class="footer-email-wrap">Contact us: <a href="mailto:editor@newsmobile.in.">editor@newsmobile.in.</a></div></div><div class="footer-social-wrap td-social-style-2">
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.facebook.com/NewsMobile/" title="Facebook">
+                <i class="td-icon-font td-icon-facebook"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://plus.google.com/+NewsmobileIn" title="Google+">
+                <i class="td-icon-font td-icon-googleplus"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.instagram.com/newsmobileindia/" title="Instagram">
+                <i class="td-icon-font td-icon-instagram"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="mailto:editor@newsmobile.in" title="Mail">
+                <i class="td-icon-font td-icon-mail-1"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://twitter.com/newsmobileindia" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://www.youtube.com/channel/UCJETshKS8-MgCm7nt74Oh7w/featured" title="Youtube">
+                <i class="td-icon-font td-icon-youtube"></i>
+            </a>
+        </span></div></div>                            </div>
+
+            <div class="td-pb-span4">
+                <div class="td_block_wrap td_block_7 td_uid_10_62af843a54c77_rand td-pb-border-top td_block_template_1" data-td-block-uid="td_uid_10_62af843a54c77"><script>var block_td_uid_10_62af843a54c77 = new tdBlock();
+block_td_uid_10_62af843a54c77.id = "td_uid_10_62af843a54c77";
+block_td_uid_10_62af843a54c77.atts = '{"limit":3,"sort":"popular","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"","category_ids":"","custom_title":"POPULAR POSTS","custom_url":"","show_child_cat":"","sub_cat_ajax":"","ajax_pagination":"","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":1,"td_ajax_preloading":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_10_62af843a54c77_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_10_62af843a54c77_rand","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+block_td_uid_10_62af843a54c77.td_column_number = "1";
+block_td_uid_10_62af843a54c77.block_type = "td_block_7";
+block_td_uid_10_62af843a54c77.post_count = "3";
+block_td_uid_10_62af843a54c77.found_posts = "148914";
+block_td_uid_10_62af843a54c77.header_color = "";
+block_td_uid_10_62af843a54c77.ajax_pagination_infinite_stop = "";
+block_td_uid_10_62af843a54c77.max_num_pages = "49638";
+tdBlocksArray.push(block_td_uid_10_62af843a54c77);
+</script><div class="td-block-title-wrap"><h4 class="block-title"><span class="td-pulldown-size">POPULAR POSTS</span></h4></div><div id="td_uid_10_62af843a54c77" class="td_block_inner">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://newsmobile.in/articles/2019/11/29/diesel-generator-charging-an-electric-car-heres-the-truth-behind-this-viral-picture/" rel="bookmark" title="Diesel generator charging an electric car? Here’s the truth behind this viral picture"><img width="100" height="70" class="entry-thumb" src="https://newsmobile.in/wp-content/themes/SocialOrbit/SocialOrbit/images/no-thumb/td_100x70.png" alt=""/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://newsmobile.in/articles/2019/11/29/diesel-generator-charging-an-electric-car-heres-the-truth-behind-this-viral-picture/" rel="bookmark" title="Diesel generator charging an electric car? Here’s the truth behind this viral picture">Diesel generator charging an electric car? Here’s the truth behind this...</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2019-11-29T00:45:35+00:00">2019-11-29</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://newsmobile.in/articles/2019/06/11/cars-are-not-melting-because-heat-waves-heres-the-truth/" rel="bookmark" title="These cars are not melting because of heat wave; here’s the truth"><img width="93" height="70" class="entry-thumb" src="https://newsmobile.in/wp-content/uploads/2019/06/MELTING_CAR.jpg" alt="Saudi Arabia, Melting, Cars, Arizona, US, NewsMobile, Mobile, News, India, Fact Check, fact Checker, Fake, news" title="These cars are not melting because of heat wave; here’s the truth"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://newsmobile.in/articles/2019/06/11/cars-are-not-melting-because-heat-waves-heres-the-truth/" rel="bookmark" title="These cars are not melting because of heat wave; here’s the truth">These cars are not melting because of heat wave; here’s the...</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2019-06-11T13:43:33+00:00">2019-06-11</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://newsmobile.in/articles/2019/07/26/man-tries-to-snatch-kid-outside-top-gurugram-school-vigilance-crucial-for-safety-in-the-millennial-city/" rel="bookmark" title="Man tries to snatch kid outside top Gurugram school; vigilance crucial for safety in the millennium city"><img width="100" height="56" class="entry-thumb" src="https://newsmobile.in/wp-content/uploads/2019/07/Kidnapping.jpg" alt="" title="Man tries to snatch kid outside top Gurugram school; vigilance crucial for safety in the millennium city"/></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://newsmobile.in/articles/2019/07/26/man-tries-to-snatch-kid-outside-top-gurugram-school-vigilance-crucial-for-safety-in-the-millennial-city/" rel="bookmark" title="Man tries to snatch kid outside top Gurugram school; vigilance crucial for safety in the millennium city">Man tries to snatch kid outside top Gurugram school; vigilance crucial...</a></h3>            <div class="td-module-meta-info">
+                                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2019-07-26T17:55:32+00:00">2019-07-26</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div></div> <!-- ./block -->                            </div>
+
+            <div class="td-pb-span4">
+                <div class="td_block_wrap td_block_popular_categories td_uid_11_62af843a58902_rand widget widget_categories td-pb-border-top td_block_template_1" data-td-block-uid="td_uid_11_62af843a58902"><h4 class="block-title"><span class="td-pulldown-size">POPULAR CATEGORY</span></h4><ul class="td-pb-padding-side"><li><a href="https://newsmobile.in/articles/category/sports/">Sports<span class="td-cat-no">35387</span></a></li><li><a href="https://newsmobile.in/articles/category/world/">World<span class="td-cat-no">32847</span></a></li><li><a href="https://newsmobile.in/articles/category/home-slider/">Home Slider<span class="td-cat-no">26146</span></a></li><li><a href="https://newsmobile.in/articles/category/nation/">Nation<span class="td-cat-no">25768</span></a></li><li><a href="https://newsmobile.in/articles/category/trending-now/">Trending Now<span class="td-cat-no">12913</span></a></li><li><a href="https://newsmobile.in/articles/category/politics/">Politics<span class="td-cat-no">10250</span></a></li><li><a href="https://newsmobile.in/articles/category/music-entertainment/">Music &amp; Entertainment<span class="td-cat-no">9183</span></a></li><li><a href="https://newsmobile.in/articles/category/cityscape/">Cityscape<span class="td-cat-no">8910</span></a></li><li><a href="https://newsmobile.in/articles/category/business/">Business<span class="td-cat-no">6140</span></a></li></ul></div> <!-- ./block -->                            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Sub Footer -->
+    <div class="td-sub-footer-container">
+        <div class="td-container">
+            <div class="td-pb-row">
+                <div class="td-pb-span7 td-sub-footer-menu">
+                        <div class="menu-footer-container"><ul id="menu-footer-1" class="td-subfooter-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-first td-menu-item td-normal-menu menu-item-1141148"><a href="https://newsmobile.in/about-us/">About us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-1079880"><a href="https://newsmobile.in/how-we-fact-check/">How We Fact Check</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-904203"><a href="https://newsmobile.in/correction-policy/">Correction Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-774164"><a href="https://newsmobile.in/privacy-policy/">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-774174"><a href="https://newsmobile.in/contact/">Contact Us</a></li>
+</ul></div>                </div>
+
+                <div class="td-pb-span5 td-sub-footer-copy">
+                    © 2022 Newsmobile | All Rights Reserved                </div>
+            </div>
+        </div>
+    </div>
+    
+</div><!--close td-outer-wrap-->
+
+<script type="text/javascript">window._taboola = window._taboola || [];
+_taboola.push({flush: true});</script>                <div class="td-more-articles-box">
+                    <i class="td-icon-close td-close-more-articles-box"></i>
+                    <span class="td-more-articles-box-title">MORE STORIES</span>
+                    <div class="td-content-more-articles-box">
+
+                    
+        <div class="td_module_1 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://newsmobile.in/articles/2022/06/19/centre-bans-35-whatsapp-groups-to-counter-spread-of-fake-news-on-agnipath-scheme/" rel="bookmark" title="Centre Bans 35 WhatsApp Groups To Counter Spread Of Fake News On Agnipath Scheme"><img width="324" height="160" class="entry-thumb" src="https://newsmobile.in/wp-content/uploads/2022/06/FVoN68eUsAAJ52z-324x160.png" srcset="https://newsmobile.in/wp-content/uploads/2022/06/FVoN68eUsAAJ52z-324x160.png 324w, https://newsmobile.in/wp-content/uploads/2022/06/FVoN68eUsAAJ52z-533x261.png 533w" sizes="(max-width: 324px) 100vw, 324px" alt="" title="Centre Bans 35 WhatsApp Groups To Counter Spread Of Fake News On Agnipath Scheme"/></a></div>                            </div>
+            <h3 class="entry-title td-module-title"><a href="https://newsmobile.in/articles/2022/06/19/centre-bans-35-whatsapp-groups-to-counter-spread-of-fake-news-on-agnipath-scheme/" rel="bookmark" title="Centre Bans 35 WhatsApp Groups To Counter Spread Of Fake News On Agnipath Scheme">Centre Bans 35 WhatsApp Groups To Counter Spread Of Fake News...</a></h3>
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://newsmobile.in/articles/author/newsmobilenation/">NewsMobile National Bureau</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2022-06-19T22:27:50+00:00">2022-06-19</time></span>                <div class="td-module-comments"><a href="https://newsmobile.in/articles/2022/06/19/centre-bans-35-whatsapp-groups-to-counter-spread-of-fake-news-on-agnipath-scheme/#respond">0</a></div>            </div>
+
+            
+        </div>
+
+                            </div>
+                </div>
+
+    <!--
+
+        Theme: Newspaper by tagDiv 2016
+        Version: 7.7.1 (rara)
+        Deploy mode: deploy
+        
+        uid: 62af843a8a73e
+    -->
+
+    
+<!-- Custom css form theme panel -->
+<style type="text/css" media="screen">
+/* custom css theme panel */
+.td_module_mx8 .td-post-author-name span,
+.td_module_mx8 .td-module-comments a ,
+.td_module_mx8 .td-post-author-name a,
+.td_module_mx8 .td-post-date,
+.td_module_mx8 .td-icon-star, 
+.td_module_mx8 .td-icon-star-half,
+.td_module_mx8 .td-icon-star-empty {
+    display:none;
+}
+
+.td-big-grid-post .td-post-author-name a,
+.td-big-grid-post .td-post-author-name span, 
+.td-big-grid-post .td-post-date {
+    display:none;
+}
+
+#responsive-form{
+	max-width:600px /*-- change this to get your desired form width --*/;
+	margin:0 auto;
+        width:100%;
+}
+.form-row{
+	width: 100%;
+}
+.column-half, .column-full{
+	float: left;
+	position: relative;
+	padding: 0.65rem;
+	width:100%;
+	-webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/**---------------- Media query ----------------**/
+@media only screen and (min-width: 48em) { 
+	.column-half{
+		width: 50%;
+	}
+}
+
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-webkit-box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+	      box-sizing: border-box
+}
+.wpcf7 input[type="text"]:focus{
+	background: #fff;
+}
+.wpcf7-submit{
+	float: right;
+	background: #CA0002;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	padding: 8px 20px;
+	cursor: pointer;
+}
+.wpcf7-submit:hover{
+	background: #ff0000;
+}
+span.wpcf7-not-valid-tip{
+	text-shadow: none;
+	font-size: 12px;
+	color: #fff;
+	background: #ff0000;
+	padding: 5px;
+}
+div.wpcf7-validation-errors { 
+	text-shadow: none;
+	border: transparent;
+	background: #f9cd00;
+	padding: 5px;
+	color: #9C6533;
+	text-align: center;
+	margin: 0;
+	font-size: 12px;
+}
+div.wpcf7-mail-sent-ok{
+	text-align: center;
+	text-shadow: none;
+	padding: 5px;
+	font-size: 12px;
+	background: #59a80f;
+	border-color: #59a80f;
+	color: #fff;
+	margin: 0;
+}
+
+.td_block_slide .td-slide-meta a, .td_block_slide .td-slide-meta span {
+    display:none;
+}
+
+.hindi-News { 
+background-color: #f4524d7d;
+border-radius:5px;
+}
+.sf-menu>li>a {
+    padding: 0 13px;
+    line-height: 48px;
+    font-size: 13px !important;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-backface-visibility: hidden;
+}
+</style>
+
+<script type="text/javascript"><script  type="text/javascript"  charset="utf-8">  
+    (function(w,d,t,f){  w[f]=w[f]||function(c,k,n){s=w[f],k=s['k']=(s['k']||(k?('&k='+k):''));s['c']=  
+    c=(c  instanceof  Array)?c:[c];s['n']=n=n||0;L=d.createElement(t),e=d.getElementsByTagName(t)[0];  
+    L.async=1;L.src='//feed.aqicn.org/feed/'+(c[n].city)+'/'+(c[n].lang||'')+'/feed.v1.js?n='+n+k;  
+    e.parentNode.insertBefore(L,e);  };  })(  window,document,'script','_aqiFeed'  );    
+</script>
+
+	<div id="fb-root"></div>
+	<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/everest-counter-lite/js/jquery.waypoints.js?ver=2.1.0" id="ec_waypoints_js-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/everest-counter-lite/js/jquery.counterup.js?ver=2.1.0" id="ec_counterup_js-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/everest-counter-lite/js/ec-frontend.js?ver=2.1.0" id="ec_frontend_js-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/newsmobile.in\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.6.1" id="contact-form-7-js"></script>
+<script type="text/javascript" id="wpc-ajax-js-extra">
+/* <![CDATA[ */
+var wpcAjax = {"wpc_nonce":"9f4200cf15","wpc_url":"https:\/\/newsmobile.in\/wp-admin\/admin-ajax.php?lang=en"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/wp-cloudy/js/wp-cloudy-ajax.js?ver=e9aca596f03aec42d042ae53466f858d" id="wpc-ajax-js"></script>
+<script type="text/javascript" id="ppress-frontend-script-js-extra">
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/newsmobile.in\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"513a37df72","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.2.14" id="ppress-frontend-script-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/themes/SocialOrbit/SocialOrbit/js/tagdiv_theme.js?ver=7.7.1" id="td-site-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-includes/js/comment-reply.min.js?ver=e9aca596f03aec42d042ae53466f858d" id="comment-reply-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/super-socializer/js/front/social_login/general.js?ver=7.13.35" id="the_champ_ss_general_scripts-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/super-socializer/js/front/facebook/sdk.js?ver=7.13.35" id="the_champ_fb_sdk-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/super-socializer/js/front/facebook/commenting.js?ver=7.13.35" id="the_champ_fb_commenting-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-content/plugins/youtube-embed-plus/scripts/fitvids.min.js?ver=14.1.1" id="__ytprefsfitvids__-js"></script>
+<script type="text/javascript" src="https://newsmobile.in/wp-includes/js/wp-embed.min.js?ver=e9aca596f03aec42d042ae53466f858d" id="wp-embed-js"></script>
+<script type="text/javascript" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js?ver=e9aca596f03aec42d042ae53466f858dload" async="async" id="remote_sdk-js"></script>
+<script>!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script>
+<!-- JS generated by theme -->
+
+<script>
+    
+
+			
+				jQuery().ready(function () {
+					tdWeather.addItem({"block_uid":"td_uid_4_62af843a53b69","location":"Delhi, IN","api_location":"Delhi","api_language":"en","today_icon":"mist-n","today_icon_text":"mist","today_temp":[26.10000000000000142108547152020037174224853515625,78.900000000000005684341886080801486968994140625],"today_humidity":78,"today_wind_speed":[2.100000000000000088817841970012523233890533447265625,1.3000000000000000444089209850062616169452667236328125],"today_min":[26.10000000000000142108547152020037174224853515625,78.900000000000005684341886080801486968994140625],"today_max":[30.199999999999999289457264239899814128875732421875,86.2999999999999971578290569595992565155029296875],"today_clouds":75,"current_unit":0,"forecast":[{"timestamp":1655793000,"day_temp":[33,91],"day_name":"Tue","owm_day_index":1},{"timestamp":1655879400,"day_temp":[39,102],"day_name":"Wed","owm_day_index":2},{"timestamp":1655965800,"day_temp":[40,104],"day_name":"Thu","owm_day_index":3},{"timestamp":1656052200,"day_temp":[40,105],"day_name":"Fri","owm_day_index":4},{"timestamp":1656138600,"day_temp":[42,108],"day_name":"Sat","owm_day_index":5}],"api_key":"f166e0697a8541984a1c4dce5221f592"});
+				});
+			
+			
+
+			
+				jQuery().ready(function () {
+					tdWeather.addItem({"block_uid":"td_uid_5_62af843a53f2e","location":"Mumbai, IN","api_location":"Mumbai","api_language":"en","today_icon":"rain-n","today_icon_text":"moderate rain","today_temp":[27,80.599999999999994315658113919198513031005859375],"today_humidity":94,"today_wind_speed":[3.100000000000000088817841970012523233890533447265625,1.899999999999999911182158029987476766109466552734375],"today_min":[27,80.599999999999994315658113919198513031005859375],"today_max":[27,80.599999999999994315658113919198513031005859375],"today_clouds":75,"current_unit":0,"forecast":[{"timestamp":1655793000,"day_temp":[28,83],"day_name":"Tue","owm_day_index":1},{"timestamp":1655879400,"day_temp":[27,81],"day_name":"Wed","owm_day_index":2},{"timestamp":1655965800,"day_temp":[29,84],"day_name":"Thu","owm_day_index":3},{"timestamp":1656052200,"day_temp":[28,83],"day_name":"Fri","owm_day_index":4},{"timestamp":1656138600,"day_temp":[28,83],"day_name":"Sat","owm_day_index":5}],"api_key":"9c252c3f1a0036ea446f45651330701e"});
+				});
+			
+			
+
+			
+				jQuery().ready(function () {
+					tdWeather.addItem({"block_uid":"td_uid_6_62af843a54087","location":"Kolkata, IN ","api_location":"Kolkata","api_language":"en","today_icon":"rain-n","today_icon_text":"moderate rain","today_temp":[26,78.7000000000000028421709430404007434844970703125],"today_humidity":89,"today_wind_speed":[4.0999999999999996447286321199499070644378662109375,2.600000000000000088817841970012523233890533447265625],"today_min":[26,78.7000000000000028421709430404007434844970703125],"today_max":[26,78.7000000000000028421709430404007434844970703125],"today_clouds":100,"current_unit":0,"forecast":[{"timestamp":1655789400,"day_temp":[32,89],"day_name":"Tue","owm_day_index":1},{"timestamp":1655875800,"day_temp":[34,92],"day_name":"Wed","owm_day_index":2},{"timestamp":1655962200,"day_temp":[34,94],"day_name":"Thu","owm_day_index":3},{"timestamp":1656048600,"day_temp":[33,92],"day_name":"Fri","owm_day_index":4},{"timestamp":1656135000,"day_temp":[32,89],"day_name":"Sat","owm_day_index":5}],"api_key":"e5342a41a77f36d7802f350362aa6725"});
+				});
+			
+			
+
+			
+				jQuery().ready(function () {
+					tdWeather.addItem({"block_uid":"td_uid_7_62af843a5413e","location":"Chennai, IN","api_location":"Chennai","api_language":"en","today_icon":"broken-clouds-n","today_icon_text":"overcast clouds","today_temp":[25,77],"today_humidity":94,"today_wind_speed":[2.600000000000000088817841970012523233890533447265625,1.600000000000000088817841970012523233890533447265625],"today_min":[25,77],"today_max":[25,77],"today_clouds":100,"current_unit":0,"forecast":[{"timestamp":1655793000,"day_temp":[31,88],"day_name":"Tue","owm_day_index":1},{"timestamp":1655879400,"day_temp":[33,91],"day_name":"Wed","owm_day_index":2},{"timestamp":1655965800,"day_temp":[31,88],"day_name":"Thu","owm_day_index":3},{"timestamp":1656052200,"day_temp":[33,91],"day_name":"Fri","owm_day_index":4},{"timestamp":1656138600,"day_temp":[32,90],"day_name":"Sat","owm_day_index":5}],"api_key":"2b08ac14030ba455470237725275d7f8"});
+				});
+			
+			
+
+                jQuery().ready(function jQuery_ready() {
+                    tdAjaxCount.tdGetViewsCountsAjax("post","[1092964]");
+                });
+            
+
+	
+
+		(function(){
+			var html_jquery_obj = jQuery('html');
+
+			if (html_jquery_obj.length && (html_jquery_obj.is('.ie8') || html_jquery_obj.is('.ie9'))) {
+
+				var path = 'https://newsmobile.in/wp-content/themes/SocialOrbit/SocialOrbit/style.css';
+
+				jQuery.get(path, function(data) {
+
+					var str_split_separator = '#td_css_split_separator';
+					var arr_splits = data.split(str_split_separator);
+					var arr_length = arr_splits.length;
+
+					if (arr_length > 1) {
+
+						var dir_path = 'https://newsmobile.in/wp-content/themes/SocialOrbit/SocialOrbit';
+						var splited_css = '';
+
+						for (var i = 0; i < arr_length; i++) {
+							if (i > 0) {
+								arr_splits[i] = str_split_separator + ' ' + arr_splits[i];
+							}
+							//jQuery('head').append('<style>' + arr_splits[i] + '</style>');
+
+							var formated_str = arr_splits[i].replace(/\surl\(\'(?!data\:)/gi, function regex_function(str) {
+								return ' url(\'' + dir_path + '/' + str.replace(/url\(\'/gi, '').replace(/^\s+|\s+$/gm,'');
+							});
+
+							splited_css += "<style>" + formated_str + "</style>";
+						}
+
+						var td_theme_css = jQuery('link#td-theme-css');
+
+						if (td_theme_css.length) {
+							td_theme_css.after(splited_css);
+						}
+					}
+				});
+			}
+		})();
+
+	
+	
+</script>
+
+
+
+
+<script type='text/javascript' style='display:none;' async>
+</script>
+
+<script type="text/javascript" data-cfasync="false"></script></body></html><!-- Page generated by LiteSpeed Cache 4.6 on 2022-06-20 01:46:58 -->
