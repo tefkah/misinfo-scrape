@@ -7,7 +7,7 @@ import { isPolitifact } from './determine-source'
 import { ratingMapNumbers } from './rating-map'
 import { Info } from './types'
 
-const illegalTwitterRegex = /(share\?|\/\w+Politifact|intent\/tweet|Snopes)/i
+const illegalTwitterRegex = /(share\?|\/\w*Politifact|intent\/tweet|Snopes)/i
 
 /**
  * Find all twitter links in the main body of an article which aren't "intent" type links.
