@@ -6,7 +6,7 @@ type RetryCondition = (error: AxiosError) => boolean
 const retryCondition = (type?: string): RetryCondition => {
   switch (type) {
     case 'archive':
-      return (error: AxiosError) => error?.response?.status === 429
+      return (error: AxiosError) => error?.response?.status !== 200
 
     default:
       return (error: AxiosError) => !error.response
