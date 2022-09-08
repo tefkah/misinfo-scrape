@@ -19,6 +19,8 @@ const articleInfo = await getArticleInfoForDir(
   join(__dirname, '../../data/politifact-info.json')
 )
 
+
+
 // const politifactInfo = await writeFile(
 //   join(__dirname, '../../data/politifact-info.json'),
 //   JSON.stringify(articleInfo, null, 2)
